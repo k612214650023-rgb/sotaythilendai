@@ -11,40 +11,48 @@
   <style>
     .tab-content { display: none; }
     .tab-content.active { display: block; }
+    /* Checkbox custom style */
+    input[type="checkbox"]:checked + span {
+      text-decoration: line-through;
+      color: #94a3b8;
+    }
   </style>
 </head>
-<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen pb-20">
+<body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen pb-24">
 
   <!-- Khai báo Khung ứng dụng di động (Mobile-First Frame) -->
   <div class="max-w-md mx-auto bg-slate-50 min-h-screen shadow-2xl relative">
 
     <!-- 1. HEADER CỐ ĐỊNH (Sticky Header) -->
-    <header class="sticky top-0 z-50 bg-blue-800 text-white p-4 shadow-md flex justify-between items-center">
+    <header class="sticky top-0 z-50 bg-blue-900 text-white p-3.5 shadow-md flex justify-between items-center">
       <div>
-        <span class="text-[10px] bg-yellow-400 text-blue-950 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
-          Kỳ thi thăng cấp 2026
-        </span>
-        <h1 class="text-base font-extrabold mt-0.5 tracking-tight">Taekwondo Kids Việt Nam</h1>
+        <div class="flex items-center gap-1.5">
+          <span class="text-[9px] bg-yellow-400 text-blue-950 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
+            16/08/2026 • 07:00 - 12:00
+          </span>
+        </div>
+        <h1 class="text-sm font-extrabold mt-1 tracking-tight uppercase text-yellow-300">Taekwondo Kids Việt Nam</h1>
+        <p class="text-[10px] text-blue-100 font-medium">Sổ Tay Hướng Dẫn Kỳ Thi Thăng Cấp Đai 2026</p>
       </div>
-      <a href="tel:0347954345" class="flex items-center gap-1.5 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow transition">
+      <a href="tel:0347954345" class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-xs font-bold px-2.5 py-1.5 rounded-lg shadow transition">
         <i data-lucide="phone-call" class="w-3.5 h-3.5"></i>
-        <span>Hỗ trợ</span>
+        <span>Hotline</span>
       </a>
     </header>
 
-    <!-- 2. THANH TRA CỨU NHANH SỐ BÁO DANH (Instant Lookup) -->
-    <section class="p-4 bg-gradient-to-b from-blue-800 to-blue-700 text-white">
+    <!-- 2. THANH TRA CỨU NHANH SỐ BÁO DANH & KẾT QUẢ -->
+    <section class="p-4 bg-gradient-to-b from-blue-900 via-blue-800 to-blue-700 text-white">
       <form id="searchForm" class="relative">
         <input 
           type="text" 
           id="searchInput"
-          placeholder="Nhập Mã võ sinh hoặc Số báo danh..." 
-          class="w-full pl-10 pr-24 py-2.5 rounded-xl text-slate-900 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-inner"
+          placeholder="Nhập Họ tên, Mã võ sinh hoặc Số báo danh..." 
+          class="w-full pl-9 pr-24 py-2.5 rounded-xl text-slate-900 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-yellow-400 shadow-inner"
         >
         <i data-lucide="search" class="w-4 h-4 absolute left-3 top-3 text-slate-400"></i>
         <button 
           type="submit" 
-          class="absolute right-1.5 top-1.5 bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow transition"
+          class="absolute right-1 top-1 bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-bold text-xs px-3 py-1.5 rounded-lg shadow transition"
         >
           Tra cứu
         </button>
@@ -60,9 +68,10 @@
           <span id="resLevel" class="bg-blue-100 text-blue-800 text-[11px] font-bold px-2 py-0.5 rounded"></span>
         </div>
         <div class="grid grid-cols-2 gap-2 text-xs">
-          <div>⏰ <strong>Ca thi:</strong> <span id="resTime"></span></div>
+          <div>⏰ <strong>Thời gian:</strong> <span id="resTime"></span></div>
           <div>🥋 <strong>Khu vực:</strong> <span id="resZone"></span></div>
-          <div class="col-span-2 text-blue-700 font-medium">🪑 <strong>Chỗ ngồi PH:</strong> <span id="resSeat"></span></div>
+          <div>🚶 <strong>Làn Check-in:</strong> <span id="resLane" class="font-bold text-emerald-700"></span></div>
+          <div>🪑 <strong>Chỗ ngồi PH:</strong> <span id="resSeat"></span></div>
         </div>
       </div>
     </section>
@@ -70,191 +79,440 @@
     <!-- 3. NỘI DUNG TABS CHI TIẾT -->
     <main class="p-4 space-y-4">
 
-      <!-- TAB 1: SƠ ĐỒ & LỐI DI CHUYỂN -->
+      <!-- TAB 1: SƠ ĐỒ & TIỆN ÍCH -->
       <div id="tab-location" class="tab-content active space-y-4">
+        
+        <!-- Địa điểm & Chỉ đường -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
             <i data-lucide="map-pin" class="text-red-600 w-4 h-4"></i>
-            Địa điểm & Sơ đồ Luồng di chuyển
+            Địa Điểm & Hướng Dẫn Di Chuyển
           </h2>
-          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-            <strong>Địa điểm:</strong> Cung Thiếu nhi cơ sở 2 (Đường Phạm Hùng).
-          </p>
+          <div class="text-xs text-slate-700 leading-relaxed mb-3 space-y-1">
+            <p><strong>Đơn vị tổ chức:</strong> Trung tâm Taekwondo Kids Việt Nam</p>
+            <p><strong>Địa điểm:</strong> Nhà thi đấu Tầng 4 - Tòa B1, Cung Thiếu nhi Hà Nội (Cơ sở 2).</p>
+            <p><strong>Địa chỉ:</strong> Đường Phạm Hùng, Phường Mỹ Đình, Nam Từ Liêm, Hà Nội.</p>
+          </div>
 
           <a href="https://maps.google.com" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full mb-4 shadow transition">
-            <span>Mở Google Maps chỉ đường</span>
+            <i data-lucide="navigation" class="w-4 h-4"></i>
+            <span>Mở Google Maps chỉ đường trực tiếp</span>
             <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
           </a>
 
+          <!-- Các luồng di chuyển -->
           <div class="space-y-2.5">
             <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-blue-600 text-xs">
-              <p class="font-bold text-blue-900 mb-0.5">🚗 Lối xuống hầm gửi xe:</p>
-              <p class="text-slate-600">Lối xuống hầm gửi xe Tòa B1 từ cổng đường Phạm Hùng.</p>
+              <p class="font-bold text-blue-900 mb-0.5">🚗 Lối vào & Hầm gửi xe:</p>
+              <p class="text-slate-600">Di chuyển từ cổng chính **Đường Phạm Hùng**, đi theo biển chỉ dẫn xuống **Hầm gửi xe Tòa B1**.</p>
             </div>
             <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-amber-500 text-xs">
               <p class="font-bold text-amber-900 mb-0.5">🛗 Lối lên Nhà thi đấu (Tầng 4):</p>
-              <p class="text-slate-600">Sử dụng <strong>Thang máy TM1</strong> tại Tòa B1 để lên thẳng Tầng 4.</p>
+              <p class="text-slate-600">Từ hầm gửi xe, di chuyển đến **Thang máy TM1 (Tòa B1)** để lên thẳng **Tầng 4**.</p>
             </div>
             <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-emerald-500 text-xs">
-              <p class="font-bold text-emerald-900 mb-0.5">🚶 Cổng vào đi bộ:</p>
-              <p class="text-slate-600">Cổng vào dành riêng cho người đi bộ di chuyển vào nhà thi đấu.</p>
+              <p class="font-bold text-emerald-900 mb-0.5">🚶 Đường đi bộ nội bộ:</p>
+              <p class="text-slate-600">Nếu đi bộ từ cổng chính, đi theo đường nội bộ dẫn thẳng vào sảnh Tòa B1.</p>
             </div>
           </div>
         </div>
 
+        <!-- Tiện ích Tầng 4 -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
+            <i data-lucide="layout" class="text-blue-600 w-4 h-4"></i>
+            Sơ Đồ Tiện Ích Trong Nhà Thi Đấu (Tầng 4)
+          </h2>
+          
+          <div class="grid grid-cols-2 gap-2.5 text-xs">
+            <div class="bg-red-50 p-2.5 rounded-lg border border-red-100 flex items-start gap-2">
+              <i data-lucide="cross" class="text-red-600 w-4 h-4 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-red-900 block">Trạm Y Tế & Sơ Cứu</strong>
+                <span class="text-red-700 text-[11px]">Cạnh Bàn BTC (sẵn sàng bác sĩ & dụng cụ y tế).</span>
+              </div>
+            </div>
+
+            <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100 flex items-start gap-2">
+              <i data-lucide="droplet" class="text-blue-600 w-4 h-4 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-blue-900 block">Trạm Nước Miễn Phí</strong>
+                <span class="text-blue-700 text-[11px]">Đặt tại 2 góc lối vào sân thi.</span>
+              </div>
+            </div>
+
+            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 flex items-start gap-2">
+              <i data-lucide="users" class="text-slate-600 w-4 h-4 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-slate-900 block">Nhà Vệ Sinh (WC)</strong>
+                <span class="text-slate-600 text-[11px]">Bên trái sảnh chờ Thang máy TM1.</span>
+              </div>
+            </div>
+
+            <div class="bg-purple-50 p-2.5 rounded-lg border border-purple-100 flex items-start gap-2">
+              <i data-lucide="camera" class="text-purple-600 w-4 h-4 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-purple-900 block">Photobooth & Chụp Ảnh</strong>
+                <span class="text-purple-700 text-[11px]">Đặt tại Khu vực Bàn Trao đai.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lưu ý phân luồng -->
         <div class="bg-amber-50 border border-amber-200 p-3.5 rounded-xl text-xs text-amber-900 flex items-start gap-2.5">
           <i data-lucide="alert-triangle" class="text-amber-600 shrink-0 w-4 h-4 mt-0.5"></i>
           <div class="leading-relaxed">
-            <strong>Lưu ý Phân luồng:</strong> Quý phụ huynh di chuyển lên khu vực khán đài, không đi vào sân thi. Khi cần trao đổi với võ sinh, xin liên hệ quản sinh hỗ trợ.
+            <strong>Lưu ý Phân luồng An toàn:</strong> Quý phụ huynh di chuyển lên khu vực khán đài quan sát, tuyệt đối không đi vào sân thi. Khi cần gửi đồ hoặc hỗ trợ đặc biệt, xin vui lòng liên hệ Thầy/Cô quản sinh.
           </div>
         </div>
+
       </div>
 
-      <!-- TAB 2: LỊCH TRÌNH & QUY TRÌNH -->
+      <!-- TAB 2: LỊCH TRÌNH & LUỒNG CHECK-IN -->
       <div id="tab-timeline" class="tab-content space-y-4">
+        
+        <!-- Quy trình Check-in 3 bước -->
+        <div class="bg-gradient-to-br from-blue-900 to-indigo-900 text-white p-4 rounded-xl shadow-sm">
+          <h2 class="font-bold flex items-center gap-2 border-b border-blue-700 pb-2 mb-3 text-sm text-yellow-300">
+            <i data-lucide="qr-code" class="w-4 h-4"></i>
+            Luồng Di Chuyển 3 Bước Tối Ưu (3-Step Flow)
+          </h2>
+
+          <div class="space-y-3 text-xs">
+            <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
+              <div class="font-bold text-yellow-300 mb-1 flex items-center gap-1.5">
+                <span class="bg-yellow-400 text-blue-950 rounded-full w-4 h-4 flex items-center justify-center text-[10px]">1</span>
+                <span>Bước 1: Check-in Siêu Tốc (Fast-Track)</span>
+              </div>
+              <p class="text-slate-200 leading-relaxed">
+                Check-in tại Lều phân làn theo cấp đai:<br>
+                • <strong>Làn 1:</strong> Cấp 10 - Cấp 8<br>
+                • <strong>Làn 2:</strong> Cấp 7 - Cấp 5<br>
+                • <strong>Làn 3:</strong> Cấp 4 - Cấp 1<br>
+                Phụ huynh quét **Mã QR SBD** (đã gửi qua Zalo/SMS) hoặc đọc Tên/SĐT để tình nguyện viên dán SBD lên võ phục.
+              </p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
+              <div class="font-bold text-yellow-300 mb-1 flex items-center gap-1.5">
+                <span class="bg-yellow-400 text-blue-950 rounded-full w-4 h-4 flex items-center justify-center text-[10px]">2</span>
+                <span>Bước 2: Tập Kết & Di Chuyển Khán Đài</span>
+              </div>
+              <p class="text-slate-200 leading-relaxed">
+                • <strong>Võ sinh:</strong> Quản sinh dẫn vào Khu vực Tập kết Sân thi xếp hàng theo thảm.<br>
+                • <strong>Phụ huynh:</strong> Di chuyển theo lối đi riêng lên **Khán đài Tầng 4** cổ vũ.
+              </p>
+            </div>
+
+            <div class="bg-white/10 backdrop-blur-md p-3 rounded-lg border border-white/15">
+              <div class="font-bold text-yellow-300 mb-1 flex items-center gap-1.5">
+                <span class="bg-yellow-400 text-blue-950 rounded-full w-4 h-4 flex items-center justify-center text-[10px]">3</span>
+                <span>Bước 3: Thi Bài Thi & Trao Đai</span>
+              </div>
+              <p class="text-slate-200 leading-relaxed">
+                Võ sinh thi theo sự điều hành của Giám khảo (Bài thi chỉ thực hiện 01 lần). Sau khi hoàn thành đạt yêu cầu, di chuyển qua **Khu vực Trao đai** nhận đai mới, Giấy khen/Chứng nhận và chụp ảnh.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Khung Thời Gian Sự Kiện -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
             <i data-lucide="clock" class="text-blue-600 w-4 h-4"></i>
-            Tiến Trình Kỳ Thi Thăng Cấp Đai
+            Lịch Trình Chi Tiết Sự Kiện (16/08/2026)
           </h2>
 
           <div class="relative border-l-2 border-blue-200 ml-3 space-y-5 my-3 pl-4">
+            
             <div class="relative">
               <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">1</span>
-              <div class="text-[11px] font-bold text-blue-900">07:30 - 08:00</div>
-              <div class="font-semibold text-xs text-slate-800">Check-in & Điểm danh</div>
+              <div class="text-[11px] font-bold text-blue-900">07:00 – 08:00</div>
+              <div class="font-semibold text-xs text-slate-800">Check-in & Tập kết Võ Sinh</div>
               <p class="text-[11px] text-slate-500 mt-0.5">
-                Võ sinh tới lều check-in điểm danh, nhận SBD và di chuyển vào vị trí tập kết đai theo hướng dẫn Ban Tổ chức.
+                Phụ huynh & Võ sinh check-in tại Lều phân luồng cấp đai (Làn 1, 2, 3), nhận dán SBD và di chuyển vào vị trí tập kết.
               </p>
             </div>
 
             <div class="relative">
               <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">2</span>
-              <div class="text-[11px] font-bold text-blue-900">08:00</div>
-              <div class="font-semibold text-xs text-slate-800">Khai mạc Kỳ thi</div>
+              <div class="text-[11px] font-bold text-blue-900">08:00 – 08:30</div>
+              <div class="font-semibold text-xs text-slate-800">Lễ Khai Mạc Kỳ Thi</div>
+              <p class="text-[11px] text-slate-500 mt-0.5">
+                Phụ huynh di chuyển lên Khán đài; Võ sinh tập hợp khởi động tại sân thi đấu.
+              </p>
             </div>
 
             <div class="relative">
               <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">3</span>
-              <div class="text-[11px] font-bold text-blue-900">08:30</div>
-              <div class="font-semibold text-xs text-slate-800">Thực hiện Bài thi Thăng cấp</div>
+              <div class="text-[11px] font-bold text-blue-900">08:30 – 11:30</div>
+              <div class="font-semibold text-xs text-slate-800">Thực Hiện Bài Thi Thăng Cấp</div>
               <p class="text-[11px] text-slate-500 mt-0.5">
-                Võ sinh thi theo hướng dẫn Ban Giám Khảo. Bài thi chỉ được thực hiện 01 lần duy nhất.
+                Võ sinh thực hiện bài thi theo các sàn đấu (Sàn 1, 2, 3, 4) dưới sự hướng dẫn của Ban Giám Khảo.
               </p>
             </div>
 
             <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-emerald-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">4</span>
-              <div class="text-[11px] font-bold text-emerald-900">12:00</div>
-              <div class="font-semibold text-xs text-slate-800">Trao đai & Bế mạc</div>
+              <span class="absolute -left-[23px] top-0.5 bg-indigo-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">4</span>
+              <div class="text-[11px] font-bold text-indigo-900">11:30 – 12:00</div>
+              <div class="font-semibold text-xs text-slate-800">Trao Đai, Chụp Ảnh & Trải Nghiệm</div>
               <p class="text-[11px] text-slate-500 mt-0.5">
-                Võ sinh thi đạt chuyển qua khu vực trao đai, nhận đai mới, chụp ảnh kỷ niệm và ra về.
+                Võ sinh đạt di chuyển qua Bàn trao đai nhận đai mới, Giấy khen, chụp ảnh kỷ niệm tại Photobooth & tham gia gian hàng trải nghiệm.
               </p>
             </div>
+
+            <div class="relative">
+              <span class="absolute -left-[23px] top-0.5 bg-emerald-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">5</span>
+              <div class="text-[11px] font-bold text-emerald-900">12:00</div>
+              <div class="font-semibold text-xs text-slate-800">Bế Mạc Kỳ Thi & Tải Ảnh / Giấy Chứng Nhận</div>
+              <p class="text-[11px] text-slate-500 mt-0.5">
+                Quét mã QR nhận Giấy chứng nhận điện tử (E-Certificate) và truy cập Kho ảnh sắc nét của kỳ thi.
+              </p>
+            </div>
+
           </div>
         </div>
+
       </div>
 
-      <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI -->
+      <!-- TAB 3: QUY ĐỊNH CẤP ĐAI & DẶN DÒ -->
       <div id="tab-rules" class="tab-content space-y-4">
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
-            <i data-lucide="check-square" class="text-emerald-600 w-4 h-4"></i>
-            Dặn Dò Trước Kỳ Thi
-          </h2>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Ăn uống đầy đủ, đi ngủ sớm</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Tinh thần vui vẻ, sẵn sàng</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Đến sớm 30 phút</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Ôn luyện kỹ bài thi</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Giữ gìn sức khỏe</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0"></i>
-              <span>Tự tin và mạnh mẽ</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-center gap-2 border border-slate-100 col-span-2">
-              <i data-lucide="x-circle" class="text-red-500 w-3.5 h-3.5 shrink-0"></i>
-              <span class="font-semibold text-red-700">Không đeo trang sức khi vào thi</span>
-            </div>
-          </div>
-        </div>
-
+        
+        <!-- Bảng Cấp Đai Chuẩn Hóa -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-sm">
-            <i data-lucide="info" class="text-blue-600 w-4 h-4"></i>
+            <i data-lucide="shield-check" class="text-blue-600 w-4 h-4"></i>
             Phổ Biến Quy Định Cấp Đai Dự Thi
           </h2>
           <p class="text-[11px] text-slate-500 mb-3">
-            (*) Theo Quyết định số 152/2015/QĐ-VTF của Liên đoàn Taekwondo Hà Nội.
+            (*) Căn cứ Quyết định số 152/2015/QĐ-VTF của Liên đoàn Taekwondo Hà Nội.
           </p>
 
-          <div class="overflow-hidden rounded-lg border border-slate-200 text-xs">
-            <table class="w-full text-left border-collapse">
+          <div class="overflow-x-auto rounded-lg border border-slate-200">
+            <table class="w-full text-left border-collapse text-[11px]">
               <thead>
-                <tr class="bg-slate-100 text-slate-700 font-bold">
-                  <th class="p-2 border-b">Cấp đai cũ</th>
-                  <th class="p-2 border-b">Cấp đai mới</th>
+                <tr class="bg-slate-100 text-slate-700 font-bold border-b">
+                  <th class="p-2 border-r">Hiện tại</th>
+                  <th class="p-2 border-r">Dự thi</th>
+                  <th class="p-2 border-r">Màu đai</th>
+                  <th class="p-2">Yêu cầu bài thi cốt lõi</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 text-slate-700">
-                <tr><td class="p-2">Cấp 10</td><td class="p-2 font-bold text-blue-700">Cấp 9</td></tr>
-                <tr><td class="p-2">Cấp 9</td><td class="p-2 font-bold text-blue-700">Cấp 8</td></tr>
-                <tr><td class="p-2">Cấp 8</td><td class="p-2 font-bold text-blue-700">Cấp 7</td></tr>
-                <tr><td class="p-2">Cấp 7</td><td class="p-2 font-bold text-blue-700">Cấp 6</td></tr>
-                <tr><td class="p-2">Cấp 6</td><td class="p-2 font-bold text-blue-700">Cấp 5</td></tr>
-                <tr><td class="p-2">Cấp 5</td><td class="p-2 font-bold text-blue-700">Cấp 4</td></tr>
-                <tr><td class="p-2">Cấp 4</td><td class="p-2 font-bold text-blue-700">Cấp 3</td></tr>
-                <tr><td class="p-2">Cấp 3</td><td class="p-2 font-bold text-blue-700">Cấp 2</td></tr>
-                <tr><td class="p-2">Cấp 2</td><td class="p-2 font-bold text-blue-700">Cấp 1</td></tr>
+                <tr>
+                  <td class="p-2 font-medium border-r">Cấp 10</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 9</td>
+                  <td class="p-2 border-r">Trắng ➔ Vàng</td>
+                  <td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td>
+                </tr>
+                <tr class="bg-slate-50/50">
+                  <td class="p-2 font-medium border-r">Cấp 9</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 8</td>
+                  <td class="p-2 border-r">Vàng ➔ Vàng cam</td>
+                  <td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-medium border-r">Cấp 8</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 7</td>
+                  <td class="p-2 border-r">Vàng cam ➔ Xanh lá</td>
+                  <td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td>
+                </tr>
+                <tr class="bg-slate-50/50">
+                  <td class="p-2 font-medium border-r">Cấp 7</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 6</td>
+                  <td class="p-2 border-r">Xanh lá ➔ Xanh lá đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-medium border-r">Cấp 6</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 5</td>
+                  <td class="p-2 border-r">Xanh lá đậm ➔ Xanh dương</td>
+                  <td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td>
+                </tr>
+                <tr class="bg-slate-50/50">
+                  <td class="p-2 font-medium border-r">Cấp 5</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 4</td>
+                  <td class="p-2 border-r">Xanh dương ➔ Xanh dương đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-medium border-r">Cấp 4</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 3</td>
+                  <td class="p-2 border-r">Xanh dương đậm ➔ Đỏ</td>
+                  <td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td>
+                </tr>
+                <tr class="bg-slate-50/50">
+                  <td class="p-2 font-medium border-r">Cấp 3</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 2</td>
+                  <td class="p-2 border-r">Đỏ ➔ Đỏ đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-medium border-r">Cấp 2</td>
+                  <td class="p-2 font-bold text-blue-700 border-r">Cấp 1</td>
+                  <td class="p-2 border-r">Đỏ đậm ➔ Đỏ đen</td>
+                  <td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
+
+        <!-- 7 Điều Dặn Dò Trước Kỳ Thi -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
+            <i data-lucide="check-square" class="text-emerald-600 w-4 h-4"></i>
+            7 Điều Cần Nhớ Trước Kỳ Thi
+          </h2>
+          <div class="space-y-2 text-xs text-slate-700">
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">1</span>
+              <span><strong>Sức khỏe & Nghỉ ngơi:</strong> Ăn uống đầy đủ dinh dưỡng, đi ngủ sớm trước ngày thi.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">2</span>
+              <span><strong>Thời gian:</strong> Có mặt tại địa điểm thi <strong>trước 30 phút</strong> (lúc 07:30) để hoàn tất check-in.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">3</span>
+              <span><strong>Ôn luyện:</strong> Ôn kỹ các bài quyền và kỹ thuật đòn thế theo đúng cấp đai dự thi.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-red-50 p-2 rounded-lg border border-red-100">
+              <span class="bg-red-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">4</span>
+              <span class="text-red-900"><strong>Trang phục & Trang sức:</strong> Mặc võ phục sạch sẻ, đeo đai hiện tại. <strong class="underline">Tuyệt đối không đeo trang sức</strong> (nhẫn, dây chuyền, đồng hồ...).</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">5</span>
+              <span><strong>Tinh thần:</strong> Giữ tâm lý tự tin, mạnh mẽ, vui vẻ và sẵn sàng thể hiện bản thân.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">6</span>
+              <span><strong>Kỷ luật:</strong> Tuân thủ theo sự hướng dẫn của các thầy cô quản sinh và Ban Giám Khảo.</span>
+            </div>
+            <div class="flex items-start gap-2 bg-slate-50 p-2 rounded-lg">
+              <span class="bg-emerald-600 text-white rounded-full w-4 h-4 flex items-center justify-center text-[10px] shrink-0 mt-0.5">7</span>
+              <span><strong>Dụng cụ cá nhân:</strong> Chuẩn bị bình nước cá nhân có <strong>ghi tên võ sinh</strong>.</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Parent Checklist Interactive -->
+        <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+          <h3 class="font-bold text-emerald-900 text-xs mb-2 flex items-center gap-1.5">
+            <i data-lucide="list-checks" class="w-4 h-4 text-emerald-600"></i>
+            Checklist Đồ Dùng Chuẩn Bị Cho Võ Sinh (Parent Checklist)
+          </h3>
+          <p class="text-[11px] text-emerald-700 mb-2">Đánh dấu vào ô để kiểm tra đồ trước khi rời nhà:</p>
+          <div class="space-y-1.5 text-xs text-slate-800">
+            <label class="flex items-center gap-2 bg-white p-2 rounded border border-emerald-100 cursor-pointer">
+              <input type="checkbox" class="rounded text-emerald-600 focus:ring-emerald-500">
+              <span>Võ phục Taekwondo Kids đầy đủ (Áo + Quần + Đai hiện tại)</span>
+            </label>
+            <label class="flex items-center gap-2 bg-white p-2 rounded border border-emerald-100 cursor-pointer">
+              <input type="checkbox" class="rounded text-emerald-600 focus:ring-emerald-500">
+              <span>Dép lê / Giày dễ tháo mở (để di chuyển vào thảm thi nhanh chóng)</span>
+            </label>
+            <label class="flex items-center gap-2 bg-white p-2 rounded border border-emerald-100 cursor-pointer">
+              <input type="checkbox" class="rounded text-emerald-600 focus:ring-emerald-500">
+              <span>Bình nước cá nhân có dán/ghi rõ tên võ sinh</span>
+            </label>
+            <label class="flex items-center gap-2 bg-white p-2 rounded border border-emerald-100 cursor-pointer">
+              <input type="checkbox" class="rounded text-emerald-600 focus:ring-emerald-500">
+              <span>Mã QR SBD đã lưu trên điện thoại hoặc tin nhắn Zalo/SMS</span>
+            </label>
+          </div>
+        </div>
+
       </div>
 
-      <!-- TAB 4: ẢNH & TỪ THIỆN -->
+      <!-- TAB 4: TIỆN ÍCH SỐ & KHÁC -->
       <div id="tab-media" class="tab-content space-y-4">
-        <div class="bg-gradient-to-r from-blue-700 to-indigo-700 text-white p-4 rounded-xl shadow-md">
+        
+        <!-- Parent Digital UX Features -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
+            <i data-lucide="smartphone" class="text-blue-600 w-4 h-4"></i>
+            Tính Năng Trải Nghiệm Số Cho Phụ Huynh
+          </h2>
+
+          <div class="space-y-2.5 text-xs">
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+              <i data-lucide="monitor" class="text-blue-600 w-5 h-5 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-blue-900 block font-semibold">1. Bảng Theo Dõi Vị Trí Thi (Live Exam Board)</strong>
+                <p class="text-slate-600 text-[11px] mt-0.5">
+                  Quét mã QR Tiến độ trên khán đài để xem trực tiếp con đang thi đấu tại thảm thi số mấy.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+              <i data-lucide="award" class="text-amber-600 w-5 h-5 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-amber-900 block font-semibold">2. Kết Quả & Giấy Chứng Nhận Điện Tử (E-Certificate)</strong>
+                <p class="text-slate-600 text-[11px] mt-0.5">
+                  Sau khi kết thúc kỳ thi 30 phút, phụ huynh có thể tải Bằng/Giấy chứng nhận điện tử có dấu xác nhận chính thức.
+                </p>
+              </div>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-lg border border-slate-200 flex items-start gap-3">
+              <i data-lucide="headphone-off" class="text-emerald-600 w-5 h-5 shrink-0 mt-0.5"></i>
+              <div>
+                <strong class="text-emerald-900 block font-semibold">3. Hotline Tương Tác Quản Sinh Trực Tiếp</strong>
+                <p class="text-slate-600 text-[11px] mt-0.5">
+                  Khi cần gửi đồ (nước, áo khoác) hoặc hỗ trợ đặc biệt về sức khỏe/tâm lý cho con, gọi hotline để nhận trợ giúp tức thì.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Góc Ảnh Võ Sinh -->
+        <div class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white p-4 rounded-xl shadow-md">
           <h2 class="font-bold flex items-center gap-2 text-sm mb-1">
-            <i data-lucide="camera" class="w-4 h-4"></i>
-            Góc Ảnh Võ Sinh
+            <i data-lucide="camera" class="w-4 h-4 text-yellow-300"></i>
+            Góc Ảnh Kỷ Niệm (Digital Photo Gallery)
           </h2>
           <p class="text-xs text-indigo-100 mb-3 leading-relaxed">
-            Quý phụ huynh có thể tìm và tải ảnh trực tiếp của võ sinh ngay sau khi hoàn thành kỳ thi tại đây.
+            Toàn bộ khoảnh khắc thể hiện bài thi và lúc nhận đai mới của các con được chụp nét cao. Phụ huynh truy cập để tìm và tải ảnh miễn phí.
           </p>
-          <a href="#" class="inline-flex items-center justify-center gap-2 w-full bg-white text-blue-900 font-bold text-xs py-2.5 rounded-lg shadow hover:bg-slate-100 transition">
-            <span>Truy cập Kho Ảnh Sự Kiện</span>
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          <a href="#" class="inline-flex items-center justify-center gap-2 w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-bold text-xs py-2.5 rounded-lg shadow transition">
+            <i data-lucide="image" class="w-4 h-4"></i>
+            <span>Truy Cập Kho Ảnh Sự Kiện</span>
           </a>
         </div>
 
+        <!-- Quỹ Từ Thiện -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-sm">
             <i data-lucide="heart" class="text-red-500 w-4 h-4"></i>
-            Gian Hàng Từ Thiện "Kids and Friends"
+            Gian Hàng Từ Thiện "Taekwondo Kids And Friends"
           </h2>
-          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-            Xin mời phụ huynh và võ sinh ghé thăm gian hàng. <strong>100% doanh thu</strong> được sử dụng để ủng hộ trẻ em nghèo vùng sâu vùng xa.
+          <p class="text-xs text-slate-600 mb-2 leading-relaxed">
+            Kính mời Quý phụ huynh và các con ghé thăm gian hàng đồ lưu niệm, nước uống, móc khóa võ thuật tại Sảnh Tầng 4.
           </p>
-          <div class="bg-red-50 text-red-700 p-2.5 rounded-lg text-xs text-center font-extrabold tracking-wider border border-red-100">
-            ALL FOR CHILDREN!
+          <div class="bg-red-50 text-red-700 p-2.5 rounded-lg text-xs text-center font-extrabold tracking-wider border border-red-100 mb-2">
+            100% LỢI NHUẬN DÙNG ĐỂ ỦNG HỘ TRẺ EM NGHÈO VÙNG SÂU VÙNG XA
           </div>
+          <p class="text-[11px] text-center italic text-slate-500">"ALL FOR CHILDREN - Tất cả vì trẻ em!"</p>
         </div>
+
+        <!-- Lời Cảm Ơn từ BTC -->
+        <div class="bg-slate-900 text-slate-200 p-4 rounded-xl text-xs leading-relaxed space-y-2">
+          <h3 class="font-bold text-yellow-400 text-sm flex items-center gap-1.5">
+            <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+            Lời Cảm Ơn Từ Ban Tổ Chức
+          </h3>
+          <p class="text-[11px] text-slate-300">
+            Kỳ thi Thăng cấp đai là cơ hội để các con rèn luyện bản lĩnh, tính kỷ luật và tinh thần chiến binh quả cảm.
+          </p>
+          <p class="text-[11px] text-slate-300">
+            Trung tâm **Taekwondo Kids Việt Nam** xin gửi lời cảm ơn chân thành nhất đến Quý phụ huynh đã luôn tin tưởng, đồng hành cùng sự phát triển của các con!
+          </p>
+        </div>
+
       </div>
 
     </main>
@@ -263,7 +521,7 @@
     <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-slate-200 flex justify-around p-2 z-50 shadow-lg">
       <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-bold text-blue-800">
         <i data-lucide="map-pin" class="w-4 h-4"></i>
-        <span>Sơ đồ</span>
+        <span>Sơ đồ & Cổng</span>
       </button>
 
       <button onclick="switchTab('timeline')" id="nav-timeline" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
@@ -273,23 +531,23 @@
 
       <button onclick="switchTab('rules')" id="nav-rules" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
         <i data-lucide="shield-check" class="w-4 h-4"></i>
-        <span>Dặn dò</span>
+        <span>Đai & Dặn dò</span>
       </button>
 
       <button onclick="switchTab('media')" id="nav-media" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
-        <i data-lucide="camera" class="w-4 h-4"></i>
-        <span>Ảnh & Quỹ</span>
+        <i data-lucide="sparkles" class="w-4 h-4"></i>
+        <span>Tiện ích số</span>
       </button>
     </nav>
 
   </div>
 
-  <!-- JAVASCRIPT ĐIỀU KHIỂN -->
+  <!-- JAVASCRIPT ĐIỀU KHIỂN & TƯƠNG TÁC -->
   <script>
-    // Khởi tạo icons
+    // Khởi tạo thư viện Icon Lucide
     lucide.createIcons();
 
-    // Chức năng chuyển Tab
+    // Chức năng chuyển Tab mượt mà
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -299,11 +557,14 @@
 
       document.getElementById('tab-' + tabId).classList.add('active');
       const activeNav = document.getElementById('nav-' + tabId);
-      activeNav.classList.remove('text-slate-500', 'font-medium');
-      activeNav.classList.add('text-blue-800', 'font-bold');
+      if (activeNav) {
+        activeNav.classList.remove('text-slate-500', 'font-medium');
+        activeNav.classList.add('text-blue-800', 'font-bold');
+      }
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Chức năng tra cứu SBD giả lập
+    // Chức năng tra cứu SBD thông minh
     document.getElementById('searchForm').addEventListener('submit', function(e) {
       e.preventDefault();
       const query = document.getElementById('searchInput').value.trim();
@@ -311,9 +572,10 @@
 
       document.getElementById('resName').innerText = query.toUpperCase();
       document.getElementById('resLevel').innerText = "Cấp 8 - Đai Vàng";
-      document.getElementById('resTime').innerText = "08:30 - 09:30";
-      document.getElementById('resZone').innerText = "Sân 02 (Khu A)";
-      document.getElementById('resSeat').innerText = "Khán đài B - Hàng 3 - Ghế 12";
+      document.getElementById('resTime').innerText = "07:00 - 12:00 (Thi lúc 08:30)";
+      document.getElementById('resZone').innerText = "Sàn thi 02 (Khu A)";
+      document.getElementById('resLane').innerText = "Làn 1 (Cấp 10 - 8)";
+      document.getElementById('resSeat').innerText = "Khán đài Tầng 4 - Dãy B";
 
       document.getElementById('searchResult').classList.remove('hidden');
     });
