@@ -116,21 +116,25 @@
   <div class="max-w-md mx-auto bg-slate-50 min-h-screen shadow-2xl relative border-x border-slate-200">
 
     <!-- 1. HEADER CỐ ĐỊNH -->
-    <header class="sticky top-0 z-50 bg-blue-900 text-white p-3 shadow-md">
+    <header class="sticky top-0 z-50 bg-blue-900 text-white p-3.5 shadow-md">
       <div class="flex justify-between items-center gap-2">
-        <div>
-          <span class="text-[10px] bg-yellow-400 text-blue-950 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider inline-block">
-            Chủ Nhật, 16/08/2026
-          </span>
-          <div class="text-[11px] font-bold text-yellow-300 mt-0.5 leading-tight uppercase">
-            Kỳ thi Thăng cấp đai Lần thứ II
+        
+        <!-- Cụm 3 dòng Header: Tăng giãn cách, đồng bộ Font, IN HOA toàn bộ -->
+        <div class="flex flex-col gap-1.5">
+          <div>
+            <span class="text-[10px] bg-yellow-400 text-blue-950 font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-block">
+              CHỦ NHẬT, 16/08/2026
+            </span>
           </div>
-          <h1 class="text-sm font-extrabold tracking-tight text-white leading-tight">
-            Taekwondo Kids Việt Nam
+          <div class="text-[11px] font-bold text-yellow-300 uppercase tracking-wide leading-tight">
+            KỲ THI THĂNG CẤP ĐAI LẦN THỨ II
+          </div>
+          <h1 class="text-xs font-extrabold text-white uppercase tracking-wider leading-tight">
+            TAEKWONDO KIDS VIỆT NAM
           </h1>
         </div>
         
-        <div class="flex flex-col gap-1 items-end shrink-0">
+        <div class="flex flex-col gap-1.5 items-end shrink-0">
           <!-- Nút Hotline -->
           <button onclick="toggleHotlineDropdown(event)" class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-[11px] font-bold px-2.5 py-1 rounded shadow transition active:scale-95">
             <i data-lucide="phone-call" class="w-3 h-3"></i>
@@ -179,7 +183,7 @@
         </ul>
       </div>
 
-      <!-- Dropdown Tra Cứu Thông Tin (Xuất hiện khi nhấn nút Tra cứu) -->
+      <!-- Dropdown Tra Cứu Thông Tin -->
       <div id="searchDropdown" class="hidden mt-2.5 bg-white text-slate-800 p-3 rounded-xl shadow-2xl border-2 border-yellow-400 fade-in">
         <div class="flex justify-between items-center border-b pb-1.5 mb-2">
           <span class="text-[11px] font-bold text-blue-900 uppercase flex items-center gap-1">
@@ -237,39 +241,42 @@
         
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
 
-          <!-- 2 Nút Toggle Chuyển Đổi Nội Dung Trong Card -->
+          <!-- 2 Nút Toggle Chuyển Đổi Nội Dung Trong Card (Đã ngắt dòng text) -->
           <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
-            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm">
-              Địa điểm & Cách thức di chuyển
+            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm">
+              Địa điểm<br>Cách thức di chuyển
             </button>
-            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900">
-              Sơ đồ & Tiện ích Nhà thi đấu
+            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900">
+              Sơ đồ<br>Tiện ích Nhà thi đấu
             </button>
           </div>
 
           <!-- SUB TAB 1: Địa điểm & Cách thức di chuyển -->
           <div id="sub-tab-location" class="space-y-4 fade-in">
-            <!-- Giữ nguyên thiết kế Địa điểm & Google Maps ban đầu, thay đổi nội dung địa chỉ -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs items-center">
-              <div>
-                <span class="font-bold text-slate-900 flex items-center gap-1 mb-1">
-                  <i data-lucide="map-pin" class="text-red-600 w-4 h-4"></i> Địa điểm:
+            
+            <!-- Khối Địa điểm -->
+            <div class="flex flex-col gap-3 bg-slate-50 p-3 rounded-lg text-xs">
+              <div class="flex items-start gap-2">
+                <span class="font-bold text-slate-900 flex items-center gap-1 shrink-0 pt-0.5">
+                  <i data-lucide="map-pin" class="text-red-600 w-4 h-4"></i> Địa điểm
                 </span>
-                <p class="text-slate-700 leading-snug">
-                  Nhà thi đấu Tầng 4 - Tòa B1 Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội
-                </p>
+                <div class="text-slate-700 leading-snug">
+                  <div>Nhà thi đấu Tầng 4 - Tòa B1</div>
+                  <div>Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội</div>
+                </div>
               </div>
-              <div class="flex items-center justify-start sm:justify-end">
+              
+              <div>
                 <a href="https://www.google.com/maps/dir//Cung+Thi%E1%BA%BFu+Nhi+H%C3%A0+N%E1%BB%99i,+2QGJ%2B27H,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.025052,105.6983177,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x313455001e049043:0xbb8abb0fa2453106!2m2!1d105.7807194!2d21.0250718?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" 
                    target="_blank" rel="noreferrer" 
-                   class="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-3 rounded-lg shadow text-xs transition w-full sm:w-auto">
+                   class="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-3 rounded-lg shadow text-xs transition w-full">
                   <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
                   <span>Mở Google Maps</span>
                 </a>
               </div>
             </div>
 
-            <!-- Tích hợp đoạn code Claude cho Cách thức di chuyển (1 Card, 2 Hàng Flow) -->
+            <!-- Cách thức di chuyển (Flow Layout) -->
             <div>
               <p class="font-bold text-slate-900 text-xs mb-2 flex items-center gap-1.5">
                 <span>🧭</span> Luồng di chuyển
@@ -331,27 +338,24 @@
               </div>
             </div>
 
-            <!-- Mục Tiện ích: Chia thành 3 Cột dọc, Icon Y tế & Bình nước -->
+            <!-- Mục Tiện ích -->
             <div>
               <h3 class="font-bold text-slate-800 text-xs mb-2 flex items-center gap-1">
                 <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i> Tiện Ích Tầng 4
               </h3>
               <div class="grid grid-cols-3 gap-2 text-center text-xs">
-                <!-- Cột 1: Trạm Y Tế -->
                 <div class="bg-red-50 p-2.5 rounded-lg border border-red-100 flex flex-col items-center justify-center gap-1">
                   <i data-lucide="first-aid-kit" class="text-red-600 w-5 h-5 shrink-0"></i>
                   <span class="font-bold text-red-950 text-[11px] leading-tight">Trạm Y tế</span>
                   <span class="text-[10px] text-slate-500 leading-tight">Cạnh BTC</span>
                 </div>
 
-                <!-- Cột 2: Cấp nước (Biểu tượng bình nước / ly nước) -->
                 <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100 flex flex-col items-center justify-center gap-1">
                   <i data-lucide="glass-water" class="text-blue-600 w-5 h-5 shrink-0"></i>
                   <span class="font-bold text-blue-950 text-[11px] leading-tight">Cấp nước</span>
                   <span class="text-[10px] text-slate-500 leading-tight">2 góc sân</span>
                 </div>
 
-                <!-- Cột 3: Photobooth / Khu vực chờ -->
                 <div class="bg-purple-50 p-2.5 rounded-lg border border-purple-100 flex flex-col items-center justify-center gap-1">
                   <i data-lucide="camera" class="text-purple-600 w-5 h-5 shrink-0"></i>
                   <span class="font-bold text-purple-950 text-[11px] leading-tight">Photobooth</span>
@@ -366,8 +370,6 @@
 
       <!-- TAB 2: LỊCH TRÌNH & BẢNG TIẾN ĐỘ -->
       <div id="tab-timeline" class="tab-content space-y-4">
-        
-        <!-- Live Exam Board -->
         <div class="bg-gradient-to-r from-slate-900 to-blue-900 text-white p-3.5 rounded-xl shadow-md border border-slate-700">
           <div class="flex justify-between items-center mb-2 border-b border-slate-700 pb-2">
             <span class="text-xs font-bold flex items-center gap-1.5 text-yellow-400">
@@ -389,7 +391,6 @@
           </div>
         </div>
 
-        <!-- Khung Thời Gian Sự Kiện -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
             <i data-lucide="clock" class="text-blue-600 w-4 h-4"></i>
@@ -447,8 +448,6 @@
 
       <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI -->
       <div id="tab-rules" class="tab-content space-y-4">
-        
-        <!-- Checklist dặn dò -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
             <i data-lucide="check-square" class="text-emerald-600 w-4 h-4"></i>
@@ -478,7 +477,6 @@
           </div>
         </div>
 
-        <!-- Bảng Quy Định Cấp Đai Chuẩn -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-sm">
             <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
@@ -515,15 +513,13 @@
 
       <!-- TAB 4: TIỆN ÍCH SỐ, ẢNH & TỪ THIỆN -->
       <div id="tab-media" class="tab-content space-y-4">
-        
-        <!-- Kho Ảnh Điện Tử & Bằng Điện Tử -->
         <div class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white p-4 rounded-xl shadow-md">
           <h2 class="font-bold flex items-center gap-2 text-sm mb-1">
             <i data-lucide="camera" class="w-4 h-4"></i>
             Kho Ảnh & Bằng Chứng Nhận Điện Tử
           </h2>
           <p class="text-xs text-indigo-100 mb-3 leading-relaxed">
-            Tải ảnh thi đấu sắc nét hoàn toàn miễn phí và nhận Giấy chứng nhận điện tử (E-Certificate) có dấu xác nhận sau khi kết thúc kỳ thi 30 phút.
+            Tải ảnh thi đấu sắc nét hoàn toàn miễn phí và nhận Giấy chứng nhận điện tử (E-Certificate) sau khi kết thúc kỳ thi 30 phút.
           </p>
           <div class="space-y-2">
             <a href="#" class="flex items-center justify-center gap-2 w-full bg-white text-blue-900 font-bold text-xs py-2.5 rounded-lg shadow hover:bg-slate-100 transition">
@@ -536,7 +532,6 @@
           </div>
         </div>
 
-        <!-- Gian hàng Từ Thiện -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-sm">
             <i data-lucide="heart" class="text-red-500 w-4 h-4"></i>
@@ -550,7 +545,6 @@
           </div>
         </div>
 
-        <!-- Lời cảm ơn từ BTC -->
         <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 leading-relaxed italic">
           "Kỳ thi Thăng cấp đai là cơ hội để các con rèn luyện bản lĩnh, sự kiên trì và tinh thần chiến binh. BTC xin gửi lời cảm ơn chân thành đến Quý phụ huynh đã luôn tin tưởng và đồng hành cùng các con!"
         </div>
@@ -585,26 +579,23 @@
 
   <!-- JAVASCRIPT XỬ LÝ INTERACTION -->
   <script>
-    // Khởi tạo Lucide Icons
     lucide.createIcons();
 
-    // Toggle Dropdown Hotline
     function toggleHotlineDropdown(e) {
       if (e) e.stopPropagation();
       const hotlineDropdown = document.getElementById('hotlineDropdown');
       const searchDropdown = document.getElementById('searchDropdown');
       
-      searchDropdown.classList.add('hidden'); // Ẩn khung tra cứu nếu đang mở
+      searchDropdown.classList.add('hidden');
       hotlineDropdown.classList.toggle('hidden');
     }
 
-    // Toggle Dropdown Tra Cứu
     function toggleSearchDropdown(e) {
       if (e) e.stopPropagation();
       const searchDropdown = document.getElementById('searchDropdown');
       const hotlineDropdown = document.getElementById('hotlineDropdown');
       
-      hotlineDropdown.classList.add('hidden'); // Ẩn hotline nếu đang mở
+      hotlineDropdown.classList.add('hidden');
       searchDropdown.classList.toggle('hidden');
 
       if (!searchDropdown.classList.contains('hidden')) {
@@ -614,7 +605,6 @@
       }
     }
 
-    // Đóng dropdown khi nhấn ra ngoài khu vực Header
     document.addEventListener('click', function(e) {
       const hotlineDropdown = document.getElementById('hotlineDropdown');
       const searchDropdown = document.getElementById('searchDropdown');
@@ -627,7 +617,6 @@
       }
     });
 
-    // Chuyển Tab chính
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -641,7 +630,6 @@
       activeNav.classList.add('text-blue-800', 'font-bold');
     }
 
-    // Chuyển Sub-Tab trong Sơ đồ
     function switchSubTab(subTabId) {
       const subLoc = document.getElementById('sub-tab-location');
       const subMap = document.getElementById('sub-tab-map');
@@ -652,18 +640,17 @@
         subLoc.classList.remove('hidden');
         subMap.classList.add('hidden');
         
-        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm";
-        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900";
+        btnLoc.className = "flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm";
+        btnMap.className = "flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900";
       } else {
         subLoc.classList.add('hidden');
         subMap.classList.remove('hidden');
 
-        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm";
-        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900";
+        btnMap.className = "flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm";
+        btnLoc.className = "flex-1 py-1.5 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900";
       }
     }
 
-    // Xử lý Tra cứu SBD
     function handleSearch(e) {
       e.preventDefault();
       const query = document.getElementById('searchInput').value.trim();
