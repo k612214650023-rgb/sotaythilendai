@@ -32,95 +32,70 @@
   <!-- Khung ứng dụng di động (Mobile-First Frame) -->
   <div class="max-w-md mx-auto bg-slate-50 min-h-screen shadow-2xl relative border-x border-slate-200">
 
-    <!-- 1. HEADER CỐ ĐỊNH (ĐÃ TỐI ƯU LỀ TRÊN/DƯỚI) -->
-    <header class="sticky top-0 z-50 bg-blue-900 text-white px-3 py-2 shadow-md">
-      <div class="flex justify-between items-center gap-2">
-        
-        <!-- Cụm thông tin tiêu đề bên trái -->
-        <div class="flex flex-col gap-0.5 min-w-0">
-          <div>
-            <span class="inline-block text-[9px] bg-yellow-400 text-blue-950 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
-              Chủ Nhật, 16/08/2026
-            </span>
-          </div>
-          <div class="text-[11px] font-bold text-yellow-300 leading-tight truncate">
-            Kỳ thi Thăng cấp đai Lần thứ II
-          </div>
-          <h1 class="text-sm font-extrabold tracking-tight leading-tight truncate">
-            Taekwondo Kids Việt Nam
-          </h1>
+    <!-- 1. HEADER CỐ ĐỊNH (Tối ưu khoảng cách lề trên/dưới) -->
+    <header class="sticky top-0 z-50 bg-blue-900 text-white py-2 px-3 shadow-md flex justify-between items-center gap-2">
+      <div>
+        <span class="text-[10px] bg-yellow-400 text-blue-950 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider block w-fit">
+          Chủ Nhật, 16/08/2026
+        </span>
+        <div class="text-[11px] font-bold text-yellow-300 mt-0.5 leading-tight uppercase">
+          Kỳ thi Thăng cấp đai Lần thứ II
         </div>
-
-        <!-- Cụm nút thao tác bên phải -->
-        <div class="flex flex-col gap-1.5 shrink-0 items-end">
-          
-          <!-- Nút Hotline tích hợp Menu hiển thị danh sách cơ sở khi nhấn -->
-          <div class="relative">
-            <button 
-              type="button" 
-              onclick="toggleHotlineDropdown(event)" 
-              class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-[11px] font-bold px-2.5 py-1 rounded-lg shadow transition active:scale-95"
-            >
-              <i data-lucide="phone-call" class="w-3 h-3"></i>
-              <span>Hotline</span>
-              <i data-lucide="chevron-down" class="w-3 h-3 opacity-80"></i>
-            </button>
-
-            <!-- Menu thông tin các cơ sở -->
-            <div 
-              id="hotlineDropdown" 
-              class="hidden absolute right-0 mt-1 w-60 bg-white text-slate-800 rounded-xl shadow-2xl border border-slate-200 p-3 z-50 fade-in"
-            >
-              <div class="flex justify-between items-center border-b border-slate-100 pb-1.5 mb-2">
-                <span class="text-[11px] font-bold text-blue-900 uppercase">Hotline Các Cơ Sở</span>
-                <button onclick="toggleHotlineDropdown(event)" class="text-slate-400 hover:text-slate-600 text-xs font-bold">✕</button>
-              </div>
-              <ul class="space-y-1.5 text-xs">
-                <li class="p-1.5 bg-slate-50 rounded-lg hover:bg-blue-50 transition">
-                  <a href="tel:0347954345" class="block font-medium text-slate-700 hover:text-blue-900">
-                    <strong class="text-blue-900 block">Cơ sở Hapulico:</strong> 0347 954 345
-                  </a>
-                </li>
-                <li class="p-1.5 bg-slate-50 rounded-lg hover:bg-blue-50 transition">
-                  <a href="tel:0347954345" class="block font-medium text-slate-700 hover:text-blue-900">
-                    <strong class="text-blue-900 block">Cơ sở Green Stars:</strong> 0347 954 345
-                  </a>
-                </li>
-                <li class="p-1.5 bg-slate-50 rounded-lg hover:bg-blue-50 transition">
-                  <a href="tel:0347954345" class="block font-medium text-slate-700 hover:text-blue-900">
-                    <strong class="text-blue-900 block">Cơ sở Nghĩa Đô:</strong> 0347 954 345
-                  </a>
-                </li>
-                <li class="p-1.5 bg-slate-50 rounded-lg hover:bg-blue-50 transition">
-                  <a href="tel:0347954345" class="block font-medium text-slate-700 hover:text-blue-900">
-                    <strong class="text-blue-900 block">Cơ sở Long Biên:</strong> 0347 954 345
-                  </a>
-                </li>
-                <li class="p-1.5 bg-slate-50 rounded-lg hover:bg-blue-50 transition">
-                  <a href="tel:0347954345" class="block font-medium text-slate-700 hover:text-blue-900">
-                    <strong class="text-blue-900 block">Cơ sở Hà Đông:</strong> 0347 954 345
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <!-- Nút Tra cứu SBD/Sàn thi màu vàng ngay dưới nút hotline -->
-          <button 
-            type="button" 
-            onclick="focusSearchInput()" 
-            class="flex items-center justify-center gap-1 bg-yellow-400 hover:bg-yellow-500 text-blue-950 text-[11px] font-bold px-2.5 py-1 rounded-lg shadow transition active:scale-95"
-          >
-            <i data-lucide="search" class="w-3 h-3"></i>
-            <span>Tra cứu SBD/Sàn thi</span>
-          </button>
-
-        </div>
+        <h1 class="text-sm font-extrabold tracking-tight text-white leading-tight">
+          Taekwondo Kids Việt Nam
+        </h1>
+      </div>
+      
+      <div class="flex flex-col gap-1 items-end shrink-0">
+        <!-- Nút Hotline -->
+        <button onclick="toggleHotlineModal()" class="flex items-center gap-1 bg-red-600 hover:bg-red-700 text-white text-[11px] font-bold px-2.5 py-1 rounded shadow transition active:scale-95">
+          <i data-lucide="phone-call" class="w-3 h-3"></i>
+          <span>Hotline</span>
+        </button>
+        <!-- Nút Tra cứu SBD/Sàn thi màu vàng -->
+        <button onclick="scrollToSearch()" class="flex items-center gap-1 bg-yellow-400 hover:bg-yellow-500 text-blue-950 text-[11px] font-bold px-2.5 py-1 rounded shadow transition active:scale-95 whitespace-nowrap">
+          <i data-lucide="search" class="w-3 h-3"></i>
+          <span>Tra cứu SBD/Sàn thi</span>
+        </button>
       </div>
     </header>
 
+    <!-- Modal Danh sách Hotline Các Cơ sở -->
+    <div id="hotlineModal" class="hidden fixed inset-0 z-[60] bg-black/50 flex items-center justify-center p-4">
+      <div class="bg-white rounded-xl p-4 w-full max-w-xs text-slate-800 shadow-2xl relative fade-in">
+        <button onclick="toggleHotlineModal()" class="absolute top-2 right-2 text-slate-400 hover:text-slate-600 p-1">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+        <h3 class="font-bold text-sm text-blue-900 mb-3 border-b pb-2 flex items-center gap-1.5">
+          <i data-lucide="phone" class="w-4 h-4 text-red-600"></i> Hotline Các Cơ Sở
+        </h3>
+        <ul class="space-y-2 text-xs">
+          <li class="flex justify-between items-center border-b border-slate-100 pb-1">
+            <span class="font-medium text-slate-600">Cơ sở Hapulico:</span>
+            <a href="tel:0347954345" class="font-bold text-blue-700 hover:underline">0347.954.345</a>
+          </li>
+          <li class="flex justify-between items-center border-b border-slate-100 pb-1">
+            <span class="font-medium text-slate-600">Cơ sở Green Stars:</span>
+            <a href="tel:0347954345" class="font-bold text-blue-700 hover:underline">0347.954.345</a>
+          </li>
+          <li class="flex justify-between items-center border-b border-slate-100 pb-1">
+            <span class="font-medium text-slate-600">Cơ sở Nghĩa Đô:</span>
+            <a href="tel:0347954345" class="font-bold text-blue-700 hover:underline">0347.954.345</a>
+          </li>
+          <li class="flex justify-between items-center border-b border-slate-100 pb-1">
+            <span class="font-medium text-slate-600">Cơ sở Long Biên:</span>
+            <a href="tel:0347954345" class="font-bold text-blue-700 hover:underline">0347.954.345</a>
+          </li>
+          <li class="flex justify-between items-center border-b border-slate-100 pb-1">
+            <span class="font-medium text-slate-600">Cơ sở Hà Đông:</span>
+            <a href="tel:0347954345" class="font-bold text-blue-700 hover:underline">0347.954.345</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
     <!-- 2. THANH TRA CỨU SỐ BÁO DANH & ĐÀO TẠO THÔNG MINH -->
-    <section class="p-4 bg-gradient-to-b from-blue-900 to-blue-800 text-white">
+    <section id="searchSection" class="p-4 bg-gradient-to-b from-blue-900 to-blue-800 text-white">
       <form id="searchForm" onsubmit="handleSearch(event)" class="relative">
         <div class="relative flex items-center">
           <i data-lucide="search" class="w-4 h-4 absolute left-3 text-slate-400"></i>
@@ -165,95 +140,133 @@
     <!-- 3. NỘI DUNG TABS CHI TIẾT -->
     <main class="p-4 space-y-4">
 
-      <!-- TAB 1: SƠ ĐỒ & DI CHUYỂN -->
-      <div id="tab-location" class="tab-content active space-y-4">
-        
-        <!-- Thông tin Địa điểm -->
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
-            <i data-lucide="map-pin" class="text-red-600 w-4 h-4"></i>
-            Địa Điểm & Chỉ Dẫn Luồng Di Chuyển
-          </h2>
-          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-            <strong>Địa điểm:</strong> Nhà thi đấu Tầng 4 - Tòa B1, Cung Thiếu nhi Hà Nội (Cơ sở 2), Đường Phạm Hùng, Hà Nội.
-          </p>
+      <!-- TAB 1: SƠ ĐỒ & DI CHUYỂN (Gộp thành 1 Card duy nhất có 2 Button điều hướng) -->
+      <div id="tab-location" class="tab-content active">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
 
-          <a href="https://maps.google.com" target="_blank" rel="noreferrer" class="flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold py-2.5 px-4 rounded-lg w-full mb-4 shadow transition">
-            <span>Mở Google Maps chỉ đường</span>
-            <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-          </a>
-
-          <div class="space-y-2.5">
-            <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-blue-600 text-xs">
-              <p class="font-bold text-blue-900 mb-0.5">🚗 Hướng dẫn gửi xe:</p>
-              <p class="text-slate-600">Đi từ cổng chính đường Phạm Hùng, di chuyển theo biển chỉ dẫn xuống <strong>Hầm gửi xe Tòa B1</strong>.</p>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-amber-500 text-xs">
-              <p class="font-bold text-amber-900 mb-0.5">🛗 Lối lên Nhà thi đấu Tầng 4:</p>
-              <p class="text-slate-600">Từ hầm gửi xe, di chuyển đến khu vực thang máy <strong>TM1</strong> để đi thẳng lên Tầng 4.</p>
-            </div>
-            <div class="bg-slate-50 p-3 rounded-lg border-l-4 border-emerald-500 text-xs">
-              <p class="font-bold text-emerald-900 mb-0.5">🚶 Cổng vào dành cho người đi bộ:</p>
-              <p class="text-slate-600">Di chuyển theo đường nội bộ dành cho người đi bộ dẫn thẳng vào sảnh Tòa B1.</p>
-            </div>
+          <!-- 2 Nút Toggle Chuyển Đổi Nội Dung Trong Card -->
+          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
+            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm">
+              Địa điểm & Cách thức di chuyển
+            </button>
+            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900">
+              Sơ đồ & Tiện ích Nhà thi đấu
+            </button>
           </div>
-        </div>
 
-        <!-- Quy trình Check-in 3 bước -->
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
-            <i data-lucide="navigation" class="text-blue-600 w-4 h-4"></i>
-            Quy Trình Check-in 3 Bước Tối Ưu
-          </h2>
-          <div class="space-y-3 text-xs">
-            <div class="flex gap-2.5 items-start">
-              <span class="bg-blue-600 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">1</span>
+          <!-- NỘI DUNG 1: Địa điểm & Cách thức di chuyển -->
+          <div id="sub-tab-location" class="space-y-4 fade-in">
+            <!-- Thông tin Địa điểm (Chia 2 cột) -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 bg-slate-50 p-3 rounded-lg border border-slate-200 text-xs items-center">
               <div>
-                <strong class="text-blue-900">Bước 1: Check-in Siêu Tốc (Fast-Track)</strong>
-                <p class="text-slate-600">Võ sinh tới Lều Check-in theo phân làn đai (Làn 1: Cấp 10-8, Làn 2: Cấp 7-5, Làn 3: Cấp 4-1). Phụ huynh quét QR/SBD để dán SBD lên võ phục.</p>
+                <span class="font-bold text-slate-900 flex items-center gap-1 mb-1">
+                  <i data-lucide="map-pin" class="text-red-600 w-4 h-4"></i> Địa điểm:
+                </span>
+                <p class="text-slate-700 leading-snug">
+                  Nhà thi đấu Tầng 4 - Tòa B1 Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội
+                </p>
+              </div>
+              <div class="flex items-center justify-start sm:justify-end">
+                <a href="https://www.google.com/maps/dir//Cung+Thi%E1%BA%BFu+Nhi+H%C3%A0+N%E1%BB%99i,+2QGJ%2B27H,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam/@21.025052,105.6983177,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x313455001e049043:0xbb8abb0fa2453106!2m2!1d105.7807194!2d21.0250718?entry=ttu&g_ep=EgoyMDI2MDgwNS4xIKXMDSoASAFQAw%3D%3D" 
+                   target="_blank" rel="noreferrer" 
+                   class="flex items-center justify-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2 px-3 rounded-lg shadow text-xs transition w-full sm:w-auto">
+                  <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                  <span>Mở Google Maps</span>
+                </a>
               </div>
             </div>
-            <div class="flex gap-2.5 items-start">
-              <span class="bg-blue-600 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">2</span>
-              <div>
-                <strong class="text-blue-900">Bước 2: Tập kết Võ sinh & Di chuyển Khán đài</strong>
-                <p class="text-slate-600">Võ sinh vào Khu tập kết sân thi xếp hàng. Phụ huynh lên Khán đài Tầng 4 để quan sát và cổ vũ (không xuống sân thi).</p>
-              </div>
-            </div>
-            <div class="flex gap-2.5 items-start">
-              <span class="bg-emerald-600 text-white font-bold text-[10px] w-5 h-5 rounded-full flex items-center justify-center shrink-0 mt-0.5">3</span>
-              <div>
-                <strong class="text-emerald-950">Bước 3: Thực hiện Bài thi & Nhận đai</strong>
-                <p class="text-slate-600">Võ sinh làm bài thi (01 lần duy nhất). Võ sinh đạt di chuyển qua Bàn Trao Đai nhận đai mới & chụp ảnh kỷ niệm.</p>
-              </div>
-            </div>
-          </div>
-        </div>
 
-        <!-- Sơ đồ tiện ích -->
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
-            <i data-lucide="shield-check" class="text-emerald-600 w-4 h-4"></i>
-            Tiện Ích Nội Khu Tầng 4
-          </h2>
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 flex items-center gap-2">
-              <i data-lucide="first-aid-kit" class="text-red-500 w-4 h-4 shrink-0"></i>
-              <span>Trạm Y tế & Sơ cứu (cạnh bàn BTC)</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 flex items-center gap-2">
-              <i data-lucide="droplet" class="text-blue-500 w-4 h-4 shrink-0"></i>
-              <span>Trạm cấp nước miễn phí (2 góc sân)</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 flex items-center gap-2">
-              <i data-lucide="info" class="text-amber-500 w-4 h-4 shrink-0"></i>
-              <span>Nhà vệ sinh (bên trái TM1)</span>
-            </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-100 flex items-center gap-2">
-              <i data-lucide="camera" class="text-purple-500 w-4 h-4 shrink-0"></i>
-              <span>Khu Chụp ảnh & Photobooth</span>
+            <!-- Thông tin Cách thức di chuyển -->
+            <div class="space-y-3">
+              <h3 class="font-bold text-slate-800 text-xs flex items-center gap-1">
+                <i data-lucide="compass" class="w-4 h-4 text-blue-600"></i> Ảnh chỉ dẫn & Các phương thức di chuyển
+              </h3>
+              
+              <!-- Ảnh chỉ dẫn cách thức di chuyển -->
+              <div class="rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
+                <img src="https://via.placeholder.com/600x300?text=Anh+Huong+Dan+Di+Chuyen" alt="Ảnh chỉ dẫn di chuyển" class="w-full h-auto object-cover" />
+              </div>
+
+              <!-- Danh sách phương thức (Mỗi phương thức trên 1 HÀNG NGANG DUY NHẤT) -->
+              <div class="space-y-2 text-[11px]">
+                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 overflow-x-auto whitespace-nowrap flex items-center gap-1.5 text-slate-700">
+                  <span class="font-bold text-blue-900 bg-blue-100 px-2 py-0.5 rounded shrink-0">[Đi xe]</span>
+                  <span>→</span>
+                  <span class="shrink-0">Cổng chính Phạm Hùng</span>
+                  <span>→</span>
+                  <span class="shrink-0">Di chuyển theo biển báo</span>
+                  <span>→</span>
+                  <span class="shrink-0">Hầm gửi xe Tòa B1</span>
+                </div>
+
+                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 overflow-x-auto whitespace-nowrap flex items-center gap-1.5 text-slate-700">
+                  <span class="font-bold text-amber-900 bg-amber-100 px-2 py-0.5 rounded shrink-0">[Lên Tầng 4]</span>
+                  <span>→</span>
+                  <span class="shrink-0">Từ hầm gửi xe</span>
+                  <span>→</span>
+                  <span class="shrink-0">Đến khu vực thang máy TM1</span>
+                  <span>→</span>
+                  <span class="shrink-0">Lên Tầng 4 Nhà thi đấu</span>
+                </div>
+
+                <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 overflow-x-auto whitespace-nowrap flex items-center gap-1.5 text-slate-700">
+                  <span class="font-bold text-emerald-900 bg-emerald-100 px-2 py-0.5 rounded shrink-0">[Đi bộ]</span>
+                  <span>→</span>
+                  <span class="shrink-0">Cổng chính</span>
+                  <span>→</span>
+                  <span class="shrink-0">Đi theo đường nội bộ</span>
+                  <span>→</span>
+                  <span class="shrink-0">Sảnh Tòa B1</span>
+                </div>
+              </div>
             </div>
           </div>
+
+          <!-- NỘI DUNG 2: Sơ đồ & Tiện ích Nhà thi đấu -->
+          <div id="sub-tab-map" class="hidden space-y-4 fade-in">
+            <!-- Thông tin Sơ đồ -->
+            <div>
+              <h3 class="font-bold text-slate-800 text-xs mb-2 flex items-center gap-1">
+                <i data-lucide="layout" class="w-4 h-4 text-blue-600"></i> Sơ đồ Nhà thi đấu Tầng 4
+              </h3>
+              <div class="rounded-lg overflow-hidden border border-slate-200 bg-slate-100">
+                <img src="https://via.placeholder.com/600x400?text=So+Do+Nha+Thi+Dau+Tang+4" alt="Sơ đồ Nhà thi đấu Tầng 4" class="w-full h-auto object-cover" />
+              </div>
+            </div>
+
+            <!-- Tiện ích Nhà thi đấu (Đã bỏ WC, Icon to rõ hơn, text ngắn gọn) -->
+            <div>
+              <h3 class="font-bold text-slate-800 text-xs mb-2 flex items-center gap-1">
+                <i data-lucide="sparkles" class="w-4 h-4 text-amber-500"></i> Tiện Ích Tầng 4
+              </h3>
+              <div class="grid grid-cols-1 gap-2">
+                <div class="bg-red-50 p-3 rounded-lg border border-red-100 flex items-center gap-3">
+                  <i data-lucide="first-aid-kit" class="text-red-600 w-6 h-6 shrink-0"></i>
+                  <div>
+                    <div class="font-bold text-xs text-red-900">Trạm Y tế & Sơ cứu</div>
+                    <div class="text-[11px] text-slate-600">Vị trí: Cạnh bàn BTC</div>
+                  </div>
+                </div>
+
+                <div class="bg-blue-50 p-3 rounded-lg border border-blue-100 flex items-center gap-3">
+                  <i data-lucide="droplet" class="text-blue-600 w-6 h-6 shrink-0"></i>
+                  <div>
+                    <div class="font-bold text-xs text-blue-900">Trạm cấp nước miễn phí</div>
+                    <div class="text-[11px] text-slate-600">Vị trí: 2 góc sân thi</div>
+                  </div>
+                </div>
+
+                <div class="bg-purple-50 p-3 rounded-lg border border-purple-100 flex items-center gap-3">
+                  <i data-lucide="camera" class="text-purple-600 w-6 h-6 shrink-0"></i>
+                  <div>
+                    <div class="font-bold text-xs text-purple-900">Khu Chụp ảnh & Photobooth</div>
+                    <div class="text-[11px] text-slate-600">Vị trí: Sảnh Tầng 4</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -476,36 +489,12 @@
 
   </div>
 
-  <!-- JAVASCRIPT XỬ LÝ -->
+  <!-- JAVASCRIPT XỬ LÝ SỰ KIỆN & TƯƠNG TÁC GIAO DIỆN -->
   <script>
-    // Khởi tạo Lucide Icons
+    // Khởi tạo biểu tượng Lucide Icons
     lucide.createIcons();
 
-    // Chức năng bật/tắt Dropdown Hotline
-    function toggleHotlineDropdown(e) {
-      if (e) e.stopPropagation();
-      const dropdown = document.getElementById('hotlineDropdown');
-      dropdown.classList.toggle('hidden');
-    }
-
-    // Đóng Dropdown khi bấm ra ngoài
-    document.addEventListener('click', function(e) {
-      const dropdown = document.getElementById('hotlineDropdown');
-      if (dropdown && !dropdown.classList.contains('hidden')) {
-        dropdown.classList.add('hidden');
-      }
-    });
-
-    // Chức năng Focus nhanh vào ô Tra cứu
-    function focusSearchInput() {
-      const input = document.getElementById('searchInput');
-      if (input) {
-        input.focus();
-        input.scrollIntoView({ behavior: 'smooth', block: 'center' });
-      }
-    }
-
-    // Chức năng chuyển Tab
+    // Chuyển đổi giữa các Tab chính ở thanh điều hướng đáy
     function switchTab(tabId) {
       document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
       document.querySelectorAll('.nav-btn').forEach(btn => {
@@ -517,6 +506,40 @@
       const activeNav = document.getElementById('nav-' + tabId);
       activeNav.classList.remove('text-slate-500', 'font-medium');
       activeNav.classList.add('text-blue-800', 'font-bold');
+    }
+
+    // Chuyển đổi giữa 2 sub-tab bên trong Card Sơ đồ
+    function switchSubTab(subTabId) {
+      const subLoc = document.getElementById('sub-tab-location');
+      const subMap = document.getElementById('sub-tab-map');
+      const btnLoc = document.getElementById('btn-sub-location');
+      const btnMap = document.getElementById('btn-sub-map');
+
+      if (subTabId === 'location') {
+        subLoc.classList.remove('hidden');
+        subMap.classList.add('hidden');
+        
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm";
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900";
+      } else {
+        subLoc.classList.add('hidden');
+        subMap.classList.remove('hidden');
+
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center bg-blue-900 text-white shadow-sm";
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center text-slate-600 hover:text-slate-900";
+      }
+    }
+
+    // Đóng/Mở Modal danh sách Hotline
+    function toggleHotlineModal() {
+      const modal = document.getElementById('hotlineModal');
+      modal.classList.toggle('hidden');
+    }
+
+    // Cuộn tới khung Tra cứu SBD
+    function scrollToSearch() {
+      document.getElementById('searchSection').scrollIntoView({ behavior: 'smooth' });
+      document.getElementById('searchInput').focus();
     }
 
     // Chức năng tra cứu thông tin SBD
