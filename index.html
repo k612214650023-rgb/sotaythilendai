@@ -372,128 +372,131 @@
         </div>
       </div>
 
-      <!-- TAB 2: LỊCH TRÌNH -->
+      <!-- TAB 2: LỊCH TRÌNH (CẬP NHẬT MỚI TOÀN BỘ THEO YÊU CẦU UI/UX) -->
       <div id="tab-timeline" class="tab-content space-y-4">
-
-        <!-- KHUNG THỜI GIAN KỲ THI -->
-        <div class="bg-white p-5 md:p-6 rounded-2xl shadow-sm border border-slate-200">
+        
+        <!-- CARD KHUNG THỜI GIAN KỲ THI (ĐÃ ĐIỀU CHỈNH PADDING RỘNG RÃI, THU GỌN CHỐNG CHẠM LỀ) -->
+        <div class="bg-white p-5 sm:p-6 rounded-2xl shadow-sm border border-slate-200">
           
-          <!-- TIÊU ĐỀ KHUNG THỜI GIAN -->
-          <h2 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-5 pb-3 border-b border-slate-100">
-            <i data-lucide="clock" class="w-4 h-4 text-slate-600 shrink-0"></i>
+          <!-- TIÊU ĐỀ KHUNG THỜI GIAN KỲ THI -->
+          <h2 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-6 pb-3 border-b border-slate-100">
+            <i data-lucide="clock" class="w-4.5 h-4.5 text-blue-800 shrink-0"></i>
             <span>Khung thời gian Kỳ thi</span>
           </h2>
 
-          <!-- DANH SÁCH MỐC THỜI GIAN DẠNG TIMELINE (Đã thu gọn lề) -->
-          <div class="relative pl-6 space-y-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-200">
+          <!-- DANH SÁCH MỐC THỜI GIAN DẠNG TIMELINE (GIỮ NGUYÊN CÁC MỐC THỜI GIAN) -->
+          <div class="space-y-6">
             
-            <!-- MỐC 1: Check-in & Tập kết -->
-            <div class="relative">
-              <!-- Node Tròn -->
-              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+            <!-- MỐC 1: 07:00 - 08:00 (MỤC CHECK-IN) -->
+            <div class="relative pl-6 pb-6 border-l-2 border-emerald-500">
+              <!-- Node tròn mốc thời gian -->
+              <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
                 <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
               </div>
 
               <div>
-                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap mb-1.5">
+                  <span class="text-emerald-700">07:00–08:00</span>
+                  <span class="text-slate-300">·</span>
                   <span>Check-in & Tập kết</span>
                 </div>
                 
-                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                  Võ sinh tới khu vực lều check-in để điểm danh và nhận SBD / Võ sinh di chuyển vào sân thi và tập kết tại vị trí cấp độ đai của mình theo hướng dẫn của thầy cô.
-                </p>
+                <!-- Nội dung xuống dòng với dấu / -->
+                <div class="text-xs text-slate-600 leading-relaxed space-y-1">
+                  <p>Võ sinh tới khu vực lều check-in để điểm danh và nhận SBD</p>
+                  <p>Võ sinh di chuyển vào sân thi và tập kết tại vị trí cấp độ đai của mình theo hướng dẫn của thầy cô.</p>
+                </div>
 
-                <!-- Nút Thông tin quy trình check-in -->
+                <!-- Nút thông tin quy trình check-in -->
                 <div class="mt-2.5">
                   <button 
                     onclick="toggleCheckinModal(true)" 
-                    class="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-semibold text-xs transition-all active:scale-95 shadow-sm"
+                    class="inline-flex items-center gap-1 text-emerald-700 hover:text-emerald-800 font-semibold text-xs underline underline-offset-2 transition-all active:scale-95"
                   >
-                    <span>📋</span>
                     <span>Thông tin quy trình check-in tại đây</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                   </button>
                 </div>
               </div>
             </div>
 
-            <!-- MỐC 2: Khai mạc -->
-            <div class="relative">
-              <!-- Node Tròn -->
-              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+            <!-- MỐC 2: 08:00 - 08:30 (MỤC KHAI MẠC) -->
+            <div class="relative pl-6 pb-6 border-l-2 border-emerald-500">
+              <!-- Node tròn mốc thời gian -->
+              <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
                 <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
               </div>
 
               <div>
-                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap mb-1.5">
+                  <span class="text-emerald-700">08:00–08:30</span>
+                  <span class="text-slate-300">·</span>
                   <span>Khai mạc</span>
                 </div>
                 
-                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                  Phụ huynh di chuyển lên khu vực khán đài, KHÔNG DI CHUYỂN vào khu vực sân thi / Khi cần trao đổi với võ sinh, quý phụ huynh liên hệ các thầy cô quản sinh để được hỗ trợ.
-                </p>
+                <!-- Nội dung xuống dòng với dấu / -->
+                <div class="text-xs text-slate-600 leading-relaxed space-y-1">
+                  <p>Phụ huynh di chuyển lên khu vực khán đài, KHÔNG DI CHUYỂN vào khu vực sân thi</p>
+                  <p>Khi cần trao đổi với võ sinh, quý phụ huynh liên hệ các thầy cô quản sinh để được hỗ trợ.</p>
+                </div>
               </div>
             </div>
 
-            <!-- MỐC 3: Thực hiện bài thi -->
-            <div class="relative">
-              <!-- Node Tròn -->
-              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+            <!-- MỐC 3: 08:30 - 12:00 (MỤC THỰC HIỆN BÀI THI) -->
+            <div class="relative pl-6 pb-6 border-l-2 border-emerald-500">
+              <!-- Node tròn mốc thời gian -->
+              <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
                 <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
               </div>
 
               <div>
-                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap mb-2.5">
+                  <span class="text-emerald-700">08:30–12:00</span>
+                  <span class="text-slate-300">·</span>
                   <span>Thực hiện bài thi</span>
                 </div>
 
-                <!-- CARD XANH NHẠT CHỨA CÁC BƯỚC THI -->
-                <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-4 mt-2.5 space-y-4">
-                  
-                  <!-- Danh sách 3 bước con với đường nối liên tục số 1, 2, 3 -->
-                  <div class="relative pl-3 space-y-4 before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-emerald-300">
+                <!-- KHUNG CHỨA 3 BƯỚC CÓ ĐƯỜNG NỐI DỌC BẮT ĐẦU TỪ ĐUÔI SỐ 1 ĐẾN ĐẦU SỐ 3 -->
+                <div class="bg-slate-50/90 border border-slate-200/80 rounded-xl p-3.5 sm:p-4">
+                  <div class="relative space-y-4 pl-7 before:absolute before:left-[9px] before:top-[18px] before:bottom-[28px] before:w-[2px] before:bg-slate-300">
                     
-                    <!-- Bước con 1 -->
-                    <div class="flex items-start gap-2.5 relative">
-                      <div class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">
+                    <!-- Bước 1 -->
+                    <div class="relative flex items-start gap-2">
+                      <div class="absolute -left-7 top-0 w-5 h-5 rounded-full bg-blue-900 text-white font-bold text-[10px] flex items-center justify-center shrink-0 z-10 shadow-sm">
                         1
                       </div>
-                      <div class="pt-0.5">
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                          Võ sinh thực hiện bài thi theo hướng dẫn của Ban giám khảo. <strong class="text-red-600 font-bold">Võ sinh chỉ được thực hiện bài thi 01 lần duy nhất.</strong>
-                        </p>
-                      </div>
+                      <p class="text-xs text-slate-700 leading-relaxed">
+                        Võ sinh thực hiện bài thi theo hướng dẫn của Ban giám khảo. <span class="font-bold text-red-600">Võ sinh chỉ được thực hiện bài thi 01 lần duy nhất.</span>
+                      </p>
                     </div>
 
-                    <!-- Bước con 2 -->
-                    <div class="flex items-start gap-2.5 relative">
-                      <div class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">
+                    <!-- Bước 2 -->
+                    <div class="relative flex items-start gap-2">
+                      <div class="absolute -left-7 top-0 w-5 h-5 rounded-full bg-blue-900 text-white font-bold text-[10px] flex items-center justify-center shrink-0 z-10 shadow-sm">
                         2
                       </div>
-                      <div class="pt-0.5">
-                        <p class="text-xs text-slate-700 leading-relaxed">
-                          Võ sinh thi đạt sẽ di chuyển qua khu vực trao đai, nhận đai mới và chụp ảnh kỷ niệm.
-                        </p>
-                      </div>
+                      <p class="text-xs text-slate-700 leading-relaxed">
+                        Võ sinh thi đạt sẽ di chuyển qua khu vực trao đai, nhận đai mới và chụp ảnh kỷ niệm.
+                      </p>
                     </div>
 
-                    <!-- Bước con 3 -->
-                    <div class="flex items-start gap-2.5 relative">
-                      <div class="w-6 h-6 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">
+                    <!-- Bước 3 -->
+                    <div class="relative flex items-start gap-2">
+                      <div class="absolute -left-7 top-0 w-5 h-5 rounded-full bg-blue-900 text-white font-bold text-[10px] flex items-center justify-center shrink-0 z-10 shadow-sm">
                         3
                       </div>
-                      <div class="pt-0.5">
+                      <div>
                         <p class="text-xs text-slate-700 leading-relaxed">
                           Phụ huynh và Võ sinh có thể tham gia các hoạt động trải nghiệm để nhận về những phần quà hấp dẫn đến từ trung tâm.
                         </p>
-                        <div class="mt-2">
-                          <button 
-                            onclick="switchTab('media')" 
-                            class="inline-flex items-center gap-1.5 bg-white hover:bg-emerald-100 text-emerald-800 border border-emerald-300 px-2.5 py-1 rounded-lg font-semibold text-[11px] transition-all active:scale-95 shadow-sm"
-                          >
-                            <span>📷</span>
-                            <span>Xem thông tin chi tiết hoạt động tại đây</span>
-                          </button>
-                        </div>
+                        <!-- Nút nhảy đến Tab Ảnh & Quỹ -->
+                        <button 
+                          onclick="switchTab('media')" 
+                          class="mt-1.5 inline-flex items-center gap-1 text-blue-700 hover:text-blue-900 font-semibold text-xs underline underline-offset-2 transition-all active:scale-95"
+                        >
+                          <span>Xem thông tin chi tiết hoạt động tại đây</span>
+                          <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
+                        </button>
                       </div>
                     </div>
 
@@ -503,29 +506,30 @@
               </div>
             </div>
 
-            <!-- MỐC 4: Bế mạc -->
-            <div class="relative">
-              <!-- Node Tròn -->
-              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+            <!-- MỐC 4: 12:00 (MỤC BẾ MẠC) -->
+            <div class="relative pl-6">
+              <!-- Node tròn mốc thời gian -->
+              <div class="absolute -left-[9px] top-0.5 w-4 h-4 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
                 <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
               </div>
 
               <div>
-                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap mb-1.5">
+                  <span class="text-emerald-700">12:00</span>
+                  <span class="text-slate-300">·</span>
                   <span>Bế mạc</span>
                 </div>
-                
-                <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+                <p class="text-xs text-slate-600 leading-relaxed">
                   Phụ huynh quét mã QR hoặc truy cập vào đường link ảnh để truy cập và tải ảnh võ sinh tại Kỳ thi.
                 </p>
-
-                <div class="mt-2.5">
+                <!-- Nút nhảy đến Tab Ảnh & Quỹ -->
+                <div class="mt-1.5">
                   <button 
                     onclick="switchTab('media')" 
-                    class="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-semibold text-xs transition-all active:scale-95 shadow-sm"
+                    class="inline-flex items-center gap-1 text-blue-700 hover:text-blue-900 font-semibold text-xs underline underline-offset-2 transition-all active:scale-95"
                   >
-                    <span>📷</span>
                     <span>Xem thông tin chi tiết hoạt động tại đây</span>
+                    <i data-lucide="chevron-right" class="w-3.5 h-3.5"></i>
                   </button>
                 </div>
               </div>
@@ -785,6 +789,9 @@
         activeNav.classList.remove('text-slate-500', 'font-medium');
         activeNav.classList.add('text-blue-800', 'font-bold');
       }
+
+      // Cuộn lên đầu trang mượt mà khi chuyển tab
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
     function switchSubTab(subTabId) {
