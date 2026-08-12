@@ -374,6 +374,8 @@
 
       <!-- TAB 2: LỊCH TRÌNH & BẢNG TIẾN ĐỘ -->
       <div id="tab-timeline" class="tab-content space-y-4">
+        
+        <!-- BẢNG TIẾN ĐỘ SÀN THI (LIVE) BANNER -->
         <div class="bg-gradient-to-r from-slate-900 to-blue-900 text-white p-3.5 rounded-xl shadow-md border border-slate-700">
           <div class="flex justify-between items-center mb-2 border-b border-slate-700 pb-2">
             <span class="text-xs font-bold flex items-center gap-1.5 text-yellow-400">
@@ -395,59 +397,168 @@
           </div>
         </div>
 
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-sm">
-            <i data-lucide="clock" class="text-blue-600 w-4 h-4"></i>
-            Khung Thời Gian Sự Kiện (16/08/2026)
+        <!-- KHUNG THỜI GIAN SỰ KIỆN (CHUẨN THEO MẪU MỚI) -->
+        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200">
+          
+          <!-- TIÊU ĐỀ KHUNG THỜI GIAN -->
+          <h2 class="font-bold text-slate-900 text-sm md:text-base flex items-center gap-2 mb-4">
+            <i data-lucide="clock" class="w-4 h-4 text-slate-500 shrink-0"></i>
+            <span>Khung thời gian sự kiện (16/08/2026)</span>
           </h2>
 
-          <div class="relative border-l-2 border-blue-200 ml-3 space-y-5 my-3 pl-4">
+          <!-- DANH SÁCH MỐC THỜI GIAN DẠNG TIMELINE -->
+          <div class="relative pl-6 space-y-6 before:absolute before:left-[7px] before:top-2 before:bottom-2 before:w-[2px] before:bg-slate-200">
+            
+            <!-- MỐC 1: 07:00 - 08:00 -->
             <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">1</span>
-              <div class="text-[11px] font-bold text-blue-900">07:00 – 08:00</div>
-              <div class="font-semibold text-xs text-slate-800">Check-in & Tập kết võ sinh</div>
-              <p class="text-[11px] text-slate-500 mt-0.5">
-                Phụ huynh & Võ sinh check-in tại lều theo phân luồng cấp đai, nhận SBD và tập kết.
-              </p>
+              <!-- Nút Node Tròn Xanh -->
+              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
+              </div>
+
+              <!-- Nội dung Mốc 1 -->
+              <div>
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                  <span class="text-emerald-700">07:00–08:00</span>
+                  <span class="text-slate-400">·</span>
+                  <span>Check-in & Tập kết võ sinh</span>
+                </div>
+                
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Phụ huynh & Võ sinh check-in tại lều theo phân luồng cấp đai, nhận SBD và tập kết.
+                </p>
+
+                <!-- NÚT MỚI: Xem quy trình check-in 3 bước -->
+                <div class="mt-2.5">
+                  <button 
+                    onclick="toggleCheckinModal(true)" 
+                    class="inline-flex items-center gap-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200/80 px-3 py-1.5 rounded-xl font-semibold text-xs transition-all active:scale-95 shadow-sm"
+                  >
+                    <span>📋</span>
+                    <span>Xem quy trình check-in 3 bước</span>
+                  </button>
+                </div>
+              </div>
             </div>
 
+            <!-- MỐC 2: 08:00 - 08:30 -->
             <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">2</span>
-              <div class="text-[11px] font-bold text-blue-900">08:00 – 08:30</div>
-              <div class="font-semibold text-xs text-slate-800">Khai mạc Kỳ thi</div>
-              <p class="text-[11px] text-slate-500 mt-0.5">
-                Phụ huynh di chuyển lên khán đài; Võ sinh khởi động chuẩn bị tại sân.
-              </p>
+              <!-- Nút Node Tròn Xanh -->
+              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
+              </div>
+
+              <!-- Nội dung Mốc 2 -->
+              <div>
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                  <span class="text-emerald-700">08:00–08:30</span>
+                  <span class="text-slate-400">·</span>
+                  <span>Khai mạc Kỳ thi</span>
+                </div>
+                
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Phụ huynh di chuyển lên khán đài; Võ sinh khởi động chuẩn bị tại sân.
+                </p>
+              </div>
             </div>
 
+            <!-- MỐC 3: 08:30 - 12:00 -->
             <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-blue-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">3</span>
-              <div class="text-[11px] font-bold text-blue-900">08:30 – 11:30</div>
-              <div class="font-semibold text-xs text-slate-800">Thực hiện Bài thi Thăng cấp</div>
-              <p class="text-[11px] text-slate-500 mt-0.5">
-                Võ sinh thực hiện bài thi theo từng sàn thi (Sàn 1, 2, 3, 4). Mỗi bài thi làm 01 lần duy nhất.
-              </p>
+              <!-- Nút Node Tròn Xanh -->
+              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
+              </div>
+
+              <!-- Nội dung Mốc 3 -->
+              <div>
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                  <span class="text-emerald-700">08:30–12:00</span>
+                  <span class="text-slate-400">·</span>
+                  <span>Thực hiện Bài thi Thăng cấp</span>
+                </div>
+
+                <!-- CARD XANH NHẠT CHỨA CÁC ĐỢT THI -->
+                <div class="bg-emerald-50/60 border border-emerald-100 rounded-2xl p-3.5 mt-2.5 space-y-3.5">
+                  
+                  <!-- Tag Diễn ra liên tục -->
+                  <div class="inline-flex items-center gap-1.5 text-emerald-800 font-bold text-xs bg-emerald-100/70 px-2.5 py-1 rounded-lg">
+                    <span class="text-blue-600">🔄</span>
+                    <span>Diễn ra liên tục, nối tiếp theo từng đợt thi</span>
+                  </div>
+
+                  <!-- Danh sách 3 bước con với đường nối -->
+                  <div class="relative pl-3 space-y-3.5 before:absolute before:left-[11px] before:top-3 before:bottom-3 before:w-[1.5px] before:bg-emerald-200">
+                    
+                    <!-- Bước con 1 -->
+                    <div class="flex items-start gap-2.5 relative">
+                      <div class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[11px] flex items-center justify-center shrink-0 z-10 shadow-sm">
+                        1
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-slate-900 text-xs">Thi thăng cấp</h4>
+                        <p class="text-[11px] text-slate-600 mt-0.5 leading-snug">
+                          Võ sinh thực hiện bài thi theo từng sàn thi (Sàn 1, 2, 3, 4). Mỗi bài thi làm 01 lần duy nhất.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Bước con 2 -->
+                    <div class="flex items-start gap-2.5 relative">
+                      <div class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[11px] flex items-center justify-center shrink-0 z-10 shadow-sm">
+                        2
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-slate-900 text-xs">Trao đai & Chụp ảnh</h4>
+                        <p class="text-[11px] text-slate-600 mt-0.5 leading-snug">
+                          Nhận đai mới, Giấy chứng nhận tạm thời và chụp ảnh tại Photobooth.
+                        </p>
+                      </div>
+                    </div>
+
+                    <!-- Bước con 3 -->
+                    <div class="flex items-start gap-2.5 relative">
+                      <div class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[11px] flex items-center justify-center shrink-0 z-10 shadow-sm">
+                        3
+                      </div>
+                      <div>
+                        <h4 class="font-bold text-slate-900 text-xs">Tham gia Hoạt động trải nghiệm</h4>
+                        <p class="text-[11px] text-slate-600 mt-0.5 leading-snug">
+                          Võ sinh tham gia các hoạt động trải nghiệm trong lúc chờ các sàn khác hoàn tất.
+                        </p>
+                      </div>
+                    </div>
+
+                  </div>
+                </div>
+
+              </div>
             </div>
 
+            <!-- MỐC 4: 12:00 -->
             <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-emerald-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">4</span>
-              <div class="text-[11px] font-bold text-emerald-900">11:30 – 12:00</div>
-              <div class="font-semibold text-xs text-slate-800">Trao đai, Chụp ảnh & Trải nghiệm</div>
-              <p class="text-[11px] text-slate-500 mt-0.5">
-                Nhận đai mới, Giấy chứng nhận tạm thời, chụp ảnh tại Photobooth và tham gia trải nghiệm.
-              </p>
+              <!-- Nút Node Tròn Xanh -->
+              <div class="absolute -left-[23px] top-0.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center">
+                <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
+              </div>
+
+              <!-- Nội dung Mốc 4 -->
+              <div>
+                <div class="text-xs md:text-sm font-bold text-slate-900 flex items-center gap-1.5 flex-wrap">
+                  <span class="text-emerald-700">12:00</span>
+                  <span class="text-slate-400">·</span>
+                  <span>Bế mạc & Tải ảnh sắc nét</span>
+                </div>
+                
+                <p class="text-xs text-slate-600 mt-1 leading-relaxed">
+                  Quét mã QR nhận ảnh kỷ niệm sắc nét và Giấy chứng nhận điện tử.
+                </p>
+              </div>
             </div>
 
-            <div class="relative">
-              <span class="absolute -left-[23px] top-0.5 bg-purple-600 text-white rounded-full w-3.5 h-3.5 flex items-center justify-center text-[9px] font-bold">5</span>
-              <div class="text-[11px] font-bold text-purple-900">12:00</div>
-              <div class="font-semibold text-xs text-slate-800">Bế mạc & Tải ảnh sắc nét</div>
-              <p class="text-[11px] text-slate-500 mt-0.5">
-                Quét mã QR nhận ảnh kỷ niệm sắc nét và Giấy chứng nhận điện tử.
-              </p>
-            </div>
           </div>
+
         </div>
+
       </div>
 
       <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI -->
@@ -556,6 +667,51 @@
 
     </main>
 
+    <!-- MODAL POPUP: QUY TRÌNH CHECK-IN 3 BƯỚC -->
+    <div id="checkinModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden fade-in">
+      <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-4 border border-slate-100 relative">
+        <div class="flex justify-between items-center border-b pb-2.5 mb-3">
+          <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
+            <span>📋</span>
+            <span>Quy Trình Check-in 3 Bước</span>
+          </h3>
+          <button onclick="toggleCheckinModal(false)" class="text-slate-400 hover:text-slate-600 text-sm font-bold w-6 h-6 rounded-full bg-slate-100 flex items-center justify-center">
+            ✕
+          </button>
+        </div>
+
+        <div class="space-y-3 text-xs text-slate-700">
+          <div class="flex items-start gap-2.5 bg-emerald-50/70 p-2.5 rounded-xl border border-emerald-100">
+            <div class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-xs flex items-center justify-center shrink-0">1</div>
+            <div>
+              <div class="font-bold text-emerald-950">Di chuyển đến Lều Check-in</div>
+              <p class="text-slate-600 text-[11px] mt-0.5">Đến lều tương ứng với cấp đai hiện tại của võ sinh (ví dụ: Làn 1 - Cấp 10-8).</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2.5 bg-blue-50/70 p-2.5 rounded-xl border border-blue-100">
+            <div class="w-5 h-5 rounded-full bg-blue-600 text-white font-bold text-xs flex items-center justify-center shrink-0">2</div>
+            <div>
+              <div class="font-bold text-blue-950">Xác nhận SBD & Nhận thẻ</div>
+              <p class="text-slate-600 text-[11px] mt-0.5">Cung cấp Tên hoặc Mã Võ sinh cho TNV để nhận Số Báo Danh và Thẻ thi đấu.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-2.5 bg-amber-50/70 p-2.5 rounded-xl border border-amber-100">
+            <div class="w-5 h-5 rounded-full bg-amber-600 text-white font-bold text-xs flex items-center justify-center shrink-0">3</div>
+            <div>
+              <div class="font-bold text-amber-950">Tập kết vào Hàng thi đấu</div>
+              <p class="text-slate-600 text-[11px] mt-0.5">Võ sinh di chuyển vào hàng theo hướng dẫn của HLV; Phụ huynh lên khán đài.</p>
+            </div>
+          </div>
+        </div>
+
+        <button onclick="toggleCheckinModal(false)" class="w-full mt-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs py-2 rounded-xl transition shadow">
+          Đã hiểu & Đóng
+        </button>
+      </div>
+    </div>
+
     <!-- 3. THANH ĐIỀU HƯỚNG ĐÁY -->
     <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-slate-200 flex justify-around p-2 z-50 shadow-lg safe-area-bottom">
       <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-bold text-blue-800">
@@ -588,6 +744,16 @@
       lucide.createIcons();
     } catch (err) {
       console.warn("Lỗi khởi tạo Lucide Icons:", err);
+    }
+
+    function toggleCheckinModal(show) {
+      const modal = document.getElementById('checkinModal');
+      if (!modal) return;
+      if (show) {
+        modal.classList.remove('hidden');
+      } else {
+        modal.classList.add('hidden');
+      }
     }
 
     function toggleHotlineDropdown(e) {
