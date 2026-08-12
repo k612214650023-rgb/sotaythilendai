@@ -263,20 +263,32 @@
           <!-- SUB TAB 1: Địa điểm & Cách thức di chuyển -->
           <div id="sub-tab-location" class="space-y-4 fade-in">
             
-           <!-- Khối Địa điểm: Tối ưu Flexbox ngang, kèm nút Google Maps bên dưới -->
-           <div class="bg-slate-50 p-3.5 rounded-xl text-xs">
+           <!-- Khối Địa điểm: Tối ưu Flexbox ngang, loại bỏ viền Card, tích hợp nút Google Maps liền khối -->
+           <div class="text-xs">
              <div class="flex items-start gap-1.5 text-slate-700 leading-snug">
                
                <!-- Cột 1: Icon và Nhãn "Địa điểm:" -->
-                <div class="flex items-center gap-1 font-bold text-slate-900 shrink-0">
+                <div class="flex items-center gap-1 font-bold text-slate-900 shrink-0 pt-0.5">
                   <i data-lucide="map-pin" class="text-red-600 w-4 h-4 shrink-0"></i>
                   <span>Địa điểm:</span>
                 </div>
               
-                <!-- Cột 2: Địa chỉ (Dòng 1 liền sau nhãn, Dòng 2 gióng thẳng hàng chữ "Nhà") -->
-                <div class="space-y-0.5">
-                  <div class="text-slate-800">Nhà thi đấu Tầng 4 - Tòa B1</div>
-                  <div class="text-slate-600">Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội</div>
+                <!-- Cột 2: Nội dung Địa chỉ và Nút thao tác dính liền -->
+                <div class="space-y-2">
+                  <div class="space-y-0.5">
+                    <div class="text-slate-900 font-semibold">Nhà thi đấu Tầng 4 - Tòa B1</div>
+                    <div class="text-slate-600">Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội</div>
+                  </div>
+                  
+                  <!-- Nút chỉ đường dạng Compact CTA đính kèm ngay dưới địa chỉ -->
+                  <div>
+                    <a href="https://www.google.com/maps/dir//Cung+Thi%E1%BA%BFu+Nhi+H%C3%A0+N%E1%BB%99i,+2QGJ%2B27H,+C%E1%BA%A7u+Gi%E1%BA%A5y,+H%C3%A0+N%E1%BB%99i,+Vi%E1%BB%87t+Nam" 
+                       target="_blank" rel="noreferrer" 
+                       class="inline-flex items-center gap-1.5 bg-emerald-600 hover:bg-emerald-700 active:bg-emerald-800 text-white font-bold py-1.5 px-3 rounded-md shadow-sm text-[11px] transition">
+                      <i data-lucide="navigation" class="w-3.5 h-3.5"></i>
+                      <span>Mở Google Maps</span>
+                    </a>
+                  </div>
                 </div>
                
               </div>
