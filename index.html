@@ -127,19 +127,25 @@
     <header class="sticky top-0 z-50 bg-blue-900 text-white p-4 shadow-md">
       <div class="flex justify-between items-center gap-2">
         
-        <!-- Cụm Header -->
-        <div class="flex flex-col gap-2">
+        <!-- Cụm Header Đã Sửa Đổi -->
+        <div class="flex flex-col gap-1.5">
+          <!-- 1. Logo + TAEKWONDO KIDS VIỆT NAM (size [11px]) -->
+          <div class="flex items-center gap-1.5 text-[11px] font-extrabold text-white uppercase tracking-wider leading-normal">
+            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-yellow-400 shrink-0"></i>
+            <span>TAEKWONDO KIDS VIỆT NAM</span>
+          </div>
+          
+          <!-- 2. KỲ THI THĂNG CẤP ĐAI LẦN THỨ II (size text-xs) -->
+          <h1 class="text-xs font-extrabold text-yellow-300 uppercase tracking-wider leading-normal">
+            KỲ THI THĂNG CẤP ĐAI LẦN THỨ II
+          </h1>
+
+          <!-- 3. CHỦ NHẬT, 16/08/2026 (size [11px]) -->
           <div>
-            <span class="text-[10px] bg-yellow-400 text-blue-950 font-extrabold px-2.5 py-1 rounded-full uppercase tracking-wider inline-block">
+            <span class="text-[11px] bg-yellow-400 text-blue-950 font-extrabold px-2.5 py-0.5 rounded-full uppercase tracking-wider inline-block">
               CHỦ NHẬT, 16/08/2026
             </span>
           </div>
-          <div class="text-[11px] font-extrabold text-yellow-300 uppercase tracking-wider leading-normal">
-            KỲ THI THĂNG CẤP ĐAI LẦN THỨ II
-          </div>
-          <h1 class="text-xs font-extrabold text-white uppercase tracking-wider leading-normal">
-            TAEKWONDO KIDS VIỆT NAM
-          </h1>
         </div>
         
         <div class="flex flex-col gap-2 items-end shrink-0">
@@ -1059,7 +1065,7 @@
         <span>Gian hàng<br>từ thiện</span>
       </button>
 
-      <!-- Button 5: Lời cảm ơn (THIẾT KẾ MỚI BỔ SUNG) -->
+      <!-- Button 5: Lời cảm ơn -->
       <button onclick="switchTab('thanks')" id="nav-thanks" class="nav-btn flex-1 flex flex-col items-center gap-0.5 text-[9px] leading-tight font-medium text-slate-500 text-center transition-colors">
         <i data-lucide="heart-handshake" class="w-4 h-4"></i>
         <span>Lời cảm ơn</span>
