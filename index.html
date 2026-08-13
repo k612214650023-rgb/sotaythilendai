@@ -239,14 +239,14 @@
       <!-- TAB 1: SƠ ĐỒ & DI CHUYỂN -->
       <div id="tab-location" class="tab-content active space-y-4">
         
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200 space-y-4">
+        <div class="bg-white p-4 rounded-xl shadow-sm space-y-4 border border-slate-200">
 
           <!-- 2 Nút Toggle Chuyển Đổi Nội Dung -->
-          <div class="flex gap-2 p-1 bg-slate-100 rounded-xl text-xs font-bold border border-slate-200">
-            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-lg transition text-center leading-tight bg-blue-900 text-white shadow-sm">
+          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
+            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm">
               Địa điểm<br>Cách thức di chuyển
             </button>
-            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-2 px-2 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900">
+            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900">
               Sơ đồ & Tiện ích<br>Nhà thi đấu
             </button>
           </div>
@@ -255,15 +255,13 @@
           <div id="sub-tab-location" class="space-y-4 fade-in">
             
             <!-- Khối Địa điểm -->
-            <div class="bg-slate-50 p-3.5 rounded-xl text-xs space-y-3">
+            <div class="bg-slate-50 p-3.5 rounded-xl text-xs space-y-3 border border-slate-100">
               <div class="flex items-start gap-1.5 text-slate-700 leading-snug">
-                <!-- Cột 1: Icon và Nhãn "Địa điểm:" -->
                 <div class="flex items-center gap-1 font-bold text-slate-900 shrink-0">
                   <i data-lucide="map-pin" class="text-red-600 w-4 h-4 shrink-0"></i>
                   <span>Địa điểm:</span>
                 </div>
               
-                <!-- Cột 2: Địa chỉ -->
                 <div class="space-y-0.5">
                   <div class="text-slate-800 font-semibold">Nhà thi đấu Tầng 4 - Tòa B1</div>
                   <div class="text-slate-600">Cung Thiếu nhi Hà Nội CS2, Phạm Hùng, Hà Nội</div>
@@ -375,23 +373,24 @@
       <!-- TAB 2: LỊCH TRÌNH & BẢNG TIẾN ĐỘ -->
       <div id="tab-timeline" class="tab-content space-y-4">
         
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200">
+        <!-- Đồng bộ padding và margin đúng như Tab 1 Sơ đồ -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
           
           <!-- 3 SUB-TABS TRONG MỤC LỊCH TRÌNH -->
-          <div class="flex gap-1.5 p-1 bg-slate-100 rounded-xl text-xs border border-slate-200 mb-4">
-            <button id="btn-sub-sched" onclick="switchTimelineSubTab('sched')" class="flex-1 py-2 px-1 rounded-lg transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold text-xs">
-              Khung thời gian Kỳ thi
+          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
+            <button id="btn-sub-sched" onclick="switchTimelineSubTab('sched')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm">
+              Khung thời gian<br>Kỳ thi
             </button>
-            <button id="btn-sub-rules" onclick="switchTimelineSubTab('rules')" class="flex-1 py-2 px-1 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium text-xs">
-              Dặn dò trước kỳ thi
+            <button id="btn-sub-rules" onclick="switchTimelineSubTab('rules')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900">
+              Dặn dò<br>trước kỳ thi
             </button>
-            <button id="btn-sub-belts" onclick="switchTimelineSubTab('belts')" class="flex-1 py-2 px-1 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium text-xs">
-              Quy định cấp đai
+            <button id="btn-sub-belts" onclick="switchTimelineSubTab('belts')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900">
+              Quy định<br>cấp đai
             </button>
           </div>
 
           <!-- SUB-TAB 1: KHUNG THỜI GIAN KỲ THI -->
-          <div id="sub-tab-timeline-sched" class="fade-in space-y-4 px-1.5 py-1">
+          <div id="sub-tab-timeline-sched" class="fade-in space-y-4">
             
             <h2 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-2 border-b border-slate-100 pb-2.5">
               <i data-lucide="clock" class="w-4 h-4 text-slate-500 shrink-0"></i>
@@ -462,11 +461,8 @@
                     <span>Thực hiện bài thi</span>
                   </div>
 
-                  <!-- CARD CHỨA CÁC BƯỚC THI VỚI ĐƯỜNG NỐI CHÍNH GIỮA CÁC SỐ -->
                   <div class="bg-slate-50 border border-slate-200/80 rounded-xl p-3.5 mt-2.5">
-                    
                     <div class="relative pl-8 space-y-4">
-                      <!-- Đường thẳng nối liền nằm CHÍNH GIỮA các số 1, 2, 3 -->
                       <div class="absolute left-[11px] top-3 bottom-3 w-[2px] bg-emerald-300"></div>
 
                       <!-- Bước con 1 -->
@@ -556,63 +552,89 @@
 
           </div>
 
-          <!-- SUB-TAB 2: DẶN DÒ TRƯỚC KỲ THI (GIAO DIỆN DẠNG CARD GRID THEO THIẾT KẾ MỚI) -->
+          <!-- SUB-TAB 2: DẶN DÒ TRƯỚC KỲ THI (Giao diện Grid dạng Thẻ theo Ảnh) -->
           <div id="sub-tab-timeline-rules" class="hidden fade-in space-y-3">
-            <div class="flex items-center gap-2 border-b border-slate-100 pb-2">
-              <div class="w-5 h-5 rounded bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
-              <h2 class="font-bold text-slate-900 text-xs md:text-sm">7 Điều Cần Nhớ Trước Kỳ Thi</h2>
+            <div>
+              <h2 class="font-bold text-slate-900 flex items-center gap-1.5 text-xs md:text-sm">
+                <span class="w-4 h-4 rounded bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+                7 Điều Cần Nhớ Trước Kỳ Thi
+              </h2>
+              <p class="text-[11px] text-slate-400 mt-0.5">Vuốt/chạm để xem chi tiết từng mục</p>
             </div>
-            <p class="text-[11px] text-slate-400 font-medium">Vuốt/chạm để xem chi tiết từng mục</p>
 
-            <!-- Lưới 6 thẻ thông tin (3 cột) -->
+            <!-- Lưới các thẻ thông tin -->
             <div class="grid grid-cols-3 gap-2 text-center">
               
               <!-- Card 1 -->
-              <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-base my-0.5">🔥</div>
-                <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Tự tin, mạnh mẽ</div>
-                <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center text-base mb-1">
+                  🔥
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-slate-900 text-[11px]">Tự tin, mạnh mẽ</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
+                </div>
               </div>
 
               <!-- Card 2 -->
-              <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-base my-0.5">🍧</div>
-                <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Ăn uống, nghỉ ngơi</div>
-                <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-base mb-1">
+                  🍧
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-slate-900 text-[11px]">Ăn uống, nghỉ ngơi</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
+                </div>
               </div>
 
               <!-- Card 3 -->
-              <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-base my-0.5">⏰</div>
-                <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Đến sớm 30 phút</div>
-                <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-base mb-1">
+                  ⏰
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-slate-900 text-[11px]">Đến sớm 30 phút</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
+                </div>
               </div>
 
               <!-- Card 4 -->
-              <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-base my-0.5">💪</div>
-                <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Giữ gìn sức khỏe</div>
-                <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-base mb-1">
+                  💪
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-slate-900 text-[11px]">Giữ gìn sức khỏe</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
+                </div>
               </div>
 
               <!-- Card 5 -->
-              <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-base my-0.5">🥋</div>
-                <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Ôn luyện kỹ</div>
-                <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center text-base mb-1">
+                  🥋
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-slate-900 text-[11px]">Ôn luyện kỹ</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
+                </div>
               </div>
 
-              <!-- Card 6 (Dạng cảnh báo màu đỏ) -->
-              <div class="bg-red-50/60 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-red-100 min-h-[125px]">
-                <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-sm my-0.5">🚫</div>
-                <div class="font-bold text-red-700 text-[11px] leading-tight mb-1">Không trang sức</div>
-                <p class="text-[10px] text-red-600/80 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+              <!-- Card 6 (Cảnh báo trang sức) -->
+              <div class="bg-red-50/60 p-2.5 rounded-2xl border border-red-100 flex flex-col items-center justify-between min-h-[125px]">
+                <div class="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-red-500 text-base mb-1">
+                  🚫
+                </div>
+                <div class="space-y-0.5">
+                  <h3 class="font-bold text-red-600 text-[11px]">Không trang sức</h3>
+                  <p class="text-[10px] text-slate-500 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+                </div>
               </div>
 
             </div>
 
-            <!-- Thanh chấm tròn Pagination Carousel Dots -->
-            <div class="flex justify-center items-center gap-1.5 pt-2">
+            <!-- Dots chỉ số vị trí -->
+            <div class="flex justify-center gap-1.5 pt-1">
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
               <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
@@ -622,13 +644,13 @@
             </div>
           </div>
 
-          <!-- SUB-TAB 3: QUY ĐỊNH CẤP ĐAI (BẢNG CẬP NHẬT THEO YÊU CẦU 2 & 3) -->
+          <!-- SUB-TAB 3: QUY ĐỊNH CẤP ĐAI (Đã cập nhật theo yêu cầu) -->
           <div id="sub-tab-timeline-belts" class="hidden fade-in space-y-3">
             <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 text-xs">
               <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
               Quy Định Cấp Đai & Bài Thi Cốt Lõi
             </h2>
-            <p class="text-[11px] text-slate-500 mb-2">
+            <p class="text-xs text-slate-500 mb-2">
               (*) Theo Quyết định số 152/2015/QĐ-VTF của Liên đoàn Taekwondo Hà Nội.
             </p>
 
@@ -636,74 +658,83 @@
               <table class="w-full text-left border-collapse">
                 <thead>
                   <tr class="bg-slate-100 text-slate-700 font-bold border-b">
-                    <!-- Gộp cột 1 và cột 2 thành Cấp đai -->
-                    <th colspan="2" class="p-2 text-center border-r border-slate-200">Cấp đai</th>
+                    <!-- Gộp cột 1 và 2 thành 'Cấp đai' -->
+                    <th colspan="2" class="p-2 border-r border-slate-200 text-center">Cấp đai</th>
+                    <!-- Đổi tên cột 3 thành 'Nội dung bài thi' -->
                     <th class="p-2">Nội dung bài thi</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 10</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 10</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 9</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 9</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 8</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 8</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 7</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 7</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 6</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 6</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 5</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 5</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 4</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 4</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 3</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 3</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td>
                   </tr>
                   <tr>
-                    <td class="p-2 font-bold whitespace-nowrap">Cấp 2</td>
-                    <td class="p-2 text-center w-12 border-r border-slate-100">
-                      <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 2</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                     </td>
                     <td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td>
+                  </tr>
+                  <!-- Đã thêm hàng Cấp 1 -->
+                  <tr>
+                    <td class="p-2 font-bold w-16 text-center">Cấp 1</td>
+                    <td class="p-2 w-16 text-center border-r border-slate-100">
+                      <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
+                    </td>
+                    <td class="p-2">Bài quyền Koryo / Taegeuk 8 nâng cao, Kỹ thuật chuyên sâu</td>
                   </tr>
                 </tbody>
               </table>
@@ -714,72 +745,69 @@
 
       </div>
 
-      <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI (GIAO DIỆN ĐỒNG BỘ) -->
+      <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI (Đã đồng bộ) -->
       <div id="tab-rules" class="tab-content space-y-4">
-        
-        <!-- Khối Dặn Dò -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-          <div class="flex items-center gap-2 border-b border-slate-100 pb-2">
-            <div class="w-5 h-5 rounded bg-emerald-500 text-white flex items-center justify-center text-xs font-bold">✓</div>
-            <h2 class="font-bold text-slate-900 text-xs md:text-sm">7 Điều Cần Nhớ Trước Kỳ Thi</h2>
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+          <div>
+            <h2 class="font-bold text-slate-900 flex items-center gap-1.5 text-xs md:text-sm">
+              <span class="w-4 h-4 rounded bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold">✓</span>
+              7 Điều Cần Nhớ Trước Kỳ Thi
+            </h2>
+            <p class="text-[11px] text-slate-400 mt-0.5 mb-3">Vuốt/chạm để xem chi tiết từng mục</p>
           </div>
-          <p class="text-[11px] text-slate-400 font-medium">Vuốt/chạm để xem chi tiết từng mục</p>
 
           <div class="grid grid-cols-3 gap-2 text-center">
-            <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-orange-50 flex items-center justify-center text-base my-0.5">🔥</div>
-              <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Tự tin, mạnh mẽ</div>
-              <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-orange-50 flex items-center justify-center text-base mb-1">🔥</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-slate-900 text-[11px]">Tự tin, mạnh mẽ</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
+              </div>
             </div>
-
-            <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-red-50 flex items-center justify-center text-base my-0.5">🍧</div>
-              <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Ăn uống, nghỉ ngơi</div>
-              <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-red-50 flex items-center justify-center text-base mb-1">🍧</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-slate-900 text-[11px]">Ăn uống, nghỉ ngơi</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
+              </div>
             </div>
-
-            <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-base my-0.5">⏰</div>
-              <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Đến sớm 30 phút</div>
-              <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-blue-50 flex items-center justify-center text-base mb-1">⏰</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-slate-900 text-[11px]">Đến sớm 30 phút</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
+              </div>
             </div>
-
-            <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-emerald-50 flex items-center justify-center text-base my-0.5">💪</div>
-              <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Giữ gìn sức khỏe</div>
-              <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-emerald-50 flex items-center justify-center text-base mb-1">💪</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-slate-900 text-[11px]">Giữ gìn sức khỏe</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
+              </div>
             </div>
-
-            <div class="bg-slate-50/80 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-slate-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-purple-50 flex items-center justify-center text-base my-0.5">🥋</div>
-              <div class="font-bold text-slate-900 text-[11px] leading-tight mb-1">Ôn luyện kỹ</div>
-              <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-purple-50 flex items-center justify-center text-base mb-1">🥋</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-slate-900 text-[11px]">Ôn luyện kỹ</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
+              </div>
             </div>
-
-            <div class="bg-red-50/60 p-2.5 rounded-2xl flex flex-col items-center justify-between border border-red-100 min-h-[125px]">
-              <div class="w-8 h-8 rounded-full bg-red-100 flex items-center justify-center text-red-500 font-bold text-sm my-0.5">🚫</div>
-              <div class="font-bold text-red-700 text-[11px] leading-tight mb-1">Không trang sức</div>
-              <p class="text-[10px] text-red-600/80 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+            <div class="bg-red-50/60 p-2.5 rounded-2xl border border-red-100 flex flex-col items-center justify-between min-h-[125px]">
+              <div class="w-9 h-9 rounded-xl bg-red-100 flex items-center justify-center text-red-500 text-base mb-1">🚫</div>
+              <div class="space-y-0.5">
+                <h3 class="font-bold text-red-600 text-[11px]">Không trang sức</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+              </div>
             </div>
-          </div>
-
-          <div class="flex justify-center items-center gap-1.5 pt-2">
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
-            <span class="w-1.5 h-1.5 rounded-full bg-emerald-600"></span>
           </div>
         </div>
 
-        <!-- Khối Quy Định Cấp Đai -->
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 text-xs">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
+          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-xs">
             <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
             Quy Định Cấp Đai & Bài Thi Cốt Lõi
           </h2>
-          <p class="text-[11px] text-slate-500 mb-2">
+          <p class="text-xs text-slate-500 mb-3">
             (*) Theo Quyết định số 152/2015/QĐ-VTF của Liên đoàn Taekwondo Hà Nội.
           </p>
 
@@ -787,84 +815,90 @@
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr class="bg-slate-100 text-slate-700 font-bold border-b">
-                  <th colspan="2" class="p-2 text-center border-r border-slate-200">Cấp đai</th>
+                  <th colspan="2" class="p-2 border-r border-slate-200 text-center">Cấp đai</th>
                   <th class="p-2">Nội dung bài thi</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 10</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 10</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 9</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 9</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 8</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 8</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 7</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 7</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 6</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 6</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 5</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 5</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 4</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 4</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 3</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 3</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td>
                 </tr>
                 <tr>
-                  <td class="p-2 font-bold whitespace-nowrap">Cấp 2</td>
-                  <td class="p-2 text-center w-12 border-r border-slate-100">
-                    <div class="w-8 h-6 bg-slate-100 rounded border border-slate-200 flex items-center justify-center text-[10px] text-slate-400">🖼️</div>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 2</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
                   </td>
                   <td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold w-16 text-center">Cấp 1</td>
+                  <td class="p-2 w-16 text-center border-r border-slate-100">
+                    <div class="w-10 h-6 bg-slate-100 border border-dashed border-slate-300 rounded mx-auto flex items-center justify-center text-[9px] text-slate-400">Ảnh</div>
+                  </td>
+                  <td class="p-2">Bài quyền Koryo / Taegeuk 8 nâng cao, Kỹ thuật chuyên sâu</td>
                 </tr>
               </tbody>
             </table>
           </div>
         </div>
-
       </div>
 
       <!-- TAB 4: TIỆN ÍCH SỐ, ẢNH & TỪ THIỆN -->
       <div id="tab-media" class="tab-content space-y-4">
-        <div class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white p-4.5 rounded-2xl shadow-md">
+        <div class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white p-4 rounded-xl shadow-md">
           <h2 class="font-bold flex items-center gap-2 text-xs mb-1">
             <i data-lucide="camera" class="w-4 h-4"></i>
             Kho Ảnh & Bằng Chứng Nhận Điện Tử
@@ -883,7 +917,7 @@
           </div>
         </div>
 
-        <div class="bg-white p-4.5 rounded-2xl shadow-sm border border-slate-200">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-xs">
             <i data-lucide="heart" class="text-red-500 w-4 h-4"></i>
             Gian Hàng Từ Thiện "Taekwondo Kids And Friends"
@@ -1058,14 +1092,14 @@
         subLoc.classList.remove('hidden');
         subMap.classList.add('hidden');
         
-        btnLoc.className = "flex-1 py-2 px-2 rounded-lg transition text-center leading-tight bg-blue-900 text-white shadow-sm";
-        btnMap.className = "flex-1 py-2 px-2 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900";
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm";
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900";
       } else {
         subLoc.classList.add('hidden');
         subMap.classList.remove('hidden');
 
-        btnMap.className = "flex-1 py-2 px-2 rounded-lg transition text-center leading-tight bg-blue-900 text-white shadow-sm";
-        btnLoc.className = "flex-1 py-2 px-2 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900";
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm";
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900";
       }
     }
 
@@ -1084,8 +1118,8 @@
       subRules.classList.add('hidden');
       subBelts.classList.add('hidden');
 
-      const activeBtnClass = "flex-1 py-2 px-1 rounded-lg transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold text-xs";
-      const inactiveBtnClass = "flex-1 py-2 px-1 rounded-lg transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium text-xs";
+      const activeBtnClass = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold text-xs";
+      const inactiveBtnClass = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium text-xs";
 
       btnSched.className = inactiveBtnClass;
       btnRules.className = inactiveBtnClass;
