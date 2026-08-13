@@ -539,7 +539,7 @@
 
       </div>
 
-      <!-- TAB 3: HOẠT ĐỘNG (THIẾT KẾ MỚI TỐI ƯU UI/UX) -->
+      <!-- TAB 3: HOẠT ĐỘNG -->
       <div id="tab-activities" class="tab-content space-y-4">
         
         <!-- Banner Tiêu đề -->
@@ -697,43 +697,222 @@
 
       </div>
 
-      <!-- TAB 4: TIỆN ÍCH SỐ, ẢNH & TỪ THIỆN -->
+      <!-- TAB 4: GIAN HÀNG & TỪ THIỆN "TAEKWONDO KIDS AND FRIENDS" -->
       <div id="tab-media" class="tab-content space-y-4">
-        <div class="bg-gradient-to-r from-blue-800 to-indigo-800 text-white p-4 rounded-xl shadow-md">
-          <h2 class="font-bold flex items-center gap-2 text-xs mb-1">
-            <i data-lucide="camera" class="w-4 h-4"></i>
-            Kho Ảnh & Bằng Chứng Nhận Điện Tử
+        
+        <!-- HERO BANNER GIỚI THIỆU GIAN HÀNG -->
+        <div class="bg-gradient-to-br from-red-700 via-rose-800 to-red-900 text-white p-4.5 rounded-2xl shadow-lg border border-red-600/30 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 bg-yellow-400 text-red-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+              <i data-lucide="heart" class="w-3 h-3 fill-current text-red-700"></i> Gian Hàng Từ Thiện
+            </span>
+            <span class="text-[10px] text-rose-200 bg-white/10 px-2 py-0.5 rounded-md border border-white/10">Sứ mệnh vì cộng đồng</span>
+          </div>
+
+          <h2 class="font-extrabold text-base md:text-lg text-white leading-snug tracking-wide">
+            Gian Hàng "Taekwondo Kids & Friends"
           </h2>
-          <p class="text-xs text-indigo-100 mb-3 leading-relaxed">
-            Tải ảnh thi đấu sắc nét hoàn toàn miễn phí và nhận Giấy chứng nhận điện tử (E-Certificate) sau khi kết thúc kỳ thi 30 phút.
+          
+          <p class="text-xs text-rose-100 font-medium mt-1.5 leading-relaxed">
+            Khởi xướng bởi Ban giám đốc Trung tâm Taekwondo Kids Việt Nam, với sự ủng hộ của Phòng quản lý Thể thao - Sở Văn hóa Thể thao và Liên đoàn Taekwondo Hà Nội.
           </p>
-          <div class="space-y-2">
-            <button onclick="switchTab('activities')" class="flex items-center justify-center gap-2 w-full bg-white text-blue-900 font-bold text-xs py-2 px-2 rounded-md shadow hover:bg-slate-100 transition">
-              <span>Truy Cập Album Ảnh Kỷ Niệm</span>
-              <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
-            </button>
-            <button onclick="alert('Cổng tải Bằng điện tử sẽ mở sau khi hoàn thành kỳ thi 30 phút!')" class="flex items-center justify-center gap-2 w-full bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-bold text-xs py-2 px-2 rounded-md shadow transition">
-              <span>Tải Giấy Chứng Nhận Điện Tử (E-Certificate)</span>
-            </button>
+
+          <!-- KHẨU HIỆU LỜI CAM KẾT -->
+          <div class="mt-3 bg-white/15 backdrop-blur-md p-2.5 rounded-xl border border-white/20 text-center">
+            <p class="text-[11px] font-extrabold text-yellow-300 uppercase tracking-wider leading-tight">
+              🎗️ LỜI CAM KẾT VÀ SỨ MỆNH
+            </p>
+            <p class="text-xs font-bold text-white mt-0.5">
+              "100% Lợi nhuận dành cho trẻ em nghèo vùng sâu vùng xa"
+            </p>
           </div>
         </div>
 
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-xs">
-            <i data-lucide="heart" class="text-red-500 w-4 h-4"></i>
-            Gian Hàng Từ Thiện "Taekwondo Kids And Friends"
-          </h2>
-          <p class="text-xs text-slate-600 mb-3 leading-relaxed">
-            Xin mời phụ huynh và các con ghé thăm gian hàng đồ lưu niệm, nước uống tại Sảnh Tầng 4. <strong>100% lợi nhuận</strong> được chuyển vào quỹ ủng hộ trẻ em nghèo vùng xa.
+        <!-- THÔNG TIN SẢN PHẨM & LỜI MỜI TRẢI NGHIỆM -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
+              <i data-lucide="store" class="w-4 h-4 text-red-600"></i>
+              <span>Gian hàng tại Kỳ thi Lần 2 - 2026</span>
+            </h3>
+            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-full border border-emerald-200/80">
+              🟢 Đang mở bán tại Sảnh
+            </span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Gian hàng phục vụ các sản phẩm <strong class="text-slate-800">nước ép trái cây tươi, đồ ăn, thức uống...</strong> do chính tay đội ngũ HLV, phụ huynh, võ sinh Taekwondo Kids cùng các tình nguyện viên tâm huyết tự tay chuẩn bị.
           </p>
-          <div class="bg-red-50 text-red-700 p-2.5 rounded-lg text-xs text-center font-extrabold tracking-wider border border-red-100">
-            ALL FOR CHILDREN - TẤT CẢ VÌ TRẺ EM!
+
+          <div class="bg-amber-50/70 p-3 rounded-xl border border-amber-200/70 text-xs text-amber-950 space-y-1.5">
+            <p class="font-bold text-amber-900 flex items-center gap-1.5">
+              <span>☕</span> <span>Kính mời Quý đại biểu, Phụ huynh & Võ sinh:</span>
+            </p>
+            <p class="text-slate-700 text-[11px] leading-relaxed">
+              Trân trọng kính mời quý vị dành chút thời gian ghé thăm, trải nghiệm các món đồ uống thơm ngon và ủng hộ gian hàng, qua đó gửi gắm tấm lòng thương yêu đến các em nhỏ khó khăn!
+            </p>
           </div>
         </div>
 
-        <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-xs text-slate-700 leading-relaxed italic">
-          "Kỳ thi Thăng cấp đai là cơ hội để các con rèn luyện bản lĩnh, sự kiên trì và tinh thần chiến binh. BTC xin gửi lời cảm ơn chân thành đến Quý phụ huynh đã luôn tin tưởng và đồng hành cùng các con!"
+        <!-- KẾT QUẢ & DẤU ẤN HOẠT ĐỘNG THIỆN NGUYỆN (DOANH THU 2025) -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3.5">
+          <div class="flex justify-between items-center border-b border-slate-100 pb-2">
+            <div class="flex items-center gap-1.5">
+              <div class="w-6 h-6 rounded-lg bg-red-100 text-red-700 font-bold text-xs flex items-center justify-center">🏆</div>
+              <h3 class="font-bold text-slate-900 text-xs md:text-sm">Hành Trình 01 Năm Năng Suất (2025)</h3>
+            </div>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Gian hàng đã góp mặt tại nhiều sự kiện lớn trong năm (Giải đấu tại Hà Nội, Phúc Thọ và các Kỳ thi Thăng cấp đai của Trung tâm).
+          </p>
+
+          <!-- METRIC CARD DOANH THU -->
+          <div class="bg-gradient-to-r from-red-50 via-rose-50 to-orange-50 p-3.5 rounded-xl border border-red-100 text-center">
+            <span class="text-[10px] font-extrabold text-red-800 uppercase tracking-wider block">
+              TỔNG DOANH THU GÂY QUỸ NĂM 2025
+            </span>
+            <span class="text-xl md:text-2xl font-black text-red-600 my-0.5 block tracking-tight">
+              45.000.000 VNĐ
+            </span>
+            <span class="text-[10px] text-slate-500 font-medium">
+              Đã phân bổ 100% vào 03 chương trình thiện nguyện trọng điểm
+            </span>
+          </div>
+
+          <!-- 3 HOẠT ĐỘNG THIỆN NGUYỆN ĐÃ THỰC HIỆN -->
+          <div class="space-y-2.5 pt-1">
+            <span class="text-[11px] font-bold text-slate-800 uppercase tracking-wider block">
+              Các hoạt động đã triển khai:
+            </span>
+
+            <!-- MỤC 1 -->
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">1</span>
+                  Ủng hộ nhân dân Cuba
+                </span>
+                <span class="font-extrabold text-red-600 text-xs bg-red-50 px-2 py-0.5 rounded-md border border-red-200">
+                  10.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Trao tặng hiện kim thông qua Mặt trận Tổ quốc Việt Nam để chia sẻ khó khăn cùng nhân dân Cuba.
+              </p>
+            </div>
+
+            <!-- MỤC 2 -->
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-blue-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">2</span>
+                  Cứu trợ đồng bào lũ lụt
+                </span>
+                <span class="font-extrabold text-blue-700 text-xs bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
+                  15.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Ủng hộ hiện vật (nước uống, thực phẩm thiết yếu) tại Thái Nguyên, Tuyên Quang & Sóc Sơn. <strong>Thầy Nguyễn Đình Toàn</strong> - Giám đốc Trung tâm đã trực tiếp lái thuyền cứu hộ cùng công an PCCC & địa phương tham gia ứng cứu.
+              </p>
+            </div>
+
+            <!-- MỤC 3 -->
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">3</span>
+                  Vì tầm vóc học sinh vùng cao
+                </span>
+                <span class="font-extrabold text-emerald-700 text-xs bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  20.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Trao tặng tủ nấu cơm và TV cho trẻ em tại điểm trường mầm non Lũng Táo, xã Lũng Cú (Tuyên Quang) phối hợp cùng Khoa KHST - Trường ĐH Sư Phạm Hà Nội 2.
+              </p>
+            </div>
+
+          </div>
         </div>
+
+        <!-- MÃ QR NGÂN HÀNG QUYÊN GÓP UNG HỘ -->
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
+              <i data-lucide="qr-code" class="w-4 h-4 text-blue-700"></i>
+              <span>Quyên Góp Trực Tiếp Qua Mã QR Ngân Hàng</span>
+            </h3>
+            <span class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md">Chuyển khoản nhanh</span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Quý phụ huynh và võ sinh muốn đóng góp trực tiếp vào Quỹ Từ Thiện "Taekwondo Kids & Friends" có thể quét mã QR bên dưới:
+          </p>
+
+          <!-- KHU VỰC HIỂN THỊ MÃ QR & THÔNG TIN TÀI KHOẢN -->
+          <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex flex-col items-center text-center space-y-3">
+            
+            <!-- KHUNG MÃ QR PLACEHOLDER CHUYÊN NGHIỆP -->
+            <div class="w-44 h-44 bg-white p-2 rounded-xl shadow-md border-2 border-slate-200 flex flex-col items-center justify-center relative group">
+              <div class="w-full h-full bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-2 text-slate-500">
+                <i data-lucide="qr-code" class="w-10 h-10 text-red-600 mb-1"></i>
+                <span class="text-[11px] font-bold text-slate-700">MÃ QR NGÂN HÀNG</span>
+                <span class="text-[9px] text-slate-400 mt-0.5">(Sẽ cập nhật ảnh QR tại đây)</span>
+              </div>
+            </div>
+
+            <div class="w-full space-y-1 text-xs text-slate-700 bg-white p-2.5 rounded-lg border border-slate-200">
+              <div class="flex justify-between items-center border-b border-slate-100 pb-1">
+                <span class="text-slate-500 text-[11px]">Ngân hàng:</span>
+                <span class="font-bold text-slate-900">[Tên Ngân Hàng - MBBank / Vietcombank...]</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-slate-100 py-1">
+                <span class="text-slate-500 text-[11px]">Số tài khoản:</span>
+                <span class="font-bold text-blue-800 tracking-wider">[SỐ TÀI KHOẢN]</span>
+              </div>
+              <div class="flex justify-between items-center pt-1">
+                <span class="text-slate-500 text-[11px]">Chủ tài khoản:</span>
+                <span class="font-bold text-slate-900 uppercase">[TÊN TÀI KHOẢN QUỸ]</span>
+              </div>
+              <div class="text-[10px] text-slate-500 italic pt-1 border-t border-slate-100 text-left">
+                * Nội dung CK: <span class="font-semibold text-slate-700">Tên PH/Võ sinh - Ung ho Quy Tu Thien Taekwondo Kids</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- QUY ĐỊNH VỆ SINH & NỘI QUY NHÀ THI ĐẤU -->
+        <div class="bg-amber-50/80 p-3.5 rounded-2xl border-2 border-amber-300/80 space-y-2">
+          <div class="flex items-center gap-1.5 text-amber-900 font-extrabold text-xs">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            <span>LƯU Ý QUAN TRỌNG DÀNH CHO QUÝ KHÁCH</span>
+          </div>
+
+          <p class="text-xs text-amber-950 leading-relaxed font-medium">
+            Để đảm bảo không gian thi đấu được <strong class="text-red-700">trang nghiêm và sạch sẽ</strong>, kính mong quý vị vui lòng:
+          </p>
+
+          <ul class="space-y-1.5 text-xs text-amber-900">
+            <li class="flex items-start gap-1.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Sử dụng đồ ăn, thức uống tại <strong class="text-slate-900">khu vực bên ngoài sàn thi đấu</strong>.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Bỏ rác đúng nơi quy định để giữ gìn vệ sinh chung.</span>
+            </li>
+          </ul>
+
+          <p class="text-[11px] text-amber-800 italic pt-1 border-t border-amber-200/60 font-semibold text-center">
+            Rất mong Quý phụ huynh & các con cùng phối hợp để Kỳ thi diễn ra thành công tốt đẹp!
+          </p>
+        </div>
+
       </div>
 
     </main>
@@ -783,26 +962,27 @@
       </div>
     </div>
 
-    <!-- 3. THANH ĐIỀU HƯỚNG ĐÁY -->
+    <!-- 3. THANH ĐIỀU HƯỚNG ĐÁY (Đã đổi tên button 4: Gian hàng / từ thiện) -->
     <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-slate-200 flex justify-around p-2 z-50 shadow-lg safe-area-bottom">
-      <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-bold text-blue-800">
+      <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex flex-col items-center gap-1 text-[10px] font-bold text-blue-800">
         <i data-lucide="map-pin" class="w-4 h-4"></i>
         <span>Sơ đồ</span>
       </button>
 
-      <button onclick="switchTab('timeline')" id="nav-timeline" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
+      <button onclick="switchTab('timeline')" id="nav-timeline" class="nav-btn flex flex-col items-center gap-1 text-[10px] font-medium text-slate-500">
         <i data-lucide="clock" class="w-4 h-4"></i>
         <span>Lịch trình</span>
       </button>
 
-      <button onclick="switchTab('activities')" id="nav-activities" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
+      <button onclick="switchTab('activities')" id="nav-activities" class="nav-btn flex flex-col items-center gap-1 text-[10px] font-medium text-slate-500">
         <i data-lucide="sparkles" class="w-4 h-4"></i>
         <span>Hoạt động</span>
       </button>
 
-      <button onclick="switchTab('media')" id="nav-media" class="nav-btn flex flex-col items-center gap-1 text-[11px] font-medium text-slate-500">
-        <i data-lucide="camera" class="w-4 h-4"></i>
-        <span>Ảnh & Quỹ</span>
+      <!-- Nút 4: Đổi tên thành "Gian hàng / từ thiện" (Xuống dòng ở dấu /) -->
+      <button onclick="switchTab('media')" id="nav-media" class="nav-btn flex flex-col items-center gap-0.5 text-[10px] leading-tight font-medium text-slate-500 text-center">
+        <i data-lucide="store" class="w-4 h-4"></i>
+        <span>Gian hàng<br>từ thiện</span>
       </button>
     </nav>
 
