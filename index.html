@@ -467,7 +467,6 @@
                     
                     <div class="relative pl-8 space-y-4">
                       <!-- Đường thẳng nối liền nằm CHÍNH GIỮA các số 1, 2, 3 -->
-                      <!-- Circle diameter 24px (left 0), center = 12px. Line width 2px -> left: 11px -->
                       <div class="absolute left-[11px] top-3 bottom-3 w-[2px] bg-emerald-300"></div>
 
                       <!-- Bước con 1 -->
@@ -557,37 +556,75 @@
 
           </div>
 
-          <!-- SUB-TAB 2: DẶN DÒ TRƯỚC KỲ THI -->
+          <!-- SUB-TAB 2: DẶN DÒ TRƯỚC KỲ THI (GIAO DIỆN MỚI DẠNG CARD) -->
           <div id="sub-tab-timeline-rules" class="hidden fade-in space-y-3">
-            <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 text-xs">
-              <i data-lucide="check-square" class="text-emerald-600 w-4 h-4"></i>
-              7 Điều Cần Nhớ Trước Kỳ Thi
-            </h2>
-            <div class="grid grid-cols-1 gap-2 text-xs">
-              <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-                <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-                <span><strong>Sức khỏe:</strong> Ăn uống đầy đủ dinh dưỡng, đi ngủ sớm trước ngày thi.</span>
+            <div class="flex items-center gap-2 border-b border-slate-100 pb-1.5">
+              <span class="bg-emerald-500 text-white rounded p-0.5 flex items-center justify-center">
+                <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+              </span>
+              <h2 class="font-bold text-slate-900 text-xs md:text-sm">7 Điều Cần Nhớ Trước Kỳ Thi</h2>
+            </div>
+            <p class="text-[11px] text-slate-400 mb-2">Vuốt/chạm để xem chi tiết từng mục</p>
+
+            <!-- Lưới Card 7 Điều Cần Nhớ -->
+            <div class="grid grid-cols-3 gap-2.5 text-xs">
+              
+              <!-- Card 1 -->
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-orange-100/70 flex items-center justify-center text-lg mb-1.5">🔥</div>
+                <h3 class="font-bold text-slate-900 text-[11px] mb-1">Tự tin, mạnh mẽ</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
               </div>
-              <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-                <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-                <span><strong>Thời gian:</strong> Có mặt tối thiểu trước 30 phút (lúc 07:30) để check-in.</span>
+
+              <!-- Card 2 -->
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-red-100/70 flex items-center justify-center text-lg mb-1.5">🍚</div>
+                <h3 class="font-bold text-slate-900 text-[11px] mb-1">Ăn uống, nghỉ ngơi</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
               </div>
-              <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-                <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-                <span><strong>Ôn luyện:</strong> Ôn kỹ các bài quyền và kỹ thuật đòn thế theo cấp đai.</span>
+
+              <!-- Card 3 -->
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-blue-100/70 flex items-center justify-center text-lg mb-1.5">⏰</div>
+                <h3 class="font-bold text-slate-900 text-[11px] mb-1">Đến sớm 30 phút</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
               </div>
-              <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-                <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-                <span><strong>Trang phục:</strong> Mặc võ phục sạch sẽ, đeo đai hiện tại. Mang bình nước cá nhân có ghi tên.</span>
+
+              <!-- Card 4 -->
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-emerald-100/70 flex items-center justify-center text-lg mb-1.5">💪</div>
+                <h3 class="font-bold text-slate-900 text-[11px] mb-1">Giữ gìn sức khỏe</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
               </div>
-              <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-                <i data-lucide="x-circle" class="text-red-500 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-                <span class="font-semibold text-red-700">Tuyệt đối không đeo trang sức (dây chuyền, nhẫn, đồng hồ...) khi vào thi.</span>
+
+              <!-- Card 5 -->
+              <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-purple-100/70 flex items-center justify-center text-lg mb-1.5">🥋</div>
+                <h3 class="font-bold text-slate-900 text-[11px] mb-1">Ôn luyện kỹ</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
               </div>
+
+              <!-- Card 6 -->
+              <div class="bg-red-50/70 p-2.5 rounded-2xl border border-red-100 flex flex-col items-center text-center shadow-sm">
+                <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-lg mb-1.5">🚫</div>
+                <h3 class="font-bold text-red-600 text-[11px] mb-1">Không trang sức</h3>
+                <p class="text-[10px] text-slate-500 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+              </div>
+
+            </div>
+
+            <!-- Dấu chấm chỉ trang/Chỉ báo Carousel -->
+            <div class="flex justify-center items-center gap-1.5 pt-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
             </div>
           </div>
 
-          <!-- SUB-TAB 3: QUY ĐỊNH CẤP ĐAI -->
+          <!-- SUB-TAB 3: QUY ĐỊNH CẤP ĐAI (ĐÃ ĐIỀU CHỈNH CỘT VÀ THÊM CẤP 1) -->
           <div id="sub-tab-timeline-belts" class="hidden fade-in space-y-3">
             <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 text-xs">
               <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
@@ -601,21 +638,72 @@
               <table class="w-full text-left border-collapse">
                 <thead>
                   <tr class="bg-slate-100 text-slate-700 font-bold border-b">
-                    <th class="p-2">Cấp hiện tại</th>
+                    <th colspan="2" class="p-2">Cấp đai</th>
                     <th class="p-2">Lộ trình đổi đai</th>
-                    <th class="p-2">Yêu cầu bài thi cốt lõi</th>
+                    <th class="p-2">Nội dung bài thi</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
-                  <tr><td class="p-2 font-bold">Cấp 10</td><td class="p-2 text-blue-700 font-bold">Trắng → Vàng</td><td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 9</td><td class="p-2 text-blue-700 font-bold">Vàng → Vàng cam</td><td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 8</td><td class="p-2 text-blue-700 font-bold">Vàng cam → Xanh lá</td><td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 7</td><td class="p-2 text-blue-700 font-bold">Xanh lá → Xanh lá đậm</td><td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 6</td><td class="p-2 text-blue-700 font-bold">Xanh lá đậm → Xanh dương</td><td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 5</td><td class="p-2 text-blue-700 font-bold">Xanh dương → Xanh dương đậm</td><td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 4</td><td class="p-2 text-blue-700 font-bold">Xanh dương đậm → Đỏ</td><td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 3</td><td class="p-2 text-blue-700 font-bold">Đỏ → Đỏ đậm</td><td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td></tr>
-                  <tr><td class="p-2 font-bold">Cấp 2</td><td class="p-2 text-blue-700 font-bold">Đỏ đậm → Đỏ đen</td><td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td></tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 10</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Trắng → Vàng</td>
+                    <td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 9</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Vàng → Vàng cam</td>
+                    <td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 8</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Vàng cam → Xanh lá</td>
+                    <td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 7</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh lá → Xanh lá đậm</td>
+                    <td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 6</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh lá đậm → Xanh dương</td>
+                    <td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 5</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh dương → Xanh dương đậm</td>
+                    <td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 4</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh dương đậm → Đỏ</td>
+                    <td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 3</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ → Đỏ đậm</td>
+                    <td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 2</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ đậm → Đỏ đen</td>
+                    <td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td>
+                  </tr>
+                  <tr>
+                    <td class="p-2 font-bold whitespace-nowrap">Cấp 1</td>
+                    <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                    <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ đen → Đen (1 Đẳng)</td>
+                    <td class="p-2">Bài quyền Koryo, Kỹ thuật đối kháng & Thể lực nâng cao</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -625,37 +713,68 @@
 
       </div>
 
-      <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI (Giao diện cũ phụ trợ) -->
+      <!-- TAB 3: DẶN DÒ & QUY ĐỊNH CẤP ĐAI (TAB ĐỘC LẬP) -->
       <div id="tab-rules" class="tab-content space-y-4">
-        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
-          <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-3 text-xs">
-            <i data-lucide="check-square" class="text-emerald-600 w-4 h-4"></i>
-            7 Điều Cần Nhớ Trước Kỳ Thi
-          </h2>
-          <div class="grid grid-cols-1 gap-2 text-xs">
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-              <span><strong>Sức khỏe:</strong> Ăn uống đầy đủ dinh dưỡng, đi ngủ sớm trước ngày thi.</span>
+        
+        <!-- CARD 7 ĐIỀU CẦN NHỚ -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center gap-2 border-b border-slate-100 pb-1.5">
+            <span class="bg-emerald-500 text-white rounded p-0.5 flex items-center justify-center">
+              <i data-lucide="check" class="w-4 h-4 stroke-[3]"></i>
+            </span>
+            <h2 class="font-bold text-slate-900 text-xs md:text-sm">7 Điều Cần Nhớ Trước Kỳ Thi</h2>
+          </div>
+          <p class="text-[11px] text-slate-400 mb-2">Vuốt/chạm để xem chi tiết từng mục</p>
+
+          <div class="grid grid-cols-3 gap-2.5 text-xs">
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-orange-100/70 flex items-center justify-center text-lg mb-1.5">🔥</div>
+              <h3 class="font-bold text-slate-900 text-[11px] mb-1">Tự tin, mạnh mẽ</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
             </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-              <span><strong>Thời gian:</strong> Có mặt tối thiểu trước 30 phút (lúc 07:30) để check-in.</span>
+
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-red-100/70 flex items-center justify-center text-lg mb-1.5">🍚</div>
+              <h3 class="font-bold text-slate-900 text-[11px] mb-1">Ăn uống, nghỉ ngơi</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
             </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-              <span><strong>Ôn luyện:</strong> Ôn kỹ các bài quyền và kỹ thuật đòn thế theo cấp đai.</span>
+
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-blue-100/70 flex items-center justify-center text-lg mb-1.5">⏰</div>
+              <h3 class="font-bold text-slate-900 text-[11px] mb-1">Đến sớm 30 phút</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Có mặt trước giờ thi ít nhất 30 phút.</p>
             </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-              <i data-lucide="check" class="text-emerald-600 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-              <span><strong>Trang phục:</strong> Mặc võ phục sạch sẽ, đeo đai hiện tại. Mang bình nước cá nhân có ghi tên.</span>
+
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-emerald-100/70 flex items-center justify-center text-lg mb-1.5">💪</div>
+              <h3 class="font-bold text-slate-900 text-[11px] mb-1">Giữ gìn sức khỏe</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
             </div>
-            <div class="bg-slate-50 p-2.5 rounded-lg flex items-start gap-2 border border-slate-100">
-              <i data-lucide="x-circle" class="text-red-500 w-3.5 h-3.5 shrink-0 mt-0.5"></i>
-              <span class="font-semibold text-red-700">Tuyệt đối không đeo trang sức (dây chuyền, nhẫn, đồng hồ...) khi vào thi.</span>
+
+            <div class="bg-slate-50/80 p-2.5 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-purple-100/70 flex items-center justify-center text-lg mb-1.5">🥋</div>
+              <h3 class="font-bold text-slate-900 text-[11px] mb-1">Ôn luyện kỹ</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
             </div>
+
+            <div class="bg-red-50/70 p-2.5 rounded-2xl border border-red-100 flex flex-col items-center text-center shadow-sm">
+              <div class="w-10 h-10 rounded-full bg-red-100 flex items-center justify-center text-lg mb-1.5">🚫</div>
+              <h3 class="font-bold text-red-600 text-[11px] mb-1">Không trang sức</h3>
+              <p class="text-[10px] text-slate-500 leading-tight">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
+            </div>
+          </div>
+
+          <div class="flex justify-center items-center gap-1.5 pt-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
           </div>
         </div>
 
+        <!-- BẢNG CẤP ĐAI -->
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200">
           <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 mb-2 text-xs">
             <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
@@ -669,25 +788,77 @@
             <table class="w-full text-left border-collapse">
               <thead>
                 <tr class="bg-slate-100 text-slate-700 font-bold border-b">
-                  <th class="p-2">Cấp hiện tại</th>
+                  <th colspan="2" class="p-2">Cấp đai</th>
                   <th class="p-2">Lộ trình đổi đai</th>
-                  <th class="p-2">Yêu cầu bài thi cốt lõi</th>
+                  <th class="p-2">Nội dung bài thi</th>
                 </tr>
               </thead>
               <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
-                <tr><td class="p-2 font-bold">Cấp 10</td><td class="p-2 text-blue-700 font-bold">Trắng → Vàng</td><td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 9</td><td class="p-2 text-blue-700 font-bold">Vàng → Vàng cam</td><td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 8</td><td class="p-2 text-blue-700 font-bold">Vàng cam → Xanh lá</td><td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 7</td><td class="p-2 text-blue-700 font-bold">Xanh lá → Xanh lá đậm</td><td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 6</td><td class="p-2 text-blue-700 font-bold">Xanh lá đậm → Xanh dương</td><td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 5</td><td class="p-2 text-blue-700 font-bold">Xanh dương → Xanh dương đậm</td><td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 4</td><td class="p-2 text-blue-700 font-bold">Xanh dương đậm → Đỏ</td><td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 3</td><td class="p-2 text-blue-700 font-bold">Đỏ → Đỏ đậm</td><td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td></tr>
-                <tr><td class="p-2 font-bold">Cấp 2</td><td class="p-2 text-blue-700 font-bold">Đỏ đậm → Đỏ đen</td><td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td></tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 10</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Trắng → Vàng</td>
+                  <td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 9</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Vàng → Vàng cam</td>
+                  <td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 8</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Vàng cam → Xanh lá</td>
+                  <td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 7</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh lá → Xanh lá đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 6</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh lá đậm → Xanh dương</td>
+                  <td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 5</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh dương → Xanh dương đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 4</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Xanh dương đậm → Đỏ</td>
+                  <td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 3</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ → Đỏ đậm</td>
+                  <td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 2</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ đậm → Đỏ đen</td>
+                  <td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td>
+                </tr>
+                <tr>
+                  <td class="p-2 font-bold whitespace-nowrap">Cấp 1</td>
+                  <td class="p-2 shrink-0"><div class="w-7 h-5 rounded bg-slate-200 border border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Ảnh</div></td>
+                  <td class="p-2 text-blue-700 font-bold whitespace-nowrap">Đỏ đen → Đen (1 Đẳng)</td>
+                  <td class="p-2">Bài quyền Koryo, Kỹ thuật đối kháng & Thể lực nâng cao</td>
+                </tr>
               </tbody>
             </table>
           </div>
         </div>
+
       </div>
 
       <!-- TAB 4: TIỆN ÍCH SỐ, ẢNH & TỪ THIỆN -->
