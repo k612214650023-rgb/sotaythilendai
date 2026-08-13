@@ -27,13 +27,15 @@
     }
 
     /* CSS Luồng di chuyển (Claude Flow Layout) */
+    /* Cho phép xuống dòng thay vì cuộn ngang.
+       Bản cũ dùng overflow-x:auto nên các bước cuối ("Tầng 4"...) bị đẩy khuất
+       ra ngoài khung, người dùng không biết là phải vuốt ngang mới thấy. */
     .route-row {
       display: flex;
       align-items: center;
-      gap: 12px;
+      flex-wrap: wrap;
+      gap: 8px 12px;
       padding: 10px 0;
-      overflow-x: auto;
-      -webkit-overflow-scrolling: touch;
     }
     .route-row + .route-row {
       border-top: 1px solid #e5e7eb;
@@ -53,7 +55,10 @@
     .flow {
       display: flex;
       align-items: center;
-      flex-wrap: nowrap;
+      flex-wrap: wrap;
+      row-gap: 6px;
+      flex: 1 1 auto;
+      min-width: 0;
     }
     .step {
       display: flex;
@@ -110,18 +115,39 @@
     }
 
     @media (max-width: 380px) {
-      .route-row { gap: 8px; }
+      .route-row { gap: 6px 8px; }
       .route-label { font-size: 11px; }
       .step-icon { width: 22px; height: 22px; font-size: 11px; }
       .step-label { font-size: 11px; }
       .connector { margin: 0 3px; font-size: 11px; }
     }
+
+    /* Trang được thiết kế cho điện thoại (cỡ chữ 9-11px). Trên màn hình lớn,
+       cỡ đó quá nhỏ để đọc, nên phóng dần theo bề rộng màn hình.
+       Dấu \[ \] để chọn đúng class Tailwind dạng text-[10px]. */
+    @media (min-width: 768px) {
+      .text-\[9px\]  { font-size: 11px !important; }
+      .text-\[10px\] { font-size: 12px !important; }
+      .text-\[11px\] { font-size: 13px !important; }
+      .route-label, .step-label { font-size: 13px; }
+      .step-icon { width: 30px; height: 30px; font-size: 14px; }
+      .img-slot { height: 200px; }
+    }
+    @media (min-width: 1024px) {
+      .text-\[9px\]  { font-size: 12px !important; }
+      .text-\[10px\] { font-size: 13px !important; }
+      .text-\[11px\] { font-size: 14px !important; }
+      .img-slot { height: 260px; }
+    }
+
+    /* Vùng bấm của thanh điều hướng dưới: tối thiểu 48px cho ngón tay. */
+    .nav-btn { min-height: 48px; justify-content: center; }
   </style>
 </head>
 <body class="bg-slate-100 text-slate-800 font-sans antialiased min-h-screen">
 
   <!-- Khung ứng dụng di động -->
-  <div class="max-w-md mx-auto bg-slate-50 min-h-screen shadow-2xl relative border-x border-slate-200">
+  <div class="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto bg-slate-50 min-h-screen shadow-2xl relative border-x border-slate-200">
 
     <!-- 1. HEADER CỐ ĐỊNH -->
     <header class="sticky top-0 z-50 bg-blue-900 text-white p-4 shadow-md">
@@ -1204,7 +1230,7 @@
     </div>
 
     <!-- 3. THANH ĐIỀU HƯỚNG ĐÁY CỐ ĐỊNH (TỐI ƯU 5 BUTTONS CHO MOBILE) -->
-    <nav class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white border-t border-slate-200 flex justify-between items-center px-1 py-2 z-50 shadow-lg safe-area-bottom">
+    <nav class="fixed bottom-0 left-0 right-0 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto bg-white border-t border-slate-200 flex justify-between items-center px-1 py-2 z-50 shadow-lg safe-area-bottom">
       
       <!-- Button 1: Sơ đồ -->
       <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex-1 flex flex-col items-center gap-1 text-[9px] font-bold text-blue-800 transition-colors">
