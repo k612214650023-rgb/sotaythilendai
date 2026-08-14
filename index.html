@@ -93,6 +93,14 @@
       flex-shrink: 0;
     }
 
+    /* Pattern trang trí Thiệp cảm ơn */
+    .card-pattern {
+      background-color: #fffdfa;
+      background-image: radial-gradient(#e5e7eb 0.75px, transparent 0.75px), radial-gradient(#e5e7eb 0.75px, #fffdfa 0.75px);
+      background-size: 30px 30px;
+      background-position: 0 0, 15px 15px;
+    }
+
     @media (max-width: 380px) {
       .route-row { gap: 6px 8px; }
       .route-label { font-size: 11px; }
@@ -231,7 +239,7 @@
       <!-- TAB 1: SƠ ĐỒ & DI CHUYỂN -->
       <div id="tab-location" class="tab-content active space-y-4">
         
-        <div class="bg-white p-4 rounded-xl shadow-sm space-y-4">
+        <div class="bg-white p-4 rounded-xl shadow-sm space-y-4 border border-slate-200">
 
           <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
             <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold">
@@ -502,7 +510,7 @@
                         <h4 class="font-bold text-slate-900 text-xs">Tham gia Hoạt động trải nghiệm</h4>
                         <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Phụ huynh và Võ sinh có thể tham gia các hoạt động trải nghiệm để nhận về những phần quà hấp dẫn.</p>
                         <div class="mt-2">
-                          <button onclick="goToActivitySubTab(2)" class="inline-flex items-center gap-1.5 bg-amber-100/80 hover:bg-amber-200/80 text-amber-900 border border-amber-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
+                          <button onclick="goToActivitySubTab('experience')" class="inline-flex items-center gap-1.5 bg-amber-100/80 hover:bg-amber-200/80 text-amber-900 border border-amber-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
                             <span>🎯</span>
                             <span>Nhấn vào để xem thông tin chi tiết hoạt động</span>
                           </button>
@@ -539,7 +547,7 @@
                     </div>
 
                     <div class="mt-2.5 pt-1">
-                      <button onclick="goToActivitySubTab(1)" class="inline-flex items-center gap-1.5 bg-purple-100/80 hover:bg-purple-200/80 text-purple-900 border border-purple-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
+                      <button onclick="goToActivitySubTab('photo')" class="inline-flex items-center gap-1.5 bg-purple-100/80 hover:bg-purple-200/80 text-purple-900 border border-purple-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
                         <span>📸</span>
                         <span>Nhấn vào để xem & tải Ảnh Võ sinh</span>
                       </button>
@@ -640,10 +648,11 @@
                           <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Kiểm tra sự tập trung, chiều cao, cân nặng, tố chất thể lực.</span></li>
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kibon Joonbi:</strong> Tư thế chuẩn bị căn bản.</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (6):</strong> Moaseogi, Narani Seogi, Juchum Seogi, Ap Seogi, Ap Kubi Seogi, Dwit Kubi Seogi.</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đấm (Jireugi):</strong> Trung bình tấn - Đấm trung 10 lần.</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đỡ (Makki):</strong> Arae Makki, Momtong Makki, Olgul Makki.</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (Chagi):</strong> Ap Chagi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (6):</strong> Moaseogi, Narani Seogi, Juchum Seogi, Ap Seogi, Ap Kubi Seogi, Dwit Kubi Seogi, Moaseogi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đấm:</strong> Trung bình tấn - Đấm trung 10 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đỡ:</strong> Arae Makki, Momtong Makki, Olgul Makki (đi 4 hướng hình vuông).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá:</strong> Ap Chagi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thuật ngữ Taekwondo:</strong> Nắm chắc các thuật ngữ căn bản.</span></li>
                           </ul>
                         </div>
                       </div>
@@ -672,7 +681,8 @@
                             <span>Thể lực & Kỹ thuật căn bản</span>
                           </div>
                           <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (5):</strong> Yeop Seogi, Beom Seogi, Kkoa Seogi, Hakdari Seogi, Moa Seogi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Tấn:</strong> Yeop Seogi, Beom Seogi, Kkoa Seogi, Hakdari Seogi, Moa Seogi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Đỡ & Tấn công:</strong> Arae Makki, Momtong Makki, Olgul Makki, Hansonnal Momtong Bakkat Makki, Hansonnal Mok Chigi.</span></li>
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá:</strong> Dollyo Chagi.</span></li>
                           </ul>
                         </div>
@@ -696,13 +706,30 @@
                   <tr id="belt-7" class="hidden bg-slate-50/90">
                     <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
-                        <div class="space-y-1">
-                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
-                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
-                            <span>Bài quyền (Poomsae)</span>
-                          </div>
-                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 1 (Nhất khúc)</p>
-                        </div>
+                        <p class="font-bold text-blue-950">Bài quyền: Taegeuk 1 (Nhất khúc)</p>
+                        <p class="text-[11px] text-slate-600">Phân thế bài quyền Taegeuk 1 và các kỹ thuật tự vệ cơ bản.</p>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 6 -->
+                  <tr onclick="toggleBeltDetail('belt-6')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 6</span>
+                        <i data-lucide="chevron-down" id="icon-belt-6" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 2 (Nhị khúc)</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Dwit Kubi, Eolgul Jireugi, Phân thế Taegeuk 2</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-6" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <p class="font-bold text-blue-950">Bài quyền: Taegeuk 2 (Nhị khúc)</p>
+                        <p class="text-[11px] text-slate-600">Dwit Kubi Seogi, Eolgul Jireugi và phân thế Taegeuk 2.</p>
                       </div>
                     </td>
                   </tr>
@@ -711,286 +738,165 @@
               </table>
             </div>
           </div>
+
         </div>
       </div>
 
-      <!-- TAB 3: HOẠT ĐỘNG -->
-      <div id="tab-activities" class="tab-content space-y-4">
-        
-        <!-- Banner Tiêu đề -->
-        <div class="bg-gradient-to-r from-blue-900 via-indigo-900 to-blue-800 text-white p-4.5 rounded-2xl shadow-md border border-blue-800/50">
-          <div class="flex items-center gap-2 mb-1.5">
-            <div class="w-7 h-7 rounded-lg bg-yellow-400 text-blue-950 font-black text-xs flex items-center justify-center shadow shrink-0">🎉</div>
-            <h2 class="font-extrabold text-sm md:text-base text-white tracking-wide">Các Hoạt Động Nổi Bật Kỳ Thi</h2>
-          </div>
-          <p class="text-xs text-indigo-100 leading-relaxed pl-9">
-            Khám phá chuỗi hoạt động trải nghiệm, lưu giữ khoảnh khắc và nhận quà tặng hấp dẫn dành riêng cho Võ sinh & Phụ huynh!
-          </p>
-        </div>
-
-        <!-- THANH TRƯỢT SUBTAB CÁC HOẠT ĐỘNG -->
-        <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
-          <button id="btn-act-1" onclick="switchActivitySubTab(1)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
-            <span class="text-sm">📸</span>
-            <span>Ảnh võ sinh</span>
-          </button>
-
-          <button id="btn-act-2" onclick="switchActivitySubTab(2)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
-            <span class="text-sm">🎯</span>
-            <span>Hoạt động trải nghiệm</span>
-          </button>
-
-          <button id="btn-act-3" onclick="switchActivitySubTab(3)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
-            <span class="text-sm">🖨️</span>
-            <span>Photobooth</span>
-          </button>
-
-          <button id="btn-act-4" onclick="switchActivitySubTab(4)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
-            <span class="text-sm">📊</span>
-            <span>Phân tích thể trạng</span>
-          </button>
-
-          <button id="btn-act-5" onclick="switchActivitySubTab(5)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
-            <span class="text-sm">🦴</span>
-            <span>Đo mật độ xương</span>
-          </button>
-        </div>
-
-        <!-- NỘI DUNG CÁC SUBTAB HOẠT ĐỘNG -->
-        <div id="activity-subtab-container">
-
-          <!-- SUBTAB HOẠT ĐỘNG 1: ẢNH VÕ SINH -->
-          <div id="sub-act-1" class="fade-in bg-white p-4 rounded-2xl shadow-sm border border-blue-200 space-y-3">
-            <div class="flex justify-between items-start gap-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 uppercase tracking-wider">
-                <i data-lucide="camera" class="w-3 h-3"></i> Hoạt động 1
-              </span>
-              <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">Cập nhật liên tục</span>
-            </div>
-
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
-                Album Ảnh Võ Sinh<br>Kỳ Thi Thăng Cấp Đai Lần Thứ II - Năm 2026
-              </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                Toàn bộ khoảnh khắc thi đấu, niềm vui nhận đai và kỷ niệm đẹp của các con đều được Taekwondo Kids lưu lại trọn vẹn nhất.
-              </p>
-            </div>
-
-            <div class="pt-1">
-              <a 
-                href="https://drive.google.com/drive/u/0/mobile/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-md transition active:scale-95 group"
-              >
-                <i data-lucide="folder-git-2" class="w-4 h-4 text-yellow-300"></i>
-                <span>Truy cập Album Ảnh võ sinh tại đây</span>
-                <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform"></i>
-              </a>
-            </div>
-          </div>
-
-          <!-- SUBTAB HOẠT ĐỘNG 2: HOẠT ĐỘNG TRẢI NGHIỆM -->
-          <div id="sub-act-2" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-amber-200 space-y-3">
-            <div class="flex justify-between items-start gap-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-900 uppercase tracking-wider">
-                <i data-lucide="trophy" class="w-3 h-3"></i> Hoạt động 2
-              </span>
-              <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
-                🎁 Quà tặng cực hấp dẫn
-              </span>
-            </div>
-
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
-                Hoạt Động Trải Nghiệm Dành Cho Gia Đình
-              </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                Cơ hội tuyệt vời để Quý phụ huynh trực tiếp "nhập cuộc" và trải nghiệm những thử thách Taekwondo thú vị cùng con yêu!
-              </p>
-            </div>
-
-            <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg">
-              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span><strong>Địa điểm:</strong> Khu vực ban công Nhà thi đấu Tầng 4: Khu vực Hoạt động trải nghiệm</span>
-            </div>
-          </div>
-
-          <!-- SUBTAB HOẠT ĐỘNG 3: PHOTOBOOTH -->
-          <div id="sub-act-3" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-purple-200 space-y-3">
-            <div class="flex justify-between items-start gap-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-800 uppercase tracking-wider">
-                <i data-lucide="sparkles" class="w-3 h-3"></i> Hoạt động Photobooth
-              </span>
-              <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200/60">
-                📸 Lấy ảnh ngay
-              </span>
-            </div>
-
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
-                Chụp Ảnh Photobooth & Nhận ảnh trực tiếp
-              </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-                Ghi lại khoảnh khắc gia đình rạng rỡ bên khung hình Photobooth độc quyền Kỳ thi Thăng cấp đai 2026.
-              </p>
-            </div>
-          </div>
-
-          <!-- SUBTAB HOẠT ĐỘNG 4: PHÂN TÍCH THỂ TRẠNG -->
-          <div id="sub-act-4" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-fuchsia-200 space-y-3">
-            <div class="flex justify-between items-start gap-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-fuchsia-100 text-fuchsia-800 uppercase tracking-wider">
-                <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Cho Con
-              </span>
-            </div>
-
-            <div class="bg-gradient-to-br from-fuchsia-700 via-purple-700 to-indigo-800 text-white p-4 rounded-xl shadow-sm space-y-2">
-              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug">
-                Phân Tích Thể Trạng & Dự Đoán Chiều Cao
-              </h3>
-              <p class="text-xs text-slate-100 mt-2 leading-relaxed">
-                Đánh giá chỉ số phát triển chiều cao & thể chất theo tiêu chuẩn khoa học.
-              </p>
-            </div>
-          </div>
-
-          <!-- SUBTAB HOẠT ĐỘNG 5: ĐO MẬT ĐỘ XƯƠNG -->
-          <div id="sub-act-5" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 space-y-3">
-            <div class="flex justify-between items-start gap-2">
-              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider">
-                <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Bố Mẹ
-              </span>
-            </div>
-
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-slate-800 space-y-2">
-              <h3 class="font-extrabold text-sm md:text-base text-blue-950 leading-snug">
-                Gói Đo Mật Độ Xương Tại Chỗ & Tư Vấn Cùng Chuyên Gia
-              </h3>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-                Sàng lọc sớm nguy cơ loãng xương cho bố mẹ và ông bà đi cùng võ sinh.
-              </p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-
-      <!-- TAB 4: GIAN HÀNG & TỪ THIỆN (ĐÃ CẬP NHẬT HOÀN CHỈNH) -->
-      <div id="tab-media" class="tab-content space-y-4">
-        
-        <!-- CARD 1: BANNER GIAN HÀNG TỪ THIỆN (ĐỒNG BỘ PADDING p-4) -->
-        <div class="bg-gradient-to-br from-red-700 via-rose-800 to-red-900 text-white p-4 rounded-2xl shadow-lg border border-red-600/30 relative overflow-hidden">
-          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+      <!-- TAB 3: HOẠT ĐỘNG & ẢNH -->
+      <div id="tab-activity" class="tab-content space-y-4">
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
           
-          <div class="flex items-center gap-2 mb-2">
-            <span class="inline-flex items-center gap-1 bg-yellow-400 text-red-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
-              <i data-lucide="heart" class="w-3 h-3 fill-current text-red-700"></i> Gian Hàng Từ Thiện
-            </span>
-            <span class="text-[10px] text-rose-200 bg-white/10 px-2 py-0.5 rounded-md border border-white/10">Sứ mệnh vì cộng đồng</span>
+          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
+            <button id="btn-sub-photo" onclick="switchActivitySubTab('photo')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold">
+              📸 Tra cứu &<br>Tải ảnh Võ sinh
+            </button>
+            <button id="btn-sub-exp" onclick="switchActivitySubTab('experience')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium">
+              🎯 Hoạt động<br>Trải nghiệm
+            </button>
           </div>
 
-          <h2 class="font-extrabold text-base md:text-lg text-white leading-snug tracking-wide">
-            Gian Hàng "Taekwondo Kids & Friends"
+          <!-- SUBTAB 1: ẢNH VÕ SINH -->
+          <div id="sub-tab-photo" class="fade-in space-y-4">
+            <div class="bg-purple-50 p-3.5 rounded-xl border border-purple-100 text-xs space-y-2">
+              <h3 class="font-bold text-purple-900 flex items-center gap-1.5 text-xs">
+                <i data-lucide="camera" class="w-4 h-4 text-purple-600"></i>
+                <span>Thư viện Ảnh Võ Sinh Kỳ Thi</span>
+              </h3>
+              <p class="text-slate-600 leading-relaxed">
+                Ban tổ chức cập nhật liên tục ảnh thi đấu và trao đai của các con trong suốt kỳ thi.
+              </p>
+              <div class="pt-1">
+                <a href="#" target="_blank" class="inline-flex items-center justify-center gap-2 bg-purple-600 hover:bg-purple-700 text-white font-bold py-2.5 px-4 rounded-lg shadow text-xs transition w-full">
+                  <i data-lucide="external-link" class="w-4 h-4"></i>
+                  <span>Truy cập Kho Ảnh Trực Tuyến</span>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBTAB 2: HOẠT ĐỘNG TRẢI NGHIỆM -->
+          <div id="sub-tab-experience" class="hidden fade-in space-y-4">
+            <div class="bg-amber-50 p-3.5 rounded-xl border border-amber-100 text-xs space-y-3">
+              <h3 class="font-bold text-amber-900 flex items-center gap-1.5 text-xs">
+                <i data-lucide="gift" class="w-4 h-4 text-amber-600"></i>
+                <span>Các Gian Hàng Trải Nghiệm & Quà Tặng</span>
+              </h3>
+              <p class="text-slate-700 leading-relaxed">
+                Sau khi hoàn thành bài thi, võ sinh và phụ huynh có thể tham gia các khu vực trải nghiệm trò chơi dân gian, thử thách võ thuật để tích điểm đổi quà.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- TAB 4: GIAN HÀNG -->
+      <div id="tab-booth" class="tab-content space-y-4">
+
+        <!-- CARD GIAN HÀNG TỪ THIỆN (ĐỒNG BỘ LỀ HOÀN HẢO) -->
+        <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4 fade-in">
+          
+          <!-- BUTTON SUBTAB GIAN HÀNG TỪ THIỆN -->
+          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
+            <button class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold cursor-default">
+              ❤️ Gian Hàng Từ Thiện & Quyên Góp
+            </button>
+          </div>
+
+          <!-- NỘI DUNG GIAN HÀNG TỪ THIỆN -->
+          <div class="space-y-4">
+            
+            <div class="bg-rose-50 border border-rose-200 p-3.5 rounded-xl space-y-2">
+              <h2 class="font-bold text-rose-900 text-xs md:text-sm flex items-center gap-2">
+                <i data-lucide="heart" class="w-4 h-4 text-rose-600 shrink-0"></i>
+                <span>Chương Trình Quyên Góp Từ Thiện</span>
+              </h2>
+              <p class="text-xs text-slate-700 leading-relaxed">
+                Ban tổ chức kêu gọi sự đồng hành từ Quý phụ huynh và các em võ sinh ủng hộ các hoạt động thiện nguyện, lan tỏa tinh thần yêu thương và sẻ chia cộng đồng.
+              </p>
+            </div>
+
+            <!-- KHU VỰC MÃ QR NGÂN HÀNG QUYÊN GÓP -->
+            <div class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-center space-y-3">
+              <h3 class="font-bold text-slate-800 text-xs uppercase tracking-wide flex items-center justify-center gap-1.5">
+                <i data-lucide="qr-code" class="w-4 h-4 text-blue-800"></i>
+                <span>Thông Tin Mã QR Ngân Hàng Quyên Góp</span>
+              </h3>
+              
+              <div class="flex justify-center items-center py-2">
+                <div class="bg-white p-3 rounded-2xl shadow-md border border-slate-200 max-w-[240px] w-full flex flex-col items-center">
+                  <img src="QR quyên góp.png" alt="Mã QR Quyên góp ngân hàng" class="w-full h-auto rounded-lg object-contain" />
+                  <span class="text-[11px] font-bold text-blue-900 mt-2">Ngân hàng & Số tài khoản quyên góp</span>
+                </div>
+              </div>
+
+              <div class="text-xs text-slate-600 bg-white p-3 rounded-lg border border-slate-200 text-left space-y-1">
+                <p class="font-semibold text-slate-800">📌 Cú pháp chuyển khoản quyên góp:</p>
+                <p class="text-blue-900 font-bold bg-blue-50 p-1.5 rounded border border-blue-100 text-center text-[11px]">
+                  [Họ tên võ sinh] - [SBD] - Quyen gop Tu thien
+                </p>
+                <p class="text-[11px] text-slate-500 italic text-center pt-1">
+                  Mọi đóng góp dù lớn hay nhỏ đều là nguồn động viên vô cùng to lớn!
+                </p>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- TAB 5: LỜI CẢM ƠN -->
+      <div id="tab-thanks" class="tab-content space-y-4">
+        <div class="bg-white p-5 rounded-2xl shadow-md border border-slate-200 card-pattern space-y-4 text-center fade-in">
+          <div class="w-12 h-12 bg-amber-100 rounded-full flex items-center justify-center mx-auto text-amber-600">
+            <i data-lucide="heart-handshake" class="w-6 h-6"></i>
+          </div>
+
+          <h2 class="text-sm md:text-base font-extrabold text-blue-950 uppercase tracking-wide">
+            Lời Cảm Ơn Từ Ban Tổ Chức
           </h2>
-          
-          <p class="text-xs text-rose-100 font-medium mt-1.5 leading-relaxed">
-            Khởi xướng bởi Ban giám đốc Trung tâm Taekwondo Kids Việt Nam, với sự ủng hộ của Phòng quản lý Thể thao - Sở Văn hóa Thể thao và Liên đoàn Taekwondo Hà Nội.
+
+          <p class="text-xs text-slate-700 leading-relaxed max-w-lg mx-auto text-justify">
+            Ban Tổ Chức Kỳ Thi Thăng Cấp Đai Taekwondo Kids 2026 xin chân thành cảm ơn Quý Phụ huynh đã luôn tin tưởng, đồng hành và tạo điều kiện tốt nhất cho các con tham gia kỳ thi. Chúc các con võ sinh tự tin, thi đấu hết mình và đạt kết quả xuất sắc nhất!
           </p>
 
-          <div class="mt-3 bg-white/15 backdrop-blur-md p-2.5 rounded-xl border border-white/20 text-center">
-            <p class="text-[11px] font-extrabold text-yellow-300 uppercase tracking-wider leading-tight">
-              🎗️ LỜI CAM KẾT VÀ SỨ MỆNH
-            </p>
-            <p class="text-xs font-bold text-white mt-0.5">
-              "100% Lợi nhuận dành cho trẻ em nghèo vùng sâu vùng xa"
-            </p>
+          <div class="pt-2 border-t border-slate-200">
+            <p class="text-xs font-bold text-blue-900">BAN TỔ CHỨC TAEKWONDO KIDS VIỆT NAM</p>
           </div>
         </div>
-
-        <!-- CARD 2: HÀNH TRÌNH NĂNG SUẤT -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3.5">
-          <div class="flex justify-between items-center border-b border-slate-100 pb-2">
-            <div class="flex items-center gap-1.5">
-              <div class="w-6 h-6 rounded-lg bg-red-100 text-red-700 font-bold text-xs flex items-center justify-center">🏆</div>
-              <h3 class="font-bold text-slate-900 text-xs md:text-sm">Hành Trình 01 Năm Năng Suất (2025)</h3>
-            </div>
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Gian hàng đã góp mặt tại nhiều sự kiện lớn trong năm (Giải đấu tại Hà Nội, Phúc Thọ và các Kỳ thi Thăng cấp đai của Trung tâm).
-          </p>
-
-          <div class="bg-gradient-to-r from-red-50 via-rose-50 to-orange-50 p-3.5 rounded-xl border border-red-100 text-center">
-            <span class="text-[10px] font-extrabold text-red-800 uppercase tracking-wider block">
-              TỔNG DOANH THU GÂY QUỸ NĂM 2025
-            </span>
-            <span class="text-xl md:text-2xl font-black text-red-600 my-0.5 block tracking-tight">
-              45.000.000 VNĐ
-            </span>
-            <span class="text-[10px] text-slate-500 font-medium">
-              Đã được trao tận tay đến các em nhỏ khó khăn
-            </span>
-          </div>
-        </div>
-
-        <!-- CARD 3: MÃ QR NGÂN HÀNG ỦNG HỘ (ĐÃ THÊM ẢNH QR từ thiện.png) -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3 text-center">
-          <div class="flex items-center justify-center gap-1.5 border-b border-slate-100 pb-2">
-            <i data-lucide="qr-code" class="w-4 h-4 text-red-600"></i>
-            <h3 class="font-bold text-slate-900 text-xs md:text-sm">Mã QR Ủng Hộ Quỹ Từ Thiện</h3>
-          </div>
-
-          <p class="text-xs text-slate-600 leading-relaxed">
-            Quý phụ huynh và các nhà hảo tâm có thể đóng góp trực tiếp cho Quỹ từ thiện thông qua mã QR dưới đây:
-          </p>
-
-          <div class="flex justify-center my-2">
-            <div class="p-2 bg-slate-50 border border-slate-200 rounded-xl shadow-inner max-w-[220px]">
-              <img src="QR từ thiện.png" alt="Mã QR Chuyển Khoản Ủng Hộ Từ Thiện" class="w-full h-auto rounded-lg object-contain">
-            </div>
-          </div>
-
-          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-200 text-xs text-slate-700 space-y-1 text-left">
-            <div class="flex justify-between items-center text-[11px]">
-              <span class="text-slate-500">Tài khoản:</span>
-              <span class="font-bold text-slate-900">Quỹ Từ Thiện Taekwondo Kids</span>
-            </div>
-            <div class="flex justify-between items-center text-[11px]">
-              <span class="text-slate-500">Nội dung:</span>
-              <span class="font-bold text-red-600">Ung ho Quy Tu Thien</span>
-            </div>
-          </div>
-        </div>
-
       </div>
 
     </main>
 
-    <!-- 3. THANH ĐIỀU HƯỚNG DƯỚI CỐ ĐỊNH (BOTTOM NAVIGATION) -->
-    <nav class="fixed bottom-0 left-0 right-0 bg-white border-t border-slate-200 z-50 safe-area-bottom">
-      <div class="max-w-md md:max-w-2xl lg:max-w-3xl mx-auto flex justify-around items-center">
+    <!-- 3. THANH ĐIỀU HƯỚNG DƯỚI (NAVIGATION BAR) CỐ ĐỊNH -->
+    <nav class="fixed bottom-0 left-1/2 -translate-x-1/2 w-full max-w-md md:max-w-2xl lg:max-w-3xl bg-white border-t border-slate-200 shadow-lg z-50 safe-area-bottom">
+      <div class="grid grid-cols-5 text-center">
         
-        <button id="nav-location" onclick="switchTab('location')" class="nav-btn flex-1 flex flex-col items-center py-2 px-1 text-blue-900 font-bold transition">
-          <i data-lucide="map-pin" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Sơ đồ</span>
+        <button id="nav-location" onclick="switchMainTab('location')" class="nav-btn py-2 flex flex-col items-center justify-center text-blue-900 font-bold transition">
+          <i data-lucide="map-pin" class="w-5 h-5"></i>
+          <span class="text-[10px] mt-1">Sơ đồ</span>
         </button>
 
-        <button id="nav-timeline" onclick="switchTab('timeline')" class="nav-btn flex-1 flex flex-col items-center py-2 px-1 text-slate-500 hover:text-slate-900 font-medium transition">
-          <i data-lucide="calendar" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Lịch trình</span>
+        <button id="nav-timeline" onclick="switchMainTab('timeline')" class="nav-btn py-2 flex flex-col items-center justify-center text-slate-500 font-medium hover:text-blue-900 transition">
+          <i data-lucide="calendar" class="w-5 h-5"></i>
+          <span class="text-[10px] mt-1">Lịch trình</span>
         </button>
 
-        <button id="nav-activities" onclick="switchTab('activities')" class="nav-btn flex-1 flex flex-col items-center py-2 px-1 text-slate-500 hover:text-slate-900 font-medium transition">
-          <i data-lucide="party-popper" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Hoạt động</span>
+        <button id="nav-activity" onclick="switchMainTab('activity')" class="nav-btn py-2 flex flex-col items-center justify-center text-slate-500 font-medium hover:text-blue-900 transition">
+          <i data-lucide="sparkles" class="w-5 h-5"></i>
+          <span class="text-[10px] mt-1">Hoạt động</span>
         </button>
 
-        <button id="nav-media" onclick="switchTab('media')" class="nav-btn flex-1 flex flex-col items-center py-2 px-1 text-slate-500 hover:text-slate-900 font-medium transition">
-          <i data-lucide="heart" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Gian hàng</span>
+        <button id="nav-booth" onclick="switchMainTab('booth')" class="nav-btn py-2 flex flex-col items-center justify-center text-slate-500 font-medium hover:text-blue-900 transition">
+          <i data-lucide="store" class="w-5 h-5"></i>
+          <span class="text-[10px] mt-1">Gian hàng</span>
+        </button>
+
+        <button id="nav-thanks" onclick="switchMainTab('thanks')" class="nav-btn py-2 flex flex-col items-center justify-center text-slate-500 font-medium hover:text-blue-900 transition">
+          <i data-lucide="heart" class="w-5 h-5"></i>
+          <span class="text-[10px] mt-1">Lời cảm ơn</span>
         </button>
 
       </div>
@@ -998,173 +904,183 @@
 
   </div>
 
-  <!-- JAVASCRIPT ĐIỀU KHIỂN SỰ KIỆN & INTERFACE -->
+  <!-- 4. SCRIPTS XỬ LÝ SỰ KIỆN TAB & INTERACTION -->
   <script>
-    // Khởi tạo Icon Lucide khi trang tải hoàn tất
-    document.addEventListener("DOMContentLoaded", function() {
-      if (window.lucide) {
-        lucide.createIcons();
-      }
-    });
+    // Khởi tạo icons Lucide
+    lucide.createIcons();
 
-    // Toggle Dropdown Hotline
-    function toggleHotlineDropdown(event) {
-      if (event) event.stopPropagation();
-      const hotlineDropdown = document.getElementById('hotlineDropdown');
-      const searchDropdown = document.getElementById('searchDropdown');
-      
-      if (searchDropdown && !searchDropdown.classList.contains('hidden')) {
-        searchDropdown.classList.add('hidden');
-      }
-      if (hotlineDropdown) {
-        hotlineDropdown.classList.toggle('hidden');
-      }
-    }
+    // Chuyển Tab chính (Thanh Navigation dưới)
+    function switchMainTab(tabName) {
+      const contents = document.querySelectorAll('.tab-content');
+      contents.forEach(el => el.classList.remove('active'));
 
-    // Toggle Dropdown Tra cứu SBD
-    function toggleSearchDropdown(event) {
-      if (event) event.stopPropagation();
-      const hotlineDropdown = document.getElementById('hotlineDropdown');
-      const searchDropdown = document.getElementById('searchDropdown');
-
-      if (hotlineDropdown && !hotlineDropdown.classList.contains('hidden')) {
-        hotlineDropdown.classList.add('hidden');
-      }
-      if (searchDropdown) {
-        searchDropdown.classList.toggle('hidden');
-      }
-    }
-
-    // Xử lý tìm kiếm giả lập
-    function handleSearch(event) {
-      event.preventDefault();
-      const inputVal = document.getElementById('searchInput').value.trim();
-      const resultContainer = document.getElementById('searchResult');
-      
-      if (!inputVal) return;
-
-      resultContainer.classList.remove('hidden');
-      resultContainer.innerHTML = `
-        <div class="p-3 bg-blue-50 border border-blue-200 rounded-xl text-xs text-blue-900 fade-in">
-          <p class="font-bold">Đang tra cứu dữ liệu cho: "${inputVal}"...</p>
-          <p class="text-[11px] text-slate-600 mt-1">Hệ thống đang đồng bộ dữ liệu SBD và Sàn thi mới nhất.</p>
-        </div>
-      `;
-    }
-
-    // Chuyển Đổi Tab Chính (Bottom Nav)
-    function switchTab(tabId) {
-      const tabs = ['location', 'timeline', 'activities', 'media'];
-      
-      tabs.forEach(id => {
-        const content = document.getElementById('tab-' + id);
-        const navBtn = document.getElementById('nav-' + id);
-        
-        if (content) content.classList.remove('active');
-        if (navBtn) {
-          navBtn.classList.remove('text-blue-900', 'font-bold');
-          navBtn.classList.add('text-slate-500', 'font-medium');
-        }
+      const navBtns = document.querySelectorAll('.nav-btn');
+      navBtns.forEach(btn => {
+        btn.classList.remove('text-blue-900', 'font-bold');
+        btn.classList.add('text-slate-500', 'font-medium');
       });
 
-      const activeContent = document.getElementById('tab-' + tabId);
-      const activeNavBtn = document.getElementById('nav-' + tabId);
-
-      if (activeContent) activeContent.classList.add('active');
-      if (activeNavBtn) {
-        activeNavBtn.classList.remove('text-slate-500', 'font-medium');
-        activeNavBtn.classList.add('text-blue-900', 'font-bold');
+      const selectedTab = document.getElementById('tab-' + tabName);
+      if (selectedTab) {
+        selectedTab.classList.add('active');
       }
 
-      window.scrollTo({ top: 0, behavior: 'smooth' });
+      const selectedNav = document.getElementById('nav-' + tabName);
+      if (selectedNav) {
+        selectedNav.classList.remove('text-slate-500', 'font-medium');
+        selectedNav.classList.add('text-blue-900', 'font-bold');
+      }
+
+      closeDropdowns();
     }
 
-    // Chuyển SubTab TAB 1 (Sơ đồ & Di chuyển)
-    function switchSubTab(subTabId) {
-      const btnLocation = document.getElementById('btn-sub-location');
+    // Subtabs cho Tab 1: Sơ đồ
+    function switchSubTab(subName) {
+      document.getElementById('sub-tab-location').classList.add('hidden');
+      document.getElementById('sub-tab-map').classList.add('hidden');
+
+      const btnLoc = document.getElementById('btn-sub-location');
       const btnMap = document.getElementById('btn-sub-map');
-      const contentLocation = document.getElementById('sub-tab-location');
-      const contentMap = document.getElementById('sub-tab-map');
 
-      if (subTabId === 'location') {
-        btnLocation.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-        contentLocation.classList.remove('hidden');
-        contentMap.classList.add('hidden');
+      btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+
+      if (subName === 'location') {
+        document.getElementById('sub-tab-location').classList.remove('hidden');
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
       } else {
+        document.getElementById('sub-tab-map').classList.remove('hidden');
         btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-        btnLocation.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-        contentMap.classList.remove('hidden');
-        contentLocation.classList.add('hidden');
       }
     }
 
-    // Chuyển SubTab TAB 2 (Lịch trình)
-    function switchTimelineSubTab(subId) {
-      const subs = ['sched', 'rules', 'belts'];
-      
-      subs.forEach(id => {
-        const btn = document.getElementById('btn-sub-' + id);
-        const content = document.getElementById('sub-tab-timeline-' + id);
-        
-        if (btn) {
-          btn.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-        }
-        if (content) content.classList.add('hidden');
-      });
+    // Subtabs cho Tab 2: Lịch trình
+    function switchTimelineSubTab(subName) {
+      document.getElementById('sub-tab-timeline-sched').classList.add('hidden');
+      document.getElementById('sub-tab-timeline-rules').classList.add('hidden');
+      document.getElementById('sub-tab-timeline-belts').classList.add('hidden');
 
-      const activeBtn = document.getElementById('btn-sub-' + subId);
-      const activeContent = document.getElementById('sub-tab-timeline-' + subId);
+      const btnSched = document.getElementById('btn-sub-sched');
+      const btnRules = document.getElementById('btn-sub-rules');
+      const btnBelts = document.getElementById('btn-sub-belts');
 
-      if (activeBtn) {
-        activeBtn.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+
+      if (subName === 'sched') {
+        document.getElementById('sub-tab-timeline-sched').classList.remove('hidden');
+        btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      } else if (subName === 'rules') {
+        document.getElementById('sub-tab-timeline-rules').classList.remove('hidden');
+        btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      } else if (subName === 'belts') {
+        document.getElementById('sub-tab-timeline-belts').classList.remove('hidden');
+        btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
       }
-      if (activeContent) activeContent.classList.remove('hidden');
     }
 
-    // Chuyển SubTab TAB 3 (Hoạt động Slider)
-    function switchActivitySubTab(actNum) {
-      for (let i = 1; i <= 5; i++) {
-        const btn = document.getElementById('btn-act-' + i);
-        const content = document.getElementById('sub-act-' + i);
-        
-        if (btn) {
-          btn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
-        }
-        if (content) content.classList.add('hidden');
-      }
+    // Subtabs cho Tab 3: Hoạt động
+    function switchActivitySubTab(subName) {
+      document.getElementById('sub-tab-photo').classList.add('hidden');
+      document.getElementById('sub-tab-experience').classList.add('hidden');
 
-      const activeBtn = document.getElementById('btn-act-' + actNum);
-      const activeContent = document.getElementById('sub-act-' + actNum);
+      const btnPhoto = document.getElementById('btn-sub-photo');
+      const btnExp = document.getElementById('btn-sub-exp');
 
-      if (activeBtn) {
-        activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md";
+      btnPhoto.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnExp.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+
+      if (subName === 'photo') {
+        document.getElementById('sub-tab-photo').classList.remove('hidden');
+        btnPhoto.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      } else {
+        document.getElementById('sub-tab-experience').classList.remove('hidden');
+        btnExp.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
       }
-      if (activeContent) activeContent.classList.remove('hidden');
     }
 
-    // Nhấn Nút Chuyển nhanh tới Subtab Hoạt Động
-    function goToActivitySubTab(actNum) {
-      switchTab('activities');
-      switchActivitySubTab(actNum);
+    // Chuyển hướng nhanh từ Lịch trình sang Hoạt động
+    function goToActivitySubTab(subName) {
+      switchMainTab('activity');
+      switchActivitySubTab(subName);
     }
 
-    // Toggle Accordion Xem Chi Tiết Cấp Đai
+    // Accordion cho Quy định cấp đai
     function toggleBeltDetail(beltId) {
-      const row = document.getElementById(beltId);
+      const targetRow = document.getElementById(beltId);
       const icon = document.getElementById('icon-' + beltId);
-      
-      if (row) {
-        const isHidden = row.classList.contains('hidden');
-        if (isHidden) {
-          row.classList.remove('hidden');
+      if (targetRow) {
+        if (targetRow.classList.contains('hidden')) {
+          targetRow.classList.remove('hidden');
           if (icon) icon.style.transform = 'rotate(180deg)';
         } else {
-          row.classList.add('hidden');
+          targetRow.classList.add('hidden');
           if (icon) icon.style.transform = 'rotate(0deg)';
         }
       }
     }
+
+    // Toggle Hotline Dropdown
+    function toggleHotlineDropdown(event) {
+      event.stopPropagation();
+      const searchDropdown = document.getElementById('searchDropdown');
+      if (searchDropdown) searchDropdown.classList.add('hidden');
+      
+      const hotlineDropdown = document.getElementById('hotlineDropdown');
+      if (hotlineDropdown) hotlineDropdown.classList.toggle('hidden');
+    }
+
+    // Toggle Tra cứu Dropdown
+    function toggleSearchDropdown(event) {
+      event.stopPropagation();
+      const hotlineDropdown = document.getElementById('hotlineDropdown');
+      if (hotlineDropdown) hotlineDropdown.classList.add('hidden');
+
+      const searchDropdown = document.getElementById('searchDropdown');
+      if (searchDropdown) searchDropdown.classList.toggle('hidden');
+    }
+
+    // Đóng tất cả dropdowns
+    function closeDropdowns() {
+      const hotlineDropdown = document.getElementById('hotlineDropdown');
+      const searchDropdown = document.getElementById('searchDropdown');
+      if (hotlineDropdown) hotlineDropdown.classList.add('hidden');
+      if (searchDropdown) searchDropdown.classList.add('hidden');
+    }
+
+    // Xử lý Tra cứu
+    function handleSearch(event) {
+      event.preventDefault();
+      const inputVal = document.getElementById('searchInput').value.trim();
+      const resultDiv = document.getElementById('searchResult');
+      
+      if (!inputVal) return;
+
+      resultDiv.classList.remove('hidden');
+      resultDiv.innerHTML = `
+        <div class="p-3 bg-blue-50 border border-blue-200 rounded-lg text-xs space-y-1">
+          <p class="font-bold text-blue-900">🔍 Kết quả tra cứu cho: "${inputVal}"</p>
+          <p class="text-slate-600">Họ tên: Nguyễn Văn A</p>
+          <p class="text-slate-600">Số báo danh: <span class="font-bold text-blue-700">TK-102</span></p>
+          <p class="text-slate-600">Sàn thi đấu: <span class="font-bold text-emerald-700">Sàn 02 - Tầng 4</span></p>
+          <p class="text-slate-600">Khung giờ thi: 08:45 - 09:30</p>
+        </div>
+      `;
+    }
+
+    // Đóng dropdown khi click bên ngoài
+    document.addEventListener('click', function(e) {
+      const hotlineDropdown = document.getElementById('hotlineDropdown');
+      const searchDropdown = document.getElementById('searchDropdown');
+      
+      if (hotlineDropdown && !hotlineDropdown.contains(e.target)) {
+        hotlineDropdown.classList.add('hidden');
+      }
+      if (searchDropdown && !searchDropdown.contains(e.target)) {
+        searchDropdown.classList.add('hidden');
+      }
+    });
   </script>
 
 </body>
