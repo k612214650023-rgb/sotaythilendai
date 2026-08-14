@@ -94,7 +94,7 @@
     }
     .img-slot {
       width: 100%;
-      height: 120px;
+      min-height: 140px;
       border-radius: 12px;
       margin-bottom: 12px;
       background: repeating-linear-gradient(45deg, #dbe4f5, #dbe4f5 10px, #e8eef8 10px, #e8eef8 20px);
@@ -105,6 +105,8 @@
       font-size: 12px;
       font-weight: 600;
       border: 1.5px dashed #b7c4e0;
+      padding: 12px;
+      text-align: center;
     }
 
     /* Pattern trang trí Thiệp cảm ơn */
@@ -129,16 +131,14 @@
       .text-\[11px\] { font-size: 13px !important; }
       .route-label, .step-label { font-size: 13px; }
       .step-icon { width: 30px; height: 30px; font-size: 14px; }
-      .img-slot { height: 200px; }
     }
     @media (min-width: 1024px) {
       .text-\[9px\]  { font-size: 12px !important; }
       .text-\[10px\] { font-size: 13px !important; }
       .text-\[11px\] { font-size: 13px !important; }
-      .img-slot { height: 260px; }
     }
 
-    /* Vùng bấm của thanh điều hướng dưới: tối thiểu 48px cho ngón tay. */
+    /* Vùng bấm của thanh điều hướng dưới: tối thiểu 48px cho ngón tay */
     .nav-btn { min-height: 48px; justify-content: center; }
   </style>
 </head>
@@ -197,19 +197,19 @@
         <ul class="space-y-1.5 text-xs">
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Hapulico:</span>
-            <a href="tel:0347954345" class="font-bold text-blue-700">0978 931 747</a>
+            <a href="tel:0978931747" class="font-bold text-blue-700">0978 931 747</a>
           </li>
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Green Stars:</span>
-            <a href="tel:0347954345" class="font-bold text-blue-700">0888 625 995</a>
+            <a href="tel:0888625995" class="font-bold text-blue-700">0888 625 995</a>
           </li>
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Nghĩa Đô:</span>
-            <a href="tel:0347954345" class="font-bold text-blue-700">0936 401 333</a>
+            <a href="tel:0936401333" class="font-bold text-blue-700">0936 401 333</a>
           </li>
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Long Biên:</span>
-            <a href="tel:0347954345" class="font-bold text-blue-700">0566 238 333</a>
+            <a href="tel:0566238333" class="font-bold text-blue-700">0566 238 333</a>
           </li>
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Hà Đông:</span>
@@ -266,6 +266,7 @@
             </button>
           </div>
 
+          <!-- SUBTAB: ĐỊA ĐIỂM & LẠI DI CHUYỂN -->
           <div id="sub-tab-location" class="space-y-4 fade-in">
             <div class="bg-slate-50 p-3.5 rounded-xl text-xs space-y-3">
               <div class="flex items-start gap-1.5 text-slate-700 leading-snug">
@@ -292,10 +293,19 @@
 
             <div class="pt-2">
               <p class="font-bold text-slate-900 text-xs mb-2 flex items-center gap-1.5">
-                <span>🧭</span> Luồng di chuyển
+                <span>🧭</span> Luồng di chuyển & Sổ tay hướng dẫn
               </p>
 
-              <div class="img-slot">📍 Ảnh sơ đồ / bản đồ chỉ đường</div>
+              <!-- HIỂN THỊ TÀI LIỆU/ẢNH HƯỚNG DẪN DI CHUYỂN -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 shadow-sm mb-3 bg-white">
+                <img 
+                  src="(Bản mới) Sổ tay hướng dẫn Kỳ thi thăng cấp đai năm 2026-pages.pdf" 
+                  alt="(Bản mới) Sổ tay hướng dẫn Kỳ thi thăng cấp đai năm 2026" 
+                  class="w-full h-auto object-cover max-h-[450px]"
+                  loading="lazy"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'img-slot\'>📄 (Bản mới) Sổ tay hướng dẫn Kỳ thi thăng cấp đai năm 2026-pages.pdf</div>';"
+                />
+              </div>
 
               <div class="route-row drive">
                 <div class="route-label drive">🚗 Nếu đi xe</div>
@@ -339,13 +349,21 @@
             </div>
           </div>
 
+          <!-- SUBTAB: SƠ ĐỒ & TIỆN ÍCH -->
           <div id="sub-tab-map" class="hidden space-y-4 fade-in">
             <div>
               <h3 class="font-bold text-slate-800 text-xs mb-2 flex items-center gap-1">
                 <i data-lucide="layout" class="w-4 h-4 text-blue-600"></i> Sơ đồ Nhà thi đấu Tầng 4
               </h3>
-              <div class="rounded-lg overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center min-h-[200px]">
-                <img src="https://placehold.co/600x400/e2e8f0/1e293b?text=So+Do+Nha+Thi+Dau+Tang+4" alt="Sơ đồ Nhà thi đấu Tầng 4" class="w-full h-auto object-cover" />
+              <!-- HIỂN THỊ SƠ ĐỒ NHÀ THI ĐẤU -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center shadow-sm">
+                <img 
+                  src="sơ đồ.png" 
+                  alt="Sơ đồ Nhà thi đấu Tầng 4" 
+                  class="w-full h-auto object-cover max-h-[500px]" 
+                  loading="lazy"
+                  onerror="this.onerror=null; this.parentElement.innerHTML='<div class=\'p-8 text-center text-xs text-slate-500 font-semibold\'>🖼️ Ảnh sơ đồ.png</div>';"
+                />
               </div>
             </div>
 
@@ -582,9 +600,7 @@
         </div>
       </div>
 
-      <!-- ========================================== -->
-      <!-- TAB 3: HOẠT ĐỘNG (ĐÃ NÂNG CẤP THANH TRƯỜNG SLIDER SUBTABS) -->
-      <!-- ========================================== -->
+      <!-- TAB 3: HOẠT ĐỘNG (THANH TRƯỢT SLIDER SUBTABS) -->
       <div id="tab-activities" class="tab-content space-y-4">
         
         <!-- Banner Tiêu đề -->
@@ -598,34 +614,29 @@
           </p>
         </div>
 
-        <!-- THANH TRƯỢT SẢN PHẨM / SUBTAB CÁC HOẠT ĐỘNG (SLIDER PILLS) -->
+        <!-- THANH TRƯỢT SLIDER SUBTAB -->
         <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
           
-          <!-- Pill 1: Ảnh võ sinh -->
           <button id="btn-act-1" onclick="switchActivitySubTab(1)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
             <span class="text-sm">📸</span>
             <span>Ảnh võ sinh</span>
           </button>
 
-          <!-- Pill 2: Hoạt động trải nghiệm -->
           <button id="btn-act-2" onclick="switchActivitySubTab(2)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🎯</span>
             <span>Hoạt động trải nghiệm</span>
           </button>
 
-          <!-- Pill 3: Photobooth -->
           <button id="btn-act-3" onclick="switchActivitySubTab(3)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🖨️</span>
             <span>Photobooth</span>
           </button>
 
-          <!-- Pill 4: Phân tích thể trạng -->
           <button id="btn-act-4" onclick="switchActivitySubTab(4)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">📊</span>
             <span>Phân tích thể trạng</span>
           </button>
 
-          <!-- Pill 5: Đo mật độ xương -->
           <button id="btn-act-5" onclick="switchActivitySubTab(5)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🦴</span>
             <span>Đo mật độ xương</span>
@@ -636,7 +647,7 @@
         <!-- NỘI DUNG CÁC SUBTAB HOẠT ĐỘNG -->
         <div id="activity-subtab-container">
 
-          <!-- SUBTAB HOẠT ĐỘNG 1: ẢNH VÕ SINH -->
+          <!-- SUBTAB 1: ẢNH VÕ SINH -->
           <div id="sub-act-1" class="fade-in bg-white p-4 rounded-2xl shadow-sm border border-blue-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 uppercase tracking-wider">
@@ -667,7 +678,7 @@
 
             <div class="pt-1">
               <a 
-                href="https://drive.google.com/drive/u/0/mobile/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID" 
+                href="https://drive.google.com/drive/folders/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-md transition active:scale-95 group"
@@ -679,14 +690,14 @@
             </div>
           </div>
 
-          <!-- SUBTAB HOẠT ĐỘNG 2: HOẠT ĐỘNG TRẢI NGHIỆM -->
+          <!-- SUBTAB 2: HOẠT ĐỘNG TRẢI NGHIỆM -->
           <div id="sub-act-2" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-amber-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-900 uppercase tracking-wider">
                 <i data-lucide="trophy" class="w-3 h-3"></i> Hoạt động 2
               </span>
               <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
-                🎁 Qùa tặng cực hấp dẫn
+                🎁 Quà tặng cực hấp dẫn
               </span>
             </div>
 
@@ -712,7 +723,7 @@
                 <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
                   <span class="text-base mb-0.5">⚡</span>
                   <span class="font-bold text-slate-800 text-[10px]">2. Vượt mốc</span>
-                  <span class="text-[9px] text-slate-500">Hoàn thành tất cả thử thách</span>
+                  <span class="text-[9px] text-slate-500">Hoàn thành thử thách</span>
                 </div>
                 <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
                   <span class="text-base mb-0.5">🎁</span>
@@ -724,11 +735,11 @@
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span><strong>Địa điểm:</strong> Khu vực ban công Nhà thi đấu Tầng 4: Khu vực Hoạt động trải nghiệm </span>
+              <span><strong>Địa điểm:</strong> Khu vực ban công Nhà thi đấu Tầng 4: Khu vực Hoạt động trải nghiệm</span>
             </div>
           </div>
 
-          <!-- SUBTAB HOẠT ĐỘNG 3: PHOTOBOOTH -->
+          <!-- SUBTAB 3: PHOTOBOOTH -->
           <div id="sub-act-3" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-purple-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-800 uppercase tracking-wider">
@@ -776,7 +787,7 @@
             </div>
           </div>
 
-          <!-- SUBTAB HOẠT ĐỘNG 4: PHÂN TÍCH THỂ TRẠNG (MIDU PART 1) -->
+          <!-- SUBTAB 4: PHÂN TÍCH THỂ TRẠNG -->
           <div id="sub-act-4" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-fuchsia-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-fuchsia-100 text-fuchsia-800 uppercase tracking-wider">
@@ -823,18 +834,18 @@
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span>Khu vực Gian hàng đối tác Midu: Khu vực ban công Nhà thi đấu Tầng 4 </span>
+              <span>Khu vực Gian hàng đối tác Midu: Khu vực ban công Nhà thi đấu Tầng 4</span>
             </div>
           </div>
 
-          <!-- SUBTAB HOẠT ĐỘNG 5: ĐO MẬT ĐỘ XƯƠNG (MIDU PART 2) -->
+          <!-- SUBTAB 5: ĐO MẬT ĐỘ XƯƠNG -->
           <div id="sub-act-5" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider">
                 <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Bố Mẹ
               </span>
               <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
-                🎁 ĐO TẦM SOÁT TẠI CHỖ
+                🎁 ĐO TẦM SOÁT TẠI CHỐ
               </span>
             </div>
 
@@ -1336,9 +1347,7 @@
       }
     }
 
-    /* ========================================== */
-    /* HAM XUL Y CHUYEN SUBTAB TRONG MUC HOAT DONG */
-    /* ========================================== */
+    /* CHUYỂN SUBTAB TRONG MỤC HOẠT ĐỘNG */
     const activityThemes = {
       1: "bg-blue-600 text-white border-blue-600 font-bold shadow-md",
       2: "bg-amber-500 text-white border-amber-500 font-bold shadow-md",
