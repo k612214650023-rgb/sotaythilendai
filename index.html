@@ -111,6 +111,15 @@
       background-position: 0 0, 15px 15px;
     }
 
+    /* Utilitiy ẩn thanh cuộn nhưng vẫn cuộn được */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
     @media (max-width: 380px) {
       .route-row { gap: 6px 8px; }
       .route-label { font-size: 11px; }
@@ -735,7 +744,7 @@
 
       </div>
 
-      <!-- TAB 3: HOẠT ĐỘNG -->
+      <!-- TAB 3: HOẠT ĐỘNG (ĐÃ TỐI ƯU CẤU TRÚC GIAO DIỆN KHUÔN ĐỒNG NHẤT) -->
       <div id="tab-activities" class="tab-content space-y-4">
         
         <!-- Banner Tiêu đề -->
@@ -749,37 +758,67 @@
           </p>
         </div>
 
+        <!-- B. OVERVIEW STRIP: THANH CHIP NGANG CUỘN NHANH ĐẾN TỪNG CARD -->
+        <div class="flex items-center gap-2 overflow-x-auto pb-1 no-scrollbar text-xs">
+          <a href="#act-1" onclick="document.getElementById('act-1').scrollIntoView({behavior: 'smooth'}); return false;" class="inline-flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm text-slate-700 hover:border-blue-500 hover:text-blue-700 font-semibold transition shrink-0">
+            <span>📸</span> Album Ảnh
+          </a>
+          <a href="#act-2" onclick="document.getElementById('act-2').scrollIntoView({behavior: 'smooth'}); return false;" class="inline-flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm text-slate-700 hover:border-amber-500 hover:text-amber-700 font-semibold transition shrink-0">
+            <span>🎯</span> Trải nghiệm PH
+          </a>
+          <a href="#act-3" onclick="document.getElementById('act-3').scrollIntoView({behavior: 'smooth'}); return false;" class="inline-flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm text-slate-700 hover:border-purple-500 hover:text-purple-700 font-semibold transition shrink-0">
+            <span>🖨️</span> Photobooth
+          </a>
+          <a href="#act-4a" onclick="document.getElementById('act-4a').scrollIntoView({behavior: 'smooth'}); return false;" class="inline-flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm text-slate-700 hover:border-blue-500 hover:text-blue-700 font-semibold transition shrink-0">
+            <span>📊</span> Thể trạng Võ sinh
+          </a>
+          <a href="#act-4b" onclick="document.getElementById('act-4b').scrollIntoView({behavior: 'smooth'}); return false;" class="inline-flex items-center gap-1.5 bg-white border border-slate-200 px-3 py-1.5 rounded-full whitespace-nowrap shadow-sm text-slate-700 hover:border-indigo-500 hover:text-indigo-700 font-semibold transition shrink-0">
+            <span>🦴</span> Mật độ xương PH
+          </a>
+        </div>
+
         <!-- HOẠT ĐỘNG 1: ALBUM ẢNH GOOGLE DRIVE -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 hover:border-blue-300 transition-all space-y-3">
-          <div class="flex justify-between items-start gap-2">
+        <div id="act-1" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <!-- 1. [Badge trạng thái] [Số thứ tự hoạt động] -->
+          <div class="flex justify-between items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              <i data-lucide="check-circle" class="w-3 h-3"></i> Miễn phí
+            </span>
             <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 uppercase tracking-wider">
               <i data-lucide="camera" class="w-3 h-3"></i> Hoạt động 1
             </span>
-            <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">Cập nhật liên tục</span>
           </div>
 
-          <div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug">
-              Album Ảnh Võ Sinh Kỳ Thi Thăng Cấp Đai Lần Thứ II - Năm 2026
-            </h3>
-            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-              Toàn bộ khoảnh khắc thi đấu hào hùng, niềm vui nhận đai và kỷ niệm đẹp của các con được Ban tổ chức lưu lại trọn vẹn với chất lượng sắc nét.
-            </p>
-          </div>
+          <!-- 2. Tiêu đề hoạt động -->
+          <h3 class="font-bold text-slate-900 text-sm md:text-base leading-snug">
+            Album Ảnh Võ Sinh Kỳ Thi Thăng Cấp Đai Lần Thứ II - 2026
+          </h3>
 
-          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-[11px] text-slate-700">
-            <div class="flex items-center gap-1.5">
-              <span class="text-emerald-600 font-bold">✓</span>
-              <span>Ảnh gốc độ phân giải cao, tải xuống hoàn toàn <strong>miễn phí</strong>.</span>
+          <!-- 3. Mô tả ngắn (1-2 câu) -->
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Toàn bộ khoảnh khắc thi đấu hào hùng và niềm vui nhận đai của các con được Ban tổ chức lưu lại trọn vẹn với chất lượng sắc nét.
+          </p>
+
+          <!-- 4. [Danh sách checklist — luôn dùng ✓, tối đa 3 dòng] -->
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-xs text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Ảnh gốc độ phân giải cao, tải xuống hoàn toàn miễn phí.</span>
             </div>
-            <div class="flex items-center gap-1.5">
-              <span class="text-emerald-600 font-bold">✓</span>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
               <span>Được phân loại gọn gàng theo từng Ca thi và Sàn thi.</span>
             </div>
           </div>
 
-          <!-- Nút Truy Cập Google Drive -->
-          <div class="pt-1">
+          <!-- 5. 📍 Địa điểm -->
+          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+            <span><strong>Địa điểm:</strong> Trực tuyến trên Google Drive Ban Tổ Chức</span>
+          </div>
+
+          <!-- 6. [Nút CTA] -->
+          <div>
             <a 
               href="https://drive.google.com/drive/u/0/mobile/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID" 
               target="_blank" 
@@ -794,206 +833,174 @@
         </div>
 
         <!-- HOẠT ĐỘNG 2: TRẢI NGHIỆM PHỤ HUYNH -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 hover:border-amber-300 transition-all space-y-3">
-          <div class="flex justify-between items-start gap-2">
+        <div id="act-2" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <!-- 1. [Badge trạng thái] [Số thứ tự hoạt động] -->
+          <div class="flex justify-between items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+              <i data-lucide="gift" class="w-3 h-3"></i> Có quà tặng
+            </span>
             <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-amber-100 text-amber-900 uppercase tracking-wider">
               <i data-lucide="trophy" class="w-3 h-3"></i> Hoạt động 2
             </span>
-            <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
-              🎁 Có quà tặng mang về
-            </span>
           </div>
 
-          <div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug">
-              Hoạt Động Trải Nghiệm Dành Cho Phụ Huynh
-            </h3>
-            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-              Cơ hội tuyệt vời để Quý phụ huynh trực tiếp "nhập cuộc", đồng hành và trải nghiệm những thử thách Taekwondo thú vị cùng con yêu!
-            </p>
-          </div>
+          <!-- 2. Tiêu đề hoạt động -->
+          <h3 class="font-bold text-slate-900 text-sm md:text-base leading-snug">
+            Hoạt Động Trải Nghiệm Dành Cho Phụ Huynh
+          </h3>
 
-          <!-- Quy trình 3 bước tham gia -->
-          <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 space-y-2">
-            <span class="text-[11px] font-extrabold text-amber-950 uppercase tracking-wider block">
-              Thử thách & Nhận quà:
-            </span>
-            <div class="grid grid-cols-3 gap-1.5 text-center text-[11px]">
-              <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                <span class="text-base mb-0.5">🎯</span>
-                <span class="font-bold text-slate-800 text-[10px]">1. Tham gia</span>
-                <span class="text-[9px] text-slate-500">Thử thách thể lực & võ thuật</span>
-              </div>
-              <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                <span class="text-base mb-0.5">⚡</span>
-                <span class="font-bold text-slate-800 text-[10px]">2. Vượt mốc</span>
-                <span class="text-[9px] text-slate-500">Hoàn thành bài test ngắn</span>
-              </div>
-              <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                <span class="text-base mb-0.5">🎁</span>
-                <span class="font-bold text-slate-800 text-[10px]">3. Nhận quà</span>
-                <span class="text-[9px] text-slate-500">Quà lưu niệm độc quyền</span>
-              </div>
+          <!-- 3. Mô tả ngắn (1-2 câu) -->
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Cơ hội tuyệt vời để Quý phụ huynh trực tiếp thử sức, đồng hành và trải nghiệm các thử thách Taekwondo thú vị cùng con yêu!
+          </p>
+
+          <!-- 4. [Danh sách checklist — luôn dùng ✓, tối đa 3 dòng] -->
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-xs text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Thử thách thể lực và kỹ thuật võ thuật cơ bản.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Hoàn thành bài test ngắn để nhận quà tặng lưu niệm độc quyền.</span>
             </div>
           </div>
 
-          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg">
+          <!-- 5. 📍 Địa điểm -->
+          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
             <span><strong>Địa điểm:</strong> Gian hàng Trải nghiệm - Sảnh Tầng 4 (Cung Thiếu nhi)</span>
           </div>
         </div>
 
         <!-- HOẠT ĐỘNG 3: PHOTOBOOTH CHỤP & IN ẢNH -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 hover:border-purple-300 transition-all space-y-3">
-          <div class="flex justify-between items-start gap-2">
+        <div id="act-3" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <!-- 1. [Badge trạng thái] [Số thứ tự hoạt động] -->
+          <div class="flex justify-between items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              <i data-lucide="check-circle" class="w-3 h-3"></i> Miễn phí
+            </span>
             <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-800 uppercase tracking-wider">
-              <i data-lucide="sparkles" class="w-3 h-3"></i> Hoạt động Photobooth
-            </span>
-            <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200/60">
-              📸 Lấy ảnh ngay
+              <i data-lucide="sparkles" class="w-3 h-3"></i> Hoạt động 3
             </span>
           </div>
 
-          <div>
-            <h3 class="font-bold text-slate-900 text-sm leading-snug">
-              Chụp Ảnh Photobooth & Nhận Ảnh Trực Tiếp Mang Về
-            </h3>
-            <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
-              Ghi lại khoảnh khắc gia đình rạng rỡ bên khung hình Photobooth độc quyền Kỳ thi Thăng cấp đai 2026 và nhận bản in ảnh kỷ niệm mang về ngay tại chỗ.
-            </p>
-          </div>
+          <!-- 2. Tiêu đề hoạt động -->
+          <h3 class="font-bold text-slate-900 text-sm md:text-base leading-snug">
+            Chụp Ảnh Photobooth Kỷ Niệm
+          </h3>
 
-          <div class="grid grid-cols-2 gap-2 text-xs">
-            <div class="bg-purple-50/60 p-2.5 rounded-xl border border-purple-100 flex items-center gap-2">
-              <div class="w-8 h-8 rounded-lg bg-purple-200/80 flex items-center justify-center text-purple-800 font-bold shrink-0">
-                🖨️
-              </div>
-              <div>
-                <span class="font-bold text-slate-900 block text-[11px]">In ấn siêu tốc</span>
-                <span class="text-[10px] text-slate-500">Chỉ 1-2 phút nhận ảnh</span>
-              </div>
+          <!-- 3. Mô tả ngắn (1-2 câu) -->
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Ghi lại khoảnh khắc gia đình rạng rỡ bên khung hình Photobooth độc quyền Kỳ thi Thăng cấp đai 2026.
+          </p>
+
+          <!-- 4. [Danh sách checklist — luôn dùng ✓, tối đa 3 dòng] -->
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-xs text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>In ấn siêu tốc, nhận bản in ảnh trực tiếp trong 1-2 phút.</span>
             </div>
-
-            <div class="bg-purple-50/60 p-2.5 rounded-xl border border-purple-100 flex items-center gap-2">
-              <div class="w-8 h-8 rounded-lg bg-purple-200/80 flex items-center justify-center text-purple-800 font-bold shrink-0">
-                ✨
-              </div>
-              <div>
-                <span class="font-bold text-slate-900 block text-[11px]">Khung ảnh độc quyền</span>
-                <span class="text-[10px] text-slate-500">Thiết kế Taekwondo 2026</span>
-              </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Khung ảnh được thiết kế độc quyền cho Kỳ thi năm 2026.</span>
             </div>
           </div>
 
-          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg">
+          <!-- 5. 📍 Địa điểm -->
+          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-            <span><strong>Vị trí:</strong> Sảnh Tầng 4 - Cung Thiếu nhi Hà Nội (Ngay lối vào Sàn thi)</span>
+            <span><strong>Địa điểm:</strong> Sảnh Tầng 4 - Cung Thiếu nhi Hà Nội (Ngay lối vào Sàn thi)</span>
           </div>
         </div>
 
-        <!-- HOẠT ĐỘNG 4: MỤC BỔ SUNG QUÀ TẶNG MIDU (ĐẶT NGAY SAU PHOTOBOOTH) -->
-        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 hover:border-emerald-300 transition-all space-y-3">
-          <div class="flex justify-between items-start gap-2">
-            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider">
-              <i data-lucide="gift" class="w-3 h-3"></i> Hoạt động 4
+        <!-- HOẠT ĐỘNG 4A: BẢN PHÂN TÍCH THỂ TRẠNG MIDU (CHO VÕ SINH) -->
+        <div id="act-4a" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <!-- 1. [Badge trạng thái] [Số thứ tự hoạt động] -->
+          <div class="flex justify-between items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-amber-800 bg-amber-50 px-2.5 py-1 rounded-full border border-amber-200">
+              <i data-lucide="gift" class="w-3 h-3"></i> Có quà tặng
             </span>
-            <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
-              🎁 Quà tặng 0đ tại sự kiện
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-900 uppercase tracking-wider">
+              <i data-lucide="user-check" class="w-3 h-3"></i> Hoạt động 4A
             </span>
           </div>
 
-          <div>
-            <div class="inline-block bg-pink-100 text-pink-700 text-[10px] font-bold px-2 py-0.5 rounded-full mb-1">
-              HAI PHẦN QUÀ CỦA NGÀY HỘI
+          <!-- 2. Tiêu đề hoạt động -->
+          <h3 class="font-bold text-slate-900 text-sm md:text-base leading-snug">
+            Bản Phân Tích Thể Trạng & Dự Đoán Chiều Cao (Cho Võ Sinh)
+          </h3>
+
+          <!-- 3. Mô tả ngắn (1-2 câu) -->
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Phân tích chính xác chỉ số phát triển thể chất và dự báo chiều cao tương lai của võ sinh theo tiêu chuẩn khoa học.
+          </p>
+
+          <!-- 4. [Danh sách checklist — luôn dùng ✓, tối đa 3 dòng] -->
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-xs text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Đánh giá mức Cao – Nặng thực tế so với chuẩn WHO.</span>
             </div>
-            <h3 class="font-black text-slate-900 text-sm md:text-base leading-snug text-blue-950">
-              Con lên đai, cả nhà cùng nhận quà
-            </h3>
-            <p class="text-xs text-slate-600 mt-1 leading-relaxed">
-              <strong>Không cần mua gì.</strong> Đăng ký trước để bàn MIDU chuẩn bị sẵn phần của gia đình, ngày 16/8 ghé lấy là xong.
-            </p>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Dự đoán chiều cao khi trưởng thành, đọc chi tiết từng năm.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Xác định yếu tố thiếu hụt & đề xuất giải pháp cho 6–12 tháng tới.</span>
+            </div>
           </div>
 
-          <!-- 2 Cụm quà: Cho võ sinh & Cho bố mẹ -->
-          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 pt-1">
-            
-            <!-- CARD 1: CHO VÕ SINH -->
-            <div class="bg-gradient-to-br from-fuchsia-700 via-purple-700 to-indigo-800 text-white p-3.5 rounded-xl shadow-sm space-y-2 relative overflow-hidden flex flex-col justify-between">
-              <div>
-                <div class="inline-block bg-yellow-400 text-purple-950 text-[10px] font-extrabold px-2 py-0.5 rounded-md uppercase tracking-wider mb-1.5">
-                  Cho Võ Sinh
-                </div>
-                <h4 class="font-extrabold text-xs md:text-sm text-yellow-300 leading-snug">
-                  Bản phân tích thể trạng & dự đoán chiều cao
-                </h4>
-                <p class="text-[10px] text-fuchsia-100 font-medium italic mt-0.5">
-                  Dành cho con đang theo học tại trung tâm
-                </p>
-                <p class="text-[11px] text-slate-100 mt-2 leading-relaxed">
-                  Bốn câu hỏi mà bố mẹ nào cũng từng thắc mắc, lần này trả lời bằng số thay vì bằng cảm giác:
-                </p>
-                <ul class="space-y-1.5 text-[11px] text-white mt-2">
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-yellow-300 font-bold shrink-0">✓</span>
-                    <span>Con đang <strong>cao – nặng</strong> ở mức nào so với chuẩn WHO.</span>
-                  </li>
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-yellow-300 font-bold shrink-0">✓</span>
-                    <span>Dự đoán <strong>chiều cao khi trưởng thành</strong>, đọc theo từng năm.</span>
-                  </li>
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-yellow-300 font-bold shrink-0">✓</span>
-                    <span>Con đang <strong>thiếu ở khâu nào</strong> và cần làm gì trong 6–12 tháng tới.</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-3 pt-2 border-t border-white/20 text-[10px] text-fuchsia-100 leading-tight">
-                <span class="line-through text-fuchsia-200">Bản này bán 180.000đ</span> <br>
-                <strong class="text-yellow-300 text-xs">→ Hôm 16/8 MIỄN PHÍ cho võ sinh.</strong>
-              </div>
-            </div>
-
-            <!-- CARD 2: CHO BỐ MẸ -->
-            <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200/90 text-slate-800 space-y-2 flex flex-col justify-between">
-              <div>
-                <div class="inline-block bg-blue-100 text-blue-900 text-[10px] font-extrabold px-2 py-0.5 rounded-md uppercase tracking-wider mb-1.5">
-                  Cho Bố Mẹ
-                </div>
-                <h4 class="font-extrabold text-xs md:text-sm text-blue-950 leading-snug">
-                  Gói đo mật độ xương tại chỗ
-                </h4>
-                <p class="text-[10px] text-red-600 font-medium italic mt-0.5">
-                  Dành cho phụ huynh đưa con đi thi
-                </p>
-                <p class="text-[11px] text-slate-600 mt-2 leading-relaxed">
-                  Con đang xây xương, bố mẹ thì đang giữ xương. Mật độ xương đi xuống lặng lẽ, không đau, không báo trước:
-                </p>
-                <ul class="space-y-1.5 text-[11px] text-slate-700 mt-2">
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-emerald-600 font-bold shrink-0">✓</span>
-                    <span><strong>Đo ngay tại sự kiện</strong>, có phiếu kết quả mang về.</span>
-                  </li>
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-emerald-600 font-bold shrink-0">✓</span>
-                    <span>Sàng lọc sớm <strong>nguy cơ loãng xương</strong> cho bố mẹ và ông bà.</span>
-                  </li>
-                  <li class="flex items-start gap-1.5">
-                    <span class="text-emerald-600 font-bold shrink-0">✓</span>
-                    <span>Chuyên viên <strong>đọc chỉ số cùng bố mẹ</strong>, không chỉ đưa tờ giấy.</span>
-                  </li>
-                </ul>
-              </div>
-              <div class="mt-3 pt-2 border-t border-slate-200 text-[10px] text-slate-600 leading-tight">
-                <strong class="text-emerald-700 text-xs">Miễn phí cho phụ huynh của trung tâm.</strong> <br>
-                <span>Đăng ký trước để giữ lượt, khỏi chờ.</span>
-              </div>
-            </div>
-
-          </div>
-
+          <!-- 5. 📍 Địa điểm -->
           <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
             <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-            <span><strong>Vị trí bàn MIDU:</strong> Sảnh Tầng 4 - Cung Thiếu nhi Hà Nội</span>
+            <span><strong>Địa điểm:</strong> Bàn MIDU - Sảnh Tầng 4 (Cung Thiếu nhi Hà Nội)</span>
+          </div>
+        </div>
+
+        <!-- HOẠT ĐỘNG 4B: ĐO MẬT ĐỘ XƯƠNG MIDU (CHO PHỤ HUYNH) -->
+        <div id="act-4b" class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <!-- 1. [Badge trạng thái] [Số thứ tự hoạt động] -->
+          <div class="flex justify-between items-center gap-2">
+            <span class="inline-flex items-center gap-1 text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full border border-emerald-200">
+              <i data-lucide="check-circle" class="w-3 h-3"></i> Miễn phí
+            </span>
+            <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-indigo-100 text-indigo-900 uppercase tracking-wider">
+              <i data-lucide="activity" class="w-3 h-3"></i> Hoạt động 4B
+            </span>
+          </div>
+
+          <!-- 2. Tiêu đề hoạt động -->
+          <h3 class="font-bold text-slate-900 text-sm md:text-base leading-snug">
+            Gói Đo Mật Độ Xương Tại Chỗ (Cho Phụ Huynh)
+          </h3>
+
+          <!-- 3. Mô tả ngắn (1-2 câu) -->
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Tầm soát sức khỏe xương khớp miễn phí cho phụ huynh đưa con đi thi, giúp phát hiện sớm nguy cơ loãng xương.
+          </p>
+
+          <!-- 4. [Danh sách checklist — luôn dùng ✓, tối đa 3 dòng] -->
+          <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-xs text-slate-700">
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Đo mật độ xương tại sự kiện và nhận phiếu kết quả mang về.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Sàng lọc sớm nguy cơ loãng xương cho phụ huynh và người thân.</span>
+            </div>
+            <div class="flex items-start gap-1.5">
+              <span class="text-emerald-600 font-bold shrink-0">✓</span>
+              <span>Chuyên viên trực tiếp tư vấn và đọc chỉ số chi tiết.</span>
+            </div>
+          </div>
+
+          <!-- 5. 📍 Địa điểm -->
+          <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+            <span><strong>Địa điểm:</strong> Bàn MIDU - Sảnh Tầng 4 (Cung Thiếu nhi Hà Nội)</span>
           </div>
         </div>
 
