@@ -34,6 +34,7 @@
     .route-row {
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
       gap: 8px 12px;
       padding: 10px 0;
@@ -56,6 +57,7 @@
     .flow {
       display: flex;
       align-items: center;
+      justify-content: center;
       flex-wrap: wrap;
       row-gap: 6px;
       flex: 1 1 auto;
@@ -239,19 +241,22 @@
       <!-- TAB 1: SƠ ĐỒ & DI CHUYỂN -->
       <div id="tab-location" class="tab-content active space-y-4">
         
-        <div class="bg-white p-4 rounded-xl shadow-sm space-y-4">
+        <!-- THANH TRƯỢT SUBTABS SƠ ĐỒ -->
+        <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
+          <button id="btn-sub-location" onclick="switchLocationSubTab('location')" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
+            <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+            <span>Địa điểm & Di chuyển</span>
+          </button>
+          <button id="btn-sub-map" onclick="switchLocationSubTab('map')" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+            <i data-lucide="layout" class="w-3.5 h-3.5"></i>
+            <span>Sơ đồ & Tiện ích</span>
+          </button>
+        </div>
 
-          <div class="flex gap-2 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
-            <button id="btn-sub-location" onclick="switchSubTab('location')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold">
-              Địa điểm<br>Cách thức di chuyển
-            </button>
-            <button id="btn-sub-map" onclick="switchSubTab('map')" class="flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium">
-              Sơ đồ & Tiện ích<br>Nhà thi đấu
-            </button>
-          </div>
+        <div class="bg-white p-4 rounded-xl shadow-sm space-y-4 border border-slate-200">
 
           <div id="sub-tab-location" class="space-y-4 fade-in">
-            <div class="bg-slate-50 p-3.5 rounded-xl text-xs space-y-3">
+            <div class="text-xs space-y-3">
               <div class="flex items-start gap-1.5 text-slate-700 leading-snug">
                 <div class="flex items-center gap-1 font-bold text-slate-900 shrink-0">
                   <i data-lucide="map-pin" class="text-red-600 w-4 h-4 shrink-0"></i>
@@ -274,9 +279,9 @@
               </div>
             </div>
 
-            <div class="pt-2">
+            <div class="pt-2 border-t border-slate-100 mt-3">
               <p class="font-bold text-slate-900 text-xs mb-2 flex items-center gap-1.5">
-                <span>🧭</span> Luồng di chuyển
+                <i data-lucide="route" class="text-blue-600 w-4 h-4 shrink-0"></i> Luồng di chuyển
               </p>
 
               <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-3 shadow-sm">
@@ -284,8 +289,8 @@
               </div>
 
               <div class="route-row drive">
-                <div class="route-label drive">🚗 Nếu đi xe</div>
-                <div class="flow">
+                <div class="route-label drive w-full justify-center mb-1">🚗 Nếu đi xe</div>
+                <div class="flow w-full">
                   <div class="step">
                     <div class="step-icon">🅿️</div>
                     <div class="step-label">Hầm gửi xe</div>
@@ -304,8 +309,8 @@
               </div>
 
               <div class="route-row walk">
-                <div class="route-label walk">🚶 Nếu đi bộ</div>
-                <div class="flow">
+                <div class="route-label walk w-full justify-center mb-1">🚶 Nếu đi bộ</div>
+                <div class="flow w-full">
                   <div class="step">
                     <div class="step-icon">🚪</div>
                     <div class="step-label">Sảnh Tòa B1</div>
@@ -349,7 +354,6 @@
                 <div class="bg-blue-50 p-2.5 rounded-lg border border-blue-100 flex flex-col items-center justify-center gap-1">
                   <i data-lucide="glass-water" class="text-blue-600 w-5 h-5 shrink-0"></i>
                   <span class="font-bold text-blue-950 text-xs leading-tight">Cấp nước</span>
-                  <span class="text-xs text-slate-500 leading-tight">2 góc sân</span>
                 </div>
 
                 <div class="bg-purple-50 p-2.5 rounded-lg border border-purple-100 flex flex-col items-center justify-center gap-1">
@@ -366,28 +370,27 @@
 
       <!-- TAB 2: LỊCH TRÌNH & BẢNG TIẾN ĐỘ -->
       <div id="tab-timeline" class="tab-content space-y-4">
+        
+        <!-- THANH TRƯỢT SUBTABS LỊCH TRÌNH -->
+        <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
+          <button id="btn-sub-sched" onclick="switchTimelineSubTab('sched')" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
+            <i data-lucide="clock" class="w-3.5 h-3.5"></i>
+            <span>Khung thời gian</span>
+          </button>
+          <button id="btn-sub-rules" onclick="switchTimelineSubTab('rules')" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+            <i data-lucide="check-circle" class="w-3.5 h-3.5"></i>
+            <span>Dặn dò</span>
+          </button>
+          <button id="btn-sub-belts" onclick="switchTimelineSubTab('belts')" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+            <i data-lucide="award" class="w-3.5 h-3.5"></i>
+            <span>Quy định cấp đai</span>
+          </button>
+        </div>
+
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
-          
-          <!-- SUBTABS LỊCH TRÌNH -->
-          <div class="flex gap-1.5 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
-            <button id="btn-sub-sched" onclick="switchTimelineSubTab('sched')" class="flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold">
-              Khung thời gian<br>Kỳ thi
-            </button>
-            <button id="btn-sub-rules" onclick="switchTimelineSubTab('rules')" class="flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium">
-              Dặn dò<br>trước kỳ thi
-            </button>
-            <button id="btn-sub-belts" onclick="switchTimelineSubTab('belts')" class="flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium">
-              Quy định<br>cấp đai
-            </button>
-          </div>
 
           <!-- SUBTAB 1: KHUNG THỜI GIAN KỲ THI -->
           <div id="sub-tab-timeline-sched" class="fade-in space-y-4">
-            <h2 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-2 border-b border-slate-100 pb-2">
-              <i data-lucide="clock" class="w-4 h-4 text-slate-500 shrink-0"></i>
-              <span>Khung thời gian Kỳ thi (16/08/2026)</span>
-            </h2>
-
             <div class="relative pl-6 space-y-4 before:absolute before:left-[7px] before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-200">
               
               <!-- CARD 1: CHECK-IN & TẬP KẾT -->
@@ -497,7 +500,7 @@
                     </div>
 
                     <div class="relative flex items-start gap-2.5">
-                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-amber-600 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">2</div>
+                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-orange-500 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">2</div>
                       <div class="w-full">
                         <h4 class="font-bold text-slate-900 text-xs">Trao đai & Chụp ảnh</h4>
                         <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Võ sinh thi đạt sẽ di chuyển qua khu vực trao đai, nhận đai mới và chụp ảnh kỷ niệm.</p>
@@ -505,7 +508,7 @@
                     </div>
 
                     <div class="relative flex items-start gap-2.5">
-                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-amber-600 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">3</div>
+                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-yellow-500 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">3</div>
                       <div class="w-full">
                         <h4 class="font-bold text-slate-900 text-xs">Tham gia Hoạt động trải nghiệm</h4>
                         <p class="text-xs text-slate-600 mt-0.5 leading-relaxed">Phụ huynh và Võ sinh có thể tham gia các hoạt động trải nghiệm để nhận về những phần quà hấp dẫn.</p>
@@ -547,20 +550,17 @@
                     </div>
 
                     <div class="relative flex items-start gap-2.5">
-                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-purple-400 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">2</div>
+                      <div class="absolute -left-8 top-0.5 w-6 h-6 rounded-full bg-fuchsia-500 text-white font-bold text-xs flex items-center justify-center shrink-0 z-10 shadow-sm">2</div>
                       <div class="w-full">
-                        <p class="text-xs text-slate-400 italic leading-relaxed">
-                          Hẹn gặp lại ở Kỳ thi Thăng cấp đai tiếp theo của Taekwondo Kids.
-                        </p>
+                        <div class="mt-0.5">
+                          <button onclick="goToActivitySubTab(1)" class="inline-flex items-center gap-1.5 bg-purple-100/80 hover:bg-purple-200/80 text-purple-900 border border-purple-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
+                            <span>📸</span>
+                            <span>Xem & tải Ảnh Võ sinh tại đây</span>
+                          </button>
+                        </div>
                       </div>
                     </div>
 
-                    <div class="mt-2.5 pt-1">
-                      <button onclick="goToActivitySubTab(1)" class="inline-flex items-center gap-1.5 bg-purple-100/80 hover:bg-purple-200/80 text-purple-900 border border-purple-300/80 py-2 px-2.5 rounded-md font-bold text-xs transition-all active:scale-95 shadow-sm">
-                        <span>📸</span>
-                        <span>Xem & tải Ảnh Võ sinh tại đây</span>
-                      </button>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -570,59 +570,41 @@
 
           <!-- SUBTAB 2: DẶN DÒ TRƯỚC KỲ THI -->
           <div id="sub-tab-timeline-rules" class="hidden fade-in space-y-3">
-            <div class="flex items-center gap-2 border-b pb-2">
-              <span class="text-emerald-600 text-base font-bold">✅</span>
-              <h2 class="font-bold text-slate-900 text-xs md:text-sm">7 Điều Cần Nhớ Trước Kỳ Thi</h2>
-            </div>
             <div class="grid grid-cols-2 gap-2.5 sm:grid-cols-3">
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px]">
                 <div class="w-10 h-10 rounded-2xl bg-orange-50 flex items-center justify-center text-lg mb-2">🔥</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Tự tin, mạnh mẽ</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Giữ tinh thần tự tin, mạnh mẽ khi vào thi.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Tự tin, mạnh mẽ</h3>
               </div>
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px]">
                 <div class="w-10 h-10 rounded-2xl bg-red-50 flex items-center justify-center text-lg mb-2">🍚</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Ăn uống, nghỉ ngơi</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Ăn uống đầy đủ, đi ngủ sớm trước ngày thi.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Ăn uống, nghỉ ngơi</h3>
               </div>
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px]">
                 <div class="w-10 h-10 rounded-2xl bg-blue-50 flex items-center justify-center text-lg mb-2">⏰</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Đến sớm 30 phút</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Có mặt trước giờ thi ít nhất 30 phút.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Đến sớm 30 phút</h3>
               </div>
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px]">
                 <div class="w-10 h-10 rounded-2xl bg-emerald-50 flex items-center justify-center text-lg mb-2">💪</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Giữ gìn sức khỏe</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Bảo vệ sức khỏe thật tốt trước ngày thi.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Giữ gìn sức khỏe</h3>
               </div>
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm">
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px]">
                 <div class="w-10 h-10 rounded-2xl bg-purple-50 flex items-center justify-center text-lg mb-2">🥋</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Ôn luyện kỹ</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Ôn luyện kỹ các bài thi trước khi vào sân.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Ôn luyện kỹ</h3>
               </div>
-              <div class="bg-red-50/70 p-3 rounded-2xl border border-red-100 flex flex-col items-center text-center shadow-sm">
-                <div class="w-10 h-10 rounded-2xl bg-red-100 flex items-center justify-center text-lg mb-2 text-red-600">🚫</div>
-                <h3 class="font-bold text-red-700 text-xs mb-1">Không trang sức</h3>
-                <p class="text-[11px] text-red-600/80 leading-snug">Dây chuyền, nhẫn, đồng hồ... khi vào thi.</p>
-              </div>
-              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center text-center shadow-sm col-span-2 sm:col-span-1">
+              <!-- Đảo vị trí 2 card cuối: Trang phục lên trước, Không trang sức ra sau -->
+              <div class="bg-slate-50 p-3 rounded-2xl border border-slate-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px] col-span-2 sm:col-span-1">
                 <div class="w-10 h-10 rounded-2xl bg-cyan-50 flex items-center justify-center text-lg mb-2">🎽</div>
-                <h3 class="font-bold text-slate-900 text-xs mb-1">Trang phục & Bình nước</h3>
-                <p class="text-[11px] text-slate-500 leading-snug">Mặc võ phục sạch sẽ, mang bình nước ghi tên.</p>
+                <h3 class="font-bold text-slate-900 text-xs">Trang phục & Bình nước</h3>
+              </div>
+              <div class="bg-red-50/70 p-3 rounded-2xl border border-red-100 flex flex-col items-center justify-center text-center shadow-sm min-h-[80px] col-span-2 sm:col-span-1">
+                <div class="w-10 h-10 rounded-2xl bg-red-100 flex items-center justify-center text-lg mb-2 text-red-600">🚫</div>
+                <h3 class="font-bold text-red-700 text-xs">Không trang sức</h3>
               </div>
             </div>
           </div>
 
-          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI (ACCORDION & DỮ LIỆU TỐI ƯU UI/UX) -->
+          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI -->
           <div id="sub-tab-timeline-belts" class="hidden fade-in space-y-3">
-            <div class="flex items-center justify-between border-b pb-2">
-              <h2 class="font-bold text-slate-900 flex items-center gap-2 text-xs">
-                <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
-                <span>Quy Định Cấp Đai & Bài Thi Chi Tiết</span>
-              </h2>
-              <span class="text-[10px] text-slate-500 font-medium italic bg-slate-100 px-2 py-0.5 rounded-full">Chạm hàng để xem chi tiết</span>
-            </div>
-
             <div class="overflow-hidden rounded-xl border border-slate-200 text-xs shadow-sm bg-white">
               <table class="w-full text-left border-collapse">
                 <thead>
@@ -1203,40 +1185,42 @@
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-100 text-blue-800 uppercase tracking-wider">
                 <i data-lucide="camera" class="w-3 h-3"></i> Hoạt động 1
               </span>
-              <span class="text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-md">Cập nhật liên tục</span>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-50 text-blue-600 uppercase tracking-wider border border-blue-200/60">
+                Cập nhật liên tục
+              </span>
             </div>
 
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
+            <div class="bg-gradient-to-br from-blue-700 via-indigo-700 to-blue-800 text-white p-4 rounded-xl shadow-sm space-y-3">
+              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug text-center">
                 Album Ảnh Võ Sinh<br>Kỳ Thi Thăng Cấp Đai Lần Thứ II - Năm 2026
               </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p class="text-xs text-blue-100 mt-1.5 leading-relaxed text-center">
                 Toàn bộ khoảnh khắc thi đấu, niềm vui nhận đai và kỷ niệm đẹp của các con đều được Taekwondo Kids lưu lại trọn vẹn nhất.
               </p>
-            </div>
-
-            <div class="bg-slate-50 p-2.5 rounded-xl border border-slate-100 space-y-1 text-[11px] text-slate-700">
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-600 font-bold">✓</span>
-                <span>Đường link bên dưới sẽ dẫn đến album ảnh (bao gồm 5 album nhỏ) của Kỳ thi. 4 album tương ứng với 4 sàn thi và 1 album riêng dành cho khu vực chụp ảnh kỷ niệm.</span>
+              
+              <ul class="space-y-1.5 text-[11px] text-white mt-2">
+                <li class="flex items-start gap-1.5">
+                  <span class="text-yellow-300 font-bold shrink-0">✓</span>
+                  <span>Đường link bên dưới sẽ dẫn đến album ảnh (bao gồm 5 album nhỏ) của Kỳ thi. 4 album tương ứng với 4 sàn thi và 1 album riêng dành cho khu vực chụp ảnh kỷ niệm.</span>
+                </li>
+                <li class="flex items-start gap-1.5">
+                  <span class="text-yellow-300 font-bold shrink-0">✓</span>
+                  <span><strong>Lưu ý:</strong> Album Ảnh Võ sinh chỉ được lưu giữ đến Kỳ thi Thăng cấp đai tiếp theo!</span>
+                </li>
+              </ul>
+              
+              <div class="pt-2">
+                <a 
+                  href="https://drive.google.com/drive/folders/1YqfX9xnV5LbKA9oJq2zmy_bzlp6PDZyK?hl=vi" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  class="flex items-center justify-center gap-2 bg-yellow-400 hover:bg-yellow-500 text-blue-950 font-bold text-xs py-2.5 px-3 rounded-xl shadow-md transition active:scale-95 group"
+                >
+                  <i data-lucide="folder-git-2" class="w-4 h-4 text-blue-900"></i>
+                  <span>Truy cập Album Ảnh võ sinh tại đây</span>
+                  <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform"></i>
+                </a>
               </div>
-              <div class="flex items-center gap-1.5">
-                <span class="text-emerald-600 font-bold">✓</span>
-                <span>Album Ảnh Võ sinh chỉ được lưu giữ đến Kỳ thi Thăng cấp đai tiếp theo!</span>
-              </div>
-            </div>
-
-            <div class="pt-1">
-              <a 
-                href="https://drive.google.com/drive/u/0/mobile/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID" 
-                target="_blank" 
-                rel="noopener noreferrer" 
-                class="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-md transition active:scale-95 group"
-              >
-                <i data-lucide="folder-git-2" class="w-4 h-4 text-yellow-300"></i>
-                <span>Truy cập Album Ảnh võ sinh tại đây</span>
-                <i data-lucide="external-link" class="w-3.5 h-3.5 opacity-80 group-hover:translate-x-0.5 transition-transform"></i>
-              </a>
             </div>
           </div>
 
@@ -1251,34 +1235,34 @@
               </span>
             </div>
 
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
+            <div class="bg-gradient-to-br from-amber-600 via-orange-600 to-amber-700 text-white p-4 rounded-xl shadow-sm space-y-3">
+              <h3 class="font-extrabold text-sm md:text-base text-yellow-200 leading-snug text-center">
                 Hoạt Động Trải Nghiệm Dành Cho Gia đình
               </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p class="text-xs text-amber-50 mt-1.5 leading-relaxed text-center">
                 Cơ hội tuyệt vời để Quý phụ huynh trực tiếp "nhập cuộc" và trải nghiệm những thử thách Taekwondo thú vị cùng con yêu!
               </p>
-            </div>
 
-            <div class="bg-amber-50/60 p-3 rounded-xl border border-amber-100 space-y-2">
-              <span class="text-[11px] font-extrabold text-amber-950 uppercase tracking-wider block">
-                Tham gia thử thách & Rinh quà liền tay
-              </span>
-              <div class="grid grid-cols-3 gap-1.5 text-center text-[11px]">
-                <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                  <span class="text-base mb-0.5">🎯</span>
-                  <span class="font-bold text-slate-800 text-[10px]">1. Tham gia</span>
-                  <span class="text-[9px] text-slate-500">Thử thách thể lực</span>
-                </div>
-                <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                  <span class="text-base mb-0.5">⚡</span>
-                  <span class="font-bold text-slate-800 text-[10px]">2. Vượt mốc</span>
-                  <span class="text-[9px] text-slate-500">Hoàn thành tất cả thử thách</span>
-                </div>
-                <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
-                  <span class="text-base mb-0.5">🎁</span>
-                  <span class="font-bold text-slate-800 text-[10px]">3. Rinh quà</span>
-                  <span class="text-[9px] text-slate-500">Voucher lên tới 20%</span>
+              <div class="bg-white/20 backdrop-blur-sm p-3 rounded-xl border border-white/30 mt-2">
+                <span class="text-[11px] font-extrabold text-white uppercase tracking-wider block mb-2 text-center">
+                  Tham gia thử thách & Rinh quà liền tay
+                </span>
+                <div class="grid grid-cols-3 gap-1.5 text-center text-[11px]">
+                  <div class="bg-white/90 text-amber-950 p-2 rounded-lg flex flex-col items-center">
+                    <span class="text-base mb-0.5">🎯</span>
+                    <span class="font-bold text-[10px]">1. Tham gia</span>
+                    <span class="text-[9px] text-slate-600">Thử thách thể lực</span>
+                  </div>
+                  <div class="bg-white/90 text-amber-950 p-2 rounded-lg flex flex-col items-center">
+                    <span class="text-base mb-0.5">⚡</span>
+                    <span class="font-bold text-[10px]">2. Vượt mốc</span>
+                    <span class="text-[9px] text-slate-600">Hoàn thành thử thách</span>
+                  </div>
+                  <div class="bg-white/90 text-amber-950 p-2 rounded-lg flex flex-col items-center">
+                    <span class="text-base mb-0.5">🎁</span>
+                    <span class="font-bold text-[10px]">3. Rinh quà</span>
+                    <span class="text-[9px] text-slate-600">Voucher tới 20%</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1293,40 +1277,40 @@
           <div id="sub-act-3" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-purple-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-purple-100 text-purple-800 uppercase tracking-wider">
-                <i data-lucide="sparkles" class="w-3 h-3"></i> Hoạt động Photobooth
+                <i data-lucide="sparkles" class="w-3 h-3"></i> Hoạt động 3
               </span>
               <span class="text-[10px] font-bold text-purple-700 bg-purple-50 px-2 py-0.5 rounded-md border border-purple-200/60">
                 📸 LẤY ẢNH NGAY
               </span>
             </div>
 
-            <div>
-              <h3 class="font-bold text-slate-900 text-sm leading-snug">
-                Chụp Ảnh Photobooth & Nhận ảnh trực tiếp
+            <div class="bg-gradient-to-br from-purple-700 via-fuchsia-700 to-purple-800 text-white p-4 rounded-xl shadow-sm space-y-3">
+              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug text-center">
+                Chụp Ảnh Photobooth & Nhận Ảnh Trực Tiếp
               </h3>
-              <p class="text-xs text-slate-600 mt-1.5 leading-relaxed">
+              <p class="text-xs text-purple-100 mt-1.5 leading-relaxed text-center">
                 Ghi lại khoảnh khắc gia đình rạng rỡ bên khung hình Photobooth độc quyền Kỳ thi Thăng cấp đai 2026 và nhận bản in ảnh kỷ niệm mang về ngay tại chỗ.
               </p>
-            </div>
 
-            <div class="grid grid-cols-2 gap-2 text-xs">
-              <div class="bg-purple-50/60 p-2.5 rounded-xl border border-purple-100 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-purple-200/80 flex items-center justify-center text-purple-800 font-bold shrink-0">
-                  🖨️
+              <div class="grid grid-cols-2 gap-2 text-xs mt-2">
+                <div class="bg-white/20 backdrop-blur-sm p-2.5 rounded-xl border border-white/30 flex flex-col items-center text-center gap-1">
+                  <div class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white font-bold shrink-0">
+                    🖨️
+                  </div>
+                  <div>
+                    <span class="font-bold block text-[11px]">Chụp & In siêu tốc</span>
+                    <span class="text-[10px] text-fuchsia-200">Chỉ 1-2 phút nhận ảnh</span>
+                  </div>
                 </div>
-                <div>
-                  <span class="font-bold text-slate-900 block text-[11px]">Chụp & In ảnh siêu tốc</span>
-                  <span class="text-[10px] text-slate-500">Chỉ 1-2 phút nhận ảnh</span>
-                </div>
-              </div>
 
-              <div class="bg-purple-50/60 p-2.5 rounded-xl border border-purple-100 flex items-center gap-2">
-                <div class="w-8 h-8 rounded-lg bg-purple-200/80 flex items-center justify-center text-purple-800 font-bold shrink-0">
-                  ✨
-                </div>
-                <div>
-                  <span class="font-bold text-slate-900 block text-[11px]">Frame độc quyền</span>
-                  <span class="text-[10px] text-slate-500">Đậm dấu ấn Kỳ thi Thăng cấp đai</span>
+                <div class="bg-white/20 backdrop-blur-sm p-2.5 rounded-xl border border-white/30 flex flex-col items-center text-center gap-1">
+                  <div class="w-8 h-8 rounded-full bg-white/30 flex items-center justify-center text-white font-bold shrink-0">
+                    ✨
+                  </div>
+                  <div>
+                    <span class="font-bold block text-[11px]">Frame độc quyền</span>
+                    <span class="text-[10px] text-fuchsia-200">Đậm dấu ấn Kỳ thi</span>
+                  </div>
                 </div>
               </div>
             </div>
@@ -1341,27 +1325,21 @@
           <div id="sub-act-4" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-fuchsia-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-fuchsia-100 text-fuchsia-800 uppercase tracking-wider">
-                <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Cho Con
+                <i data-lucide="activity" class="w-3 h-3"></i> Hoạt động 4
               </span>
               <span class="text-[10px] font-bold text-fuchsia-700 bg-fuchsia-50 px-2 py-0.5 rounded-md border border-fuchsia-200/60">
-                🎁 HOÀN TOÀN MIỄN PHÍ
+                🎁 Dành cho Võ sinh
               </span>
             </div>
 
             <div class="bg-gradient-to-br from-fuchsia-700 via-purple-700 to-indigo-800 text-white p-4 rounded-xl shadow-sm space-y-2">
-              <div class="inline-block bg-yellow-400 text-purple-950 text-[10px] font-extrabold px-2 py-0.5 rounded-md uppercase tracking-wider mb-1">
-                Dành Riêng Cho Võ Sinh Taekwondo Kids
-              </div>
-              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug">
+              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug text-center">
                 Phân Tích Thể Trạng & Dự Đoán Chiều Cao
               </h3>
-              <p class="text-[11px] text-fuchsia-100 italic">
-                Dành cho võ sinh đang theo học tại trung tâm
-              </p>
-              <p class="text-xs text-slate-100 mt-2 leading-relaxed">
+              <p class="text-xs text-slate-100 mt-2 leading-relaxed text-center">
                 Bốn câu hỏi mà bố mẹ nào cũng từng thắc mắc, lần này được trả lời chính xác bằng số liệu khoa học:
               </p>
-              <ul class="space-y-1.5 text-xs text-white mt-2">
+              <ul class="space-y-1.5 text-xs text-white mt-3">
                 <li class="flex items-start gap-1.5">
                   <span class="text-yellow-300 font-bold shrink-0">✓</span>
                   <span>Con đang <strong>cao – nặng</strong> ở mức nào so với chuẩn WHO.</span>
@@ -1375,11 +1353,6 @@
                   <span>Con đang <strong>thiếu ở khâu nào</strong> và cần làm gì trong 6–12 tháng tới.</span>
                 </li>
               </ul>
-              
-              <div class="mt-3 pt-2 border-t border-white/20 text-xs text-fuchsia-100 leading-tight">
-                <span class="line-through text-fuchsia-200">Giá gốc: 180.000đ</span> <br>
-                <strong class="text-yellow-300 text-xs">MIỄN PHÍ HOÀN TOÀN</strong>
-              </div>
             </div>
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
@@ -1392,49 +1365,43 @@
           <div id="sub-act-5" class="hidden fade-in bg-white p-4 rounded-2xl shadow-sm border border-emerald-200 space-y-3">
             <div class="flex justify-between items-start gap-2">
               <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-100 text-emerald-800 uppercase tracking-wider">
-                <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Bố Mẹ
+                <i data-lucide="heart-pulse" class="w-3 h-3"></i> Hoạt động 5
               </span>
               <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
-                🎁 ĐO TẦM SOÁT TẠI CHỐ
+                🎁 Dành cho Phụ huynh
               </span>
             </div>
 
-            <div class="bg-slate-50 p-4 rounded-xl border border-slate-200 text-slate-800 space-y-2">
-              <div class="inline-block bg-blue-100 text-blue-900 text-[10px] font-extrabold px-2 py-0.5 rounded-md uppercase tracking-wider mb-1">
-                Dành riêng Cho Phụ Huynh Taekwondo Kids
-              </div>
-              <h3 class="font-extrabold text-sm md:text-base text-blue-950 leading-snug">
-                Gói Đo Mật Độ Xương Tại Chỗ & Tư Vấn Cùng Chuyên Gia
+            <div class="bg-gradient-to-br from-emerald-600 via-teal-600 to-emerald-700 text-white p-4 rounded-xl shadow-sm space-y-2">
+              <h3 class="font-extrabold text-sm md:text-base text-yellow-300 leading-snug text-center">
+                Gói Đo Mật Độ Xương & Tư Vấn Chuyên Gia
               </h3>
-              <p class="text-[11px] text-red-600 font-medium italic">
-                Dành riêng cho phụ huynh đưa con đi thi
-              </p>
-              <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              <p class="text-xs text-emerald-100 mt-2 leading-relaxed text-center">
                 Con đang xây xương, bố mẹ thì đang giữ xương. Mật độ xương đi xuống lặng lẽ, không đau, không báo trước:
               </p>
-              <ul class="space-y-1.5 text-xs text-slate-700 mt-2">
+              <ul class="space-y-1.5 text-xs text-white mt-3">
                 <li class="flex items-start gap-1.5">
-                  <span class="text-emerald-600 font-bold shrink-0">✓</span>
+                  <span class="text-yellow-300 font-bold shrink-0">✓</span>
                   <span><strong>Đo ngay tại sự kiện</strong>, nhận phiếu kết quả ngay sau 3 phút.</span>
                 </li>
                 <li class="flex items-start gap-1.5">
-                  <span class="text-emerald-600 font-bold shrink-0">✓</span>
+                  <span class="text-yellow-300 font-bold shrink-0">✓</span>
                   <span>Sàng lọc sớm <strong>nguy cơ loãng xương</strong> cho bố mẹ và ông bà.</span>
                 </li>
                 <li class="flex items-start gap-1.5">
-                  <span class="text-emerald-600 font-bold shrink-0">✓</span>
+                  <span class="text-yellow-300 font-bold shrink-0">✓</span>
                   <span>Chuyên viên <strong>đọc chỉ số cùng bố mẹ</strong>, hướng dẫn chế độ bổ sung.</span>
                 </li>
               </ul>
 
-              <div class="mt-3 pt-2 border-t border-slate-200 text-xs text-slate-600 leading-tight">
+              <div class="mt-3 pt-2 border-t border-emerald-500/50 text-xs text-emerald-50 font-medium leading-tight text-center">
                 <span>Đăng ký trước tại khu vực gian hàng đối tác <strong>MIDU</strong> để nhận lượt ưu tiên đo xương.</span>
               </div>
             </div>
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span><strong>Vị trí:</strong> <strong>Khu vực Gian hàng đối tác Midu</strong>strong> - Khu vực ban công Nhà thi đấu Tầng 4</span>
+              <span><strong>Vị trí:</strong> <strong>Khu vực Gian hàng đối tác Midu</strong> - Khu vực ban công Nhà thi đấu Tầng 4</span>
             </div>
           </div>
 
@@ -1445,6 +1412,35 @@
       <!-- TAB 4: GIAN HÀNG & TỪ THIỆN -->
       <div id="tab-media" class="tab-content space-y-4">
         
+        <!-- HIỂN THỊ CARD CHUNG XUYÊN SUỐT CÁC SUBTAB -->
+        <div class="bg-gradient-to-br from-red-700 via-rose-800 to-red-900 text-white p-4 rounded-2xl shadow-lg border border-red-600/30 relative overflow-hidden">
+          <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+          
+          <div class="flex items-center gap-2 mb-2">
+            <span class="inline-flex items-center gap-1 bg-yellow-400 text-red-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
+              <i data-lucide="heart" class="w-3 h-3 fill-current text-red-700"></i> Gian Hàng Từ Thiện
+            </span>
+            <span class="text-[10px] text-rose-200 bg-white/10 px-2 py-0.5 rounded-md border border-white/10">Sứ mệnh vì cộng đồng</span>
+          </div>
+
+          <h2 class="font-extrabold text-base md:text-lg text-white leading-snug tracking-wide">
+            Gian Hàng "Taekwondo Kids & Friends"
+          </h2>
+          
+          <p class="text-xs text-rose-100 font-medium mt-1.5 leading-relaxed">
+            Khởi xướng bởi Ban giám đốc Trung tâm Taekwondo Kids Việt Nam, với sự ủng hộ của Phòng quản lý Thể thao - Sở Văn hóa Thể thao và Liên đoàn Taekwondo Hà Nội.
+          </p>
+
+          <div class="mt-3 bg-white/15 backdrop-blur-md p-2.5 rounded-xl border border-white/20 text-center">
+            <p class="text-[11px] font-extrabold text-yellow-300 uppercase tracking-wider leading-tight">
+              🎗️ LỜI CAM KẾT VÀ SỨ MỆNH
+            </p>
+            <p class="text-xs font-bold text-white mt-0.5">
+              "100% lợi nhuận dành cho trẻ em nghèo vùng sâu vùng xa"
+            </p>
+          </div>
+        </div>
+
         <!-- THANH TRƯỢT SUBTAB GIAN HÀNG -->
         <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
           <button id="btn-media-1" onclick="switchMediaSubTab(1)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-md">
@@ -1461,51 +1457,6 @@
           
           <!-- SUBTAB 1: GIAN HÀNG TỪ THIỆN -->
           <div id="sub-media-1" class="fade-in space-y-4">
-            
-            <!-- Card Gian Hàng Từ Thiện (Đã sửa lại lề padding thành p-4 đồng bộ với các card khác) -->
-            <div class="bg-gradient-to-br from-red-700 via-rose-800 to-red-900 text-white p-4 rounded-2xl shadow-lg border border-red-600/30 relative overflow-hidden">
-              <div class="absolute -right-6 -bottom-6 w-28 h-28 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
-              
-              <div class="flex items-center gap-2 mb-2">
-                <span class="inline-flex items-center gap-1 bg-yellow-400 text-red-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase tracking-wider shadow-sm">
-                  <i data-lucide="heart" class="w-3 h-3 fill-current text-red-700"></i> Gian Hàng Từ Thiện
-                </span>
-                <span class="text-[10px] text-rose-200 bg-white/10 px-2 py-0.5 rounded-md border border-white/10">Sứ mệnh vì cộng đồng</span>
-              </div>
-
-              <h2 class="font-extrabold text-base md:text-lg text-white leading-snug tracking-wide">
-                Gian Hàng "Taekwondo Kids & Friends"
-              </h2>
-              
-              <p class="text-xs text-rose-100 font-medium mt-1.5 leading-relaxed">
-                Khởi xướng bởi Ban giám đốc Trung tâm Taekwondo Kids Việt Nam, với sự ủng hộ của Phòng quản lý Thể thao - Sở Văn hóa Thể thao và Liên đoàn Taekwondo Hà Nội.
-              </p>
-
-              <div class="mt-3 bg-white/15 backdrop-blur-md p-2.5 rounded-xl border border-white/20 text-center">
-                <p class="text-[11px] font-extrabold text-yellow-300 uppercase tracking-wider leading-tight">
-                  🎗️ LỜI CAM KẾT VÀ SỨ MỆNH
-                </p>
-                <p class="text-xs font-bold text-white mt-0.5">
-                  "100% lợi nhuận dành cho trẻ em nghèo vùng sâu vùng xa"
-                </p>
-              </div>
-            </div>
-
-            <!-- Thêm Card Đồ ăn Thức uống MỚI -->
-            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
-              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
-                <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
-                  <i data-lucide="coffee" class="w-4 h-4 text-orange-600"></i>
-                  <span>Đồ ăn & Thức uống</span>
-                </h3>
-              </div>
-              <p class="text-xs text-slate-600 leading-relaxed">
-                Khám phá menu đa dạng với các món ăn và thức uống hấp dẫn tại gian hàng của chúng tôi.
-              </p>
-              <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-3 shadow-sm">
-                <img src="menu.png" alt="Menu Đồ ăn Thức uống" class="w-full h-auto object-cover" />
-              </div>
-            </div>
 
             <!-- Card QR Quyên góp -->
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
@@ -1514,7 +1465,6 @@
                   <i data-lucide="qr-code" class="w-4 h-4 text-blue-700"></i>
                   <span>Địa chỉ Quyên Góp</span>
                 </h3>
-                <span class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md">Chuyển khoản nhanh</span>
               </div>
 
               <p class="text-xs text-slate-600 leading-relaxed">
@@ -1529,18 +1479,19 @@
                 <div class="w-full space-y-1 text-xs text-slate-700 bg-white p-2.5 rounded-lg border border-slate-200">
                   <div class="flex justify-between items-center border-b border-slate-100 pb-1">
                     <span class="text-slate-500 text-[11px]">Ngân hàng:</span>
-                    <span class="font-bold text-slate-900">MB - Ngân hàng Quân đội</span>
+                    <span class="font-bold text-slate-900 text-right">MB - Ngân hàng Quân đội</span>
                   </div>
                   <div class="flex justify-between items-center border-b border-slate-100 py-1">
                     <span class="text-slate-500 text-[11px]">Số tài khoản:</span>
-                    <span class="font-bold text-blue-800 tracking-wider">0347 954 345</span>
+                    <span class="font-bold text-blue-800 tracking-wider text-right">0347 954 345</span>
+                  </div>
+                  <div class="flex justify-between items-center border-b border-slate-100 py-1">
+                    <span class="text-slate-500 text-[11px]">Chủ tài khoản:</span>
+                    <span class="font-bold text-slate-900 uppercase text-right">NGUYEN NGOC ANH</span>
                   </div>
                   <div class="flex justify-between items-center pt-1">
-                    <span class="text-slate-500 text-[11px]">Chủ tài khoản:</span>
-                    <span class="font-bold text-slate-900 uppercase">NGUYEN NGOC ANH</span>
-                  </div>
-                  <div class="text-[10px] text-slate-500 italic pt-1 border-t border-slate-100 text-left">
-                    Nội dung CK: <span class="font-semibold text-slate-700">Tên PH/Võ sinh - Ung ho Quy Tu Thien Taekwondo Kids</span>
+                    <span class="text-slate-500 text-[11px] min-w-[70px]">Nội dung CK:</span>
+                    <span class="font-bold text-slate-900 text-right leading-tight max-w-[65%]">Tên PH/Võ sinh - Ung ho Quy Tu Thien Taekwondo Kids</span>
                   </div>
                 </div>
               </div>
@@ -1550,6 +1501,22 @@
 
           <!-- SUBTAB 2: TỔNG KẾT HOẠT ĐỘNG -->
           <div id="sub-media-2" class="hidden fade-in space-y-4">
+
+            <!-- Card Đồ ăn Thức uống -->
+            <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+              <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+                <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
+                  <i data-lucide="coffee" class="w-4 h-4 text-orange-600"></i>
+                  <span>Đồ ăn & Thức uống</span>
+                </h3>
+              </div>
+              <p class="text-xs text-slate-600 leading-relaxed">
+                Khám phá menu đa dạng với các món ăn và thức uống hấp dẫn tại gian hàng của chúng tôi.
+              </p>
+              <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 shadow-sm">
+                <img src="menu.png" alt="Menu Đồ ăn Thức uống" class="w-full h-auto object-cover" />
+              </div>
+            </div>
             
             <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3.5">
               <div class="flex justify-between items-center border-b border-slate-100 pb-2">
@@ -1563,21 +1530,30 @@
                 Gian hàng đã góp mặt tại nhiều sự kiện lớn trong năm (Giải đấu tại Hà Nội, Phúc Thọ và các Kỳ thi Thăng cấp đai của Trung tâm).
               </p>
 
-              <div class="space-y-3">
-                <!-- MỤC CỦA NĂM 2025 -->
-                <div class="inline-block bg-red-100 text-red-800 text-[11px] font-extrabold px-2.5 py-1 rounded-md uppercase tracking-wider">
+              <!-- THANH TRƯỢT SUB-SUB-TABS NĂM -->
+              <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x border-b border-slate-100 pb-2">
+                <button id="btn-year-2025" onclick="switchYearSubTab(2025)" class="act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-sm">
                   Năm 2025
-                </div>
+                </button>
+                <button id="btn-year-2026" onclick="switchYearSubTab(2026)" class="act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+                  Năm 2026
+                </button>
+                <button id="btn-year-2027" onclick="switchYearSubTab(2027)" class="act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+                  Năm 2027
+                </button>
+                <button id="btn-year-2028" onclick="switchYearSubTab(2028)" class="act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
+                  Năm 2028
+                </button>
+              </div>
 
+              <!-- Nội dung Năm 2025 -->
+              <div id="year-2025" class="space-y-3 fade-in">
                 <div class="bg-gradient-to-r from-red-50 via-rose-50 to-orange-50 p-3.5 rounded-xl border border-red-100 text-center">
                   <span class="text-[10px] font-extrabold text-red-800 uppercase tracking-wider block">
                     TỔNG DOANH THU GÂY QUỸ NĂM 2025
                   </span>
                   <span class="text-xl md:text-2xl font-black text-red-600 my-0.5 block tracking-tight">
                     45.000.000 VNĐ
-                  </span>
-                  <span class="text-[10px] text-slate-500 font-medium">
-                    Đã phân bổ 100% vào 03 chương trình thiện nguyện trọng điểm
                   </span>
                 </div>
 
@@ -1632,6 +1608,22 @@
                   </div>
                 </div>
               </div>
+
+              <!-- Nội dung Năm 2026 -->
+              <div id="year-2026" class="hidden fade-in py-6 text-center text-slate-500 text-xs bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                Chưa có dữ liệu tổng kết hoạt động năm 2026.
+              </div>
+
+              <!-- Nội dung Năm 2027 -->
+              <div id="year-2027" class="hidden fade-in py-6 text-center text-slate-500 text-xs bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                Chưa có dữ liệu tổng kết hoạt động năm 2027.
+              </div>
+
+              <!-- Nội dung Năm 2028 -->
+              <div id="year-2028" class="hidden fade-in py-6 text-center text-slate-500 text-xs bg-slate-50 rounded-xl border border-dashed border-slate-200">
+                Chưa có dữ liệu tổng kết hoạt động năm 2028.
+              </div>
+
             </div>
 
           </div>
@@ -1663,7 +1655,8 @@
             </p>
           </div>
 
-          <div class="bg-white/90 backdrop-blur-sm p-4.5 rounded-xl shadow-inner border border-amber-200/80 space-y-3.5 text-xs leading-relaxed text-slate-800">
+          <!-- Đã điều chỉnh p-4.5 thành p-5 và tăng khoảng cách lề cho thông thoáng -->
+          <div class="bg-white/90 backdrop-blur-sm px-5 py-6 rounded-xl shadow-inner border border-amber-200/80 space-y-4 text-xs leading-relaxed text-slate-800">
             <p class="text-slate-800 font-medium text-justify">
               Kỳ thi Thăng cấp đai không chỉ là một thử thách về kỹ thuật Taekwondo mà còn là cơ hội để các con rèn luyện bản lĩnh, sự kiên trì, tính kỷ luật và tinh thần chiến binh.
             </p>
@@ -1672,7 +1665,7 @@
               Trung tâm Taekwondo Kids Việt Nam cảm ơn và trân trọng sự đồng hành của quý phụ huynh trong hành trình phát triển của các võ sinh. Hãy luôn là nguồn động lực to lớn để con có một kỳ thi thành công!
             </p>
 
-            <div class="pt-2 border-t border-amber-100 flex flex-col items-center text-center space-y-1">
+            <div class="pt-3 border-t border-amber-100 flex flex-col items-center text-center space-y-1">
               <p class="font-extrabold text-red-700 text-xs md:text-sm uppercase tracking-wide">
                 Xin chân thành cảm ơn quý phụ huynh!
               </p>
@@ -1786,57 +1779,45 @@
       }
     }
 
-    function switchSubTab(subTabId) {
-      const subLoc = document.getElementById('sub-tab-location');
-      const subMap = document.getElementById('sub-tab-map');
-      const btnLoc = document.getElementById('btn-sub-location');
-      const btnMap = document.getElementById('btn-sub-map');
-
-      if (!subLoc || !subMap || !btnLoc || !btnMap) return;
-
-      if (subTabId === 'location') {
-        subLoc.classList.remove('hidden');
-        subMap.classList.add('hidden');
-        
-        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-      } else {
-        subLoc.classList.add('hidden');
-        subMap.classList.remove('hidden');
-
-        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+    /* ĐỔI SUBTAB SƠ ĐỒ */
+    function switchLocationSubTab(subTabId) {
+      const tabs = ['location', 'map'];
+      tabs.forEach(id => {
+        const sub = document.getElementById('sub-tab-' + id);
+        const btn = document.getElementById('btn-sub-' + id);
+        if (sub) sub.classList.add('hidden');
+        if (btn) {
+          btn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        }
+      });
+      
+      const activeSub = document.getElementById('sub-tab-' + subTabId);
+      const activeBtn = document.getElementById('btn-sub-' + subTabId);
+      if (activeSub) activeSub.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md";
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
     }
 
+    /* ĐỔI SUBTAB LỊCH TRÌNH */
     function switchTimelineSubTab(subTabId) {
-      const subSched = document.getElementById('sub-tab-timeline-sched');
-      const subRules = document.getElementById('sub-tab-timeline-rules');
-      const subBelts = document.getElementById('sub-tab-timeline-belts');
-
-      const btnSched = document.getElementById('btn-sub-sched');
-      const btnRules = document.getElementById('btn-sub-rules');
-      const btnBelts = document.getElementById('btn-sub-belts');
-
-      if (!subSched || !subRules || !subBelts || !btnSched || !btnRules || !btnBelts) return;
-
-      subSched.classList.add('hidden');
-      subRules.classList.add('hidden');
-      subBelts.classList.add('hidden');
-
-      btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-      btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-      btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
-
-      if (subTabId === 'sched') {
-        subSched.classList.remove('hidden');
-        btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-      } else if (subTabId === 'rules') {
-        subRules.classList.remove('hidden');
-        btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
-      } else if (subTabId === 'belts') {
-        subBelts.classList.remove('hidden');
-        btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      const tabs = ['sched', 'rules', 'belts'];
+      tabs.forEach(id => {
+        const sub = document.getElementById('sub-tab-timeline-' + id);
+        const btn = document.getElementById('btn-sub-' + id);
+        if (sub) sub.classList.add('hidden');
+        if (btn) {
+          btn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        }
+      });
+      
+      const activeSub = document.getElementById('sub-tab-timeline-' + subTabId);
+      const activeBtn = document.getElementById('btn-sub-' + subTabId);
+      if (activeSub) activeSub.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md";
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
     }
 
@@ -1859,11 +1840,11 @@
       } catch (e) {}
     }
 
-    /* CHUYỂN SUBTAB TRONG MỤC HOẠT ĐỘNG */
+    /* ĐỔI SUBTAB MỤC HOẠT ĐỘNG */
     const activityThemes = {
       1: "bg-blue-600 text-white border-blue-600 font-bold shadow-md",
-      2: "bg-amber-500 text-white border-amber-500 font-bold shadow-md",
-      3: "bg-purple-600 text-white border-purple-600 font-bold shadow-md",
+      2: "bg-amber-600 text-white border-amber-600 font-bold shadow-md",
+      3: "bg-purple-700 text-white border-purple-700 font-bold shadow-md",
       4: "bg-fuchsia-700 text-white border-fuchsia-700 font-bold shadow-md",
       5: "bg-emerald-600 text-white border-emerald-600 font-bold shadow-md"
     };
@@ -1884,6 +1865,7 @@
       if (activeSub) activeSub.classList.remove('hidden');
       if (activeBtn && activityThemes[actId]) {
         activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border " + activityThemes[actId];
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
     }
 
@@ -1892,23 +1874,45 @@
       switchActivitySubTab(actId);
     }
     
-    /* CHUYỂN SUBTAB TRONG MỤC GIAN HÀNG TỪ THIỆN */
+    /* ĐỔI SUBTAB GIAN HÀNG TỪ THIỆN */
     function switchMediaSubTab(actId) {
-      const sub1 = document.getElementById('sub-media-1');
-      const sub2 = document.getElementById('sub-media-2');
-      const btn1 = document.getElementById('btn-media-1');
-      const btn2 = document.getElementById('btn-media-2');
+      const tabs = [1, 2];
+      tabs.forEach(id => {
+        const sub = document.getElementById('sub-media-' + id);
+        const btn = document.getElementById('btn-media-' + id);
+        if (sub) sub.classList.add('hidden');
+        if (btn) {
+          btn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        }
+      });
 
-      if (actId === 1) {
-        sub1.classList.remove('hidden');
-        sub2.classList.add('hidden');
-        btn1.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-md";
-        btn2.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
-      } else {
-        sub1.classList.add('hidden');
-        sub2.classList.remove('hidden');
-        btn2.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-md";
-        btn1.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+      const activeSub = document.getElementById('sub-media-' + actId);
+      const activeBtn = document.getElementById('btn-media-' + actId);
+      if (activeSub) activeSub.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-md";
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+      }
+    }
+
+    /* ĐỔI SUBTAB NĂM (TỔNG KẾT HOẠT ĐỘNG) */
+    function switchYearSubTab(year) {
+      const years = [2025, 2026, 2027, 2028];
+      years.forEach(y => {
+        const sub = document.getElementById('year-' + y);
+        const btn = document.getElementById('btn-year-' + y);
+        if (sub) sub.classList.add('hidden');
+        if (btn) {
+          btn.className = "act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        }
+      });
+
+      const activeSub = document.getElementById('year-' + year);
+      const activeBtn = document.getElementById('btn-year-' + year);
+      if (activeSub) activeSub.classList.remove('hidden');
+      if (activeBtn) {
+        activeBtn.className = "act-pill snap-start shrink-0 flex items-center px-3 py-1.5 rounded-full text-[11px] transition-all duration-200 border bg-red-600 text-white border-red-600 font-bold shadow-sm";
+        activeBtn.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
       }
     }
 
