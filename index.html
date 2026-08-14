@@ -613,7 +613,7 @@
             </div>
           </div>
 
-          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI (GỘP CỘT HÌNH ĐAI VÀ GIỚI HẠN PHẠM VI NỘI DUNG THI) -->
+          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI (ACCORDION & DỮ LIỆU TỐI ƯU UI/UX) -->
           <div id="sub-tab-timeline-belts" class="hidden fade-in space-y-3">
             <div class="flex items-center justify-between border-b pb-2">
               <h2 class="font-bold text-slate-900 flex items-center gap-2 text-xs">
@@ -627,8 +627,8 @@
               <table class="w-full text-left border-collapse">
                 <thead>
                   <tr class="bg-blue-900 text-white font-bold text-[11px]">
-                    <th class="p-2.5 w-2/5">Cấp đai & Hình đai</th>
-                    <th class="p-2.5 w-3/5">Nội dung bài thi (Quét nhanh)</th>
+                    <th class="p-2.5 w-1/3">Cấp đai</th>
+                    <th class="p-2.5 w-2/3">Nội dung bài thi (Quét nhanh)</th>
                   </tr>
                 </thead>
                 <tbody class="divide-y divide-slate-200 text-slate-700 text-xs">
@@ -636,11 +636,8 @@
                   <!-- CẤP 9 -->
                   <tr onclick="toggleBeltDetail('belt-9')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-9.png" alt="Đai Cấp 9" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 9</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 9</span>
                         <i data-lucide="chevron-down" id="icon-belt-9" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -650,8 +647,7 @@
                     </td>
                   </tr>
                   <tr id="belt-9" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -660,7 +656,7 @@
                           </div>
                           <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Kiểm tra sự tập trung, chiều cao, cân nặng, tố chất thể lực.</span></li>
-                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kibon Joonbi <span class="text-slate-400 font-normal text-[10px]">(기본 chuẩn bị)</span>:</strong> Tư thế chuẩn bị căn bản.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kibon Joonbi <span class="text-slate-400 font-normal text-[10px]">(기본 준비)</span>:</strong> Tư thế chuẩn bị căn bản.</span></li>
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (6):</strong> Moaseogi, Narani Seogi, Juchum Seogi, Ap Seogi, Ap Kubi Seogi, Dwit Kubi Seogi, Moaseogi (đổi bên).</span></li>
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đấm <span class="text-slate-400 font-normal text-[10px]">(Jireugi)</span>:</strong> Trung bình tấn - Đấm trung 10 lần.</span></li>
                             <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đỡ <span class="text-slate-400 font-normal text-[10px]">(Makki)</span>:</strong> Arae Makki, Momtong Makki, Olgul Makki (đi 4 hướng hình vuông).</span></li>
@@ -693,11 +689,8 @@
                   <!-- CẤP 8 -->
                   <tr onclick="toggleBeltDetail('belt-8')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-8.png" alt="Đai Cấp 8" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 8</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 8</span>
                         <i data-lucide="chevron-down" id="icon-belt-8" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -707,8 +700,7 @@
                     </td>
                   </tr>
                   <tr id="belt-8" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -751,11 +743,8 @@
                   <!-- CẤP 7 -->
                   <tr onclick="toggleBeltDetail('belt-7')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-7.png" alt="Đai Cấp 7" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 7</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 7</span>
                         <i data-lucide="chevron-down" id="icon-belt-7" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -765,8 +754,7 @@
                     </td>
                   </tr>
                   <tr id="belt-7" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -810,11 +798,8 @@
                   <!-- CẤP 6 -->
                   <tr onclick="toggleBeltDetail('belt-6')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-6.png" alt="Đai Cấp 6" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 6</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 6</span>
                         <i data-lucide="chevron-down" id="icon-belt-6" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -824,8 +809,7 @@
                     </td>
                   </tr>
                   <tr id="belt-6" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -866,11 +850,8 @@
                   <!-- CẤP 5 -->
                   <tr onclick="toggleBeltDetail('belt-5')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-5.png" alt="Đai Cấp 5" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 5</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 5</span>
                         <i data-lucide="chevron-down" id="icon-belt-5" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -880,8 +861,7 @@
                     </td>
                   </tr>
                   <tr id="belt-5" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -921,11 +901,8 @@
                   <!-- CẤP 4 -->
                   <tr onclick="toggleBeltDetail('belt-4')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-4.png" alt="Đai Cấp 4" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 4</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 4</span>
                         <i data-lucide="chevron-down" id="icon-belt-4" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -935,8 +912,7 @@
                     </td>
                   </tr>
                   <tr id="belt-4" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -986,11 +962,8 @@
                   <!-- CẤP 3 -->
                   <tr onclick="toggleBeltDetail('belt-3')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-3.png" alt="Đai Cấp 3" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 3</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 3</span>
                         <i data-lucide="chevron-down" id="icon-belt-3" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -1000,8 +973,7 @@
                     </td>
                   </tr>
                   <tr id="belt-3" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -1052,11 +1024,8 @@
                   <!-- CẤP 2 -->
                   <tr onclick="toggleBeltDetail('belt-2')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-2.png" alt="Đai Cấp 2" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 2</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 2</span>
                         <i data-lucide="chevron-down" id="icon-belt-2" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -1066,8 +1035,7 @@
                     </td>
                   </tr>
                   <tr id="belt-2" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -1117,11 +1085,8 @@
                   <!-- CẤP 1 -->
                   <tr onclick="toggleBeltDetail('belt-1')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
                     <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
-                      <div class="flex items-center justify-between gap-1.5">
-                        <div class="flex items-center gap-2">
-                          <img src="dai-cap-1.png" alt="Đai Cấp 1" class="w-8 h-8 object-contain shrink-0 rounded border border-slate-200 bg-white p-0.5" />
-                          <span class="whitespace-nowrap">Cấp 1</span>
-                        </div>
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 1</span>
                         <i data-lucide="chevron-down" id="icon-belt-1" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
                       </div>
                     </td>
@@ -1131,8 +1096,7 @@
                     </td>
                   </tr>
                   <tr id="belt-1" class="hidden bg-slate-50/90">
-                    <td class="border-r border-slate-100"></td>
-                    <td class="p-3 border-t border-slate-200 align-top">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
                       <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
                         <div class="space-y-1">
                           <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
@@ -1543,196 +1507,265 @@
           </div>
 
           <p class="text-xs text-slate-600 leading-relaxed">
-            Trong năm 2025, gian hàng từ thiện của Taekwondo Kids đã quyên góp và tổ chức nhiều chuyến đi trao quà ý nghĩa đến các em nhỏ tại các vùng cao, mang lại niềm vui và sự hỗ trợ thiết thực cho cộng đồng.
+            Gian hàng đã góp mặt tại nhiều sự kiện lớn trong năm (Giải đấu tại Hà Nội, Phúc Thọ và các Kỳ thi Thăng cấp đai của Trung tâm).
           </p>
+
+          <div class="bg-gradient-to-r from-red-50 via-rose-50 to-orange-50 p-3.5 rounded-xl border border-red-100 text-center">
+            <span class="text-[10px] font-extrabold text-red-800 uppercase tracking-wider block">
+              TỔNG DOANH THU GÂY QUỸ NĂM 2025
+            </span>
+            <span class="text-xl md:text-2xl font-black text-red-600 my-0.5 block tracking-tight">
+              45.000.000 VNĐ
+            </span>
+            <span class="text-[10px] text-slate-500 font-medium">
+              Đã phân bổ 100% vào 03 chương trình thiện nguyện trọng điểm
+            </span>
+          </div>
+
+          <div class="space-y-2.5 pt-1">
+            <span class="text-[11px] font-bold text-slate-800 uppercase tracking-wider block">
+              Các hoạt động đã triển khai:
+            </span>
+
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-red-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">1</span>
+                  Ủng hộ nhân dân Cuba
+                </span>
+                <span class="font-extrabold text-red-600 text-xs bg-red-50 px-2 py-0.5 rounded-md border border-red-200">
+                  10.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Trao tặng hiện kim thông qua Mặt trận Tổ quốc Việt Nam để chia sẻ khó khăn cùng nhân dân Cuba.
+              </p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-blue-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">2</span>
+                  Cứu trợ đồng bào lũ lụt
+                </span>
+                <span class="font-extrabold text-blue-700 text-xs bg-blue-50 px-2 py-0.5 rounded-md border border-blue-200">
+                  15.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Ủng hộ hiện vật (nước uống, thực phẩm thiết yếu) tại Thái Nguyên, Tuyên Quang & Sóc Sơn. <strong>Thầy Nguyễn Đình Toàn</strong> - Giám đốc Trung tâm đã trực tiếp lái thuyền cứu hộ cùng công an PCCC & địa phương tham gia ứng cứu.
+              </p>
+            </div>
+
+            <div class="p-3 bg-slate-50 rounded-xl border border-slate-200/80 space-y-1">
+              <div class="flex items-center justify-between">
+                <span class="font-bold text-slate-900 text-xs flex items-center gap-1.5">
+                  <span class="w-5 h-5 rounded-full bg-emerald-600 text-white font-bold text-[10px] flex items-center justify-center shrink-0">3</span>
+                  Vì tầm vóc học sinh vùng cao
+                </span>
+                <span class="font-extrabold text-emerald-700 text-xs bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200">
+                  20.000.000 đ
+                </span>
+              </div>
+              <p class="text-[11px] text-slate-600 leading-relaxed pl-6">
+                Trao tặng tủ nấu cơm và TV cho trẻ em tại điểm trường mầm non Lũng Táo, xã Lũng Cú (Tuyên Quang) phối hợp cùng Khoa KHST - Trường ĐH Sư Phạm Hà Nội 2.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white p-4 rounded-2xl shadow-sm border border-slate-200 space-y-3">
+          <div class="flex items-center justify-between border-b border-slate-100 pb-2">
+            <h3 class="font-bold text-slate-900 text-xs md:text-sm flex items-center gap-1.5">
+              <i data-lucide="qr-code" class="w-4 h-4 text-blue-700"></i>
+              <span>Quyên Góp Trực Tiếp Qua Mã QR Ngân Hàng</span>
+            </h3>
+            <span class="text-[10px] font-bold text-blue-800 bg-blue-50 px-2 py-0.5 rounded-md">Chuyển khoản nhanh</span>
+          </div>
+
+          <p class="text-xs text-slate-600 leading-relaxed">
+            Quý phụ huynh và võ sinh muốn đóng góp trực tiếp vào Quỹ Từ Thiện "Taekwondo Kids & Friends" có thể quét mã QR bên dưới:
+          </p>
+
+          <div class="bg-slate-50 p-3.5 rounded-xl border border-slate-200 flex flex-col items-center text-center space-y-3">
+            <div class="w-44 h-44 bg-white p-2 rounded-xl shadow-md border-2 border-slate-200 flex flex-col items-center justify-center relative group">
+              <div class="w-full h-full bg-slate-100 rounded-lg border-2 border-dashed border-slate-300 flex flex-col items-center justify-center p-2 text-slate-500">
+                <i data-lucide="qr-code" class="w-10 h-10 text-red-600 mb-1"></i>
+                <span class="text-[11px] font-bold text-slate-700">MÃ QR NGÂN HÀNG</span>
+                <span class="text-[9px] text-slate-400 mt-0.5">(Sẽ cập nhật ảnh QR tại đây)</span>
+              </div>
+            </div>
+
+            <div class="w-full space-y-1 text-xs text-slate-700 bg-white p-2.5 rounded-lg border border-slate-200">
+              <div class="flex justify-between items-center border-b border-slate-100 pb-1">
+                <span class="text-slate-500 text-[11px]">Ngân hàng:</span>
+                <span class="font-bold text-slate-900">[Tên Ngân Hàng - MBBank / Vietcombank...]</span>
+              </div>
+              <div class="flex justify-between items-center border-b border-slate-100 py-1">
+                <span class="text-slate-500 text-[11px]">Số tài khoản:</span>
+                <span class="font-bold text-blue-800 tracking-wider">[SỐ TÀI KHOẢN]</span>
+              </div>
+              <div class="flex justify-between items-center pt-1">
+                <span class="text-slate-500 text-[11px]">Chủ tài khoản:</span>
+                <span class="font-bold text-slate-900 uppercase">[TÊN TÀI KHOẢN QUỸ]</span>
+              </div>
+              <div class="text-[10px] text-slate-500 italic pt-1 border-t border-slate-100 text-left">
+                * Nội dung CK: <span class="font-semibold text-slate-700">Tên PH/Võ sinh - Ung ho Quy Tu Thien Taekwondo Kids</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-amber-50/80 p-3.5 rounded-2xl border-2 border-amber-300/80 space-y-2">
+          <div class="flex items-center gap-1.5 text-amber-900 font-extrabold text-xs">
+            <i data-lucide="shield-alert" class="w-4 h-4 text-amber-600 shrink-0"></i>
+            <span>LƯU Ý QUAN TRỌNG DÀNH CHO QUÝ KHÁCH</span>
+          </div>
+
+          <p class="text-xs text-amber-950 leading-relaxed font-medium">
+            Để đảm bảo không gian thi đấu được <strong class="text-red-700">trang nghiêm và sạch sẽ</strong>, kính mong quý vị vui lòng:
+          </p>
+
+          <ul class="space-y-1.5 text-xs text-amber-900">
+            <li class="flex items-start gap-1.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Sử dụng đồ ăn, thức uống tại <strong class="text-slate-900">khu vực bên ngoài sàn thi đấu</strong>.</span>
+            </li>
+            <li class="flex items-start gap-1.5">
+              <span class="text-amber-600 font-bold shrink-0">✓</span>
+              <span>Bỏ rác đúng nơi quy định để giữ gìn vệ sinh chung.</span>
+            </li>
+          </ul>
+
+          <p class="text-[11px] text-amber-800 italic pt-1 border-t border-amber-200/60 font-semibold text-center">
+            Rất mong Quý phụ huynh & các con cùng phối hợp để Kỳ thi diễn ra thành công tốt đẹp!
+          </p>
+        </div>
+
+      </div>
+
+      <!-- TAB 5: THIỆP CẢM ƠN -->
+      <div id="tab-thanks" class="tab-content space-y-4">
+        <div class="relative bg-gradient-to-b from-amber-50 via-orange-50/40 to-amber-100/60 p-5 rounded-2xl shadow-xl border-2 border-amber-300/80 overflow-hidden fade-in card-pattern">
+          <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-amber-500 rounded-tl-2xl pointer-events-none opacity-80"></div>
+          <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-amber-500 rounded-tr-2xl pointer-events-none opacity-80"></div>
+          <div class="absolute bottom-0 left-0 w-16 h-16 border-b-4 border-l-4 border-amber-500 rounded-bl-2xl pointer-events-none opacity-80"></div>
+          <div class="absolute bottom-0 right-0 w-16 h-16 border-b-4 border-r-4 border-amber-500 rounded-br-2xl pointer-events-none opacity-80"></div>
+
+          <div class="flex justify-center mb-3">
+            <div class="inline-flex items-center gap-1.5 bg-gradient-to-r from-red-700 via-rose-700 to-red-800 text-yellow-300 text-[11px] font-extrabold px-3.5 py-1.5 rounded-full shadow-md uppercase tracking-wider border border-yellow-400/50">
+              <i data-lucide="heart-handshake" class="w-4 h-4 text-yellow-300"></i>
+              <span>Thư Tri Ân & Cảm Ơn</span>
+            </div>
+          </div>
+
+          <div class="text-center mb-4 space-y-1">
+            <h2 class="text-base md:text-lg font-black text-blue-950 uppercase tracking-wide leading-snug">
+              KỲ THI THĂNG CẤP ĐAI TAEKWONDO 2026
+            </h2>
+            <p class="text-xs font-bold text-amber-800 italic">
+              "Đồng hành cùng sự trưởng thành của các con"
+            </p>
+          </div>
+
+          <div class="bg-white/90 backdrop-blur-sm p-4.5 rounded-xl shadow-inner border border-amber-200/80 space-y-3.5 text-xs leading-relaxed text-slate-800">
+            <p class="text-slate-800 font-medium text-justify">
+              Kỳ thi Thăng cấp đai không chỉ là một thử thách về kỹ thuật Taekwondo mà còn là cơ hội để các con rèn luyện bản lĩnh, sự kiên trì, tính kỷ luật và tinh thần chiến binh.
+            </p>
+
+            <p class="text-slate-800 font-medium text-justify">
+              Trung tâm Taekwondo Kids Việt Nam cảm ơn và trân trọng sự đồng hành của quý phụ huynh trong hành trình phát triển của các bé. Hãy luôn là nguồn động lực to lớn để con có một kỳ thi thành công!
+            </p>
+
+            <div class="pt-2 border-t border-amber-100 flex flex-col items-center text-center space-y-1">
+              <p class="font-extrabold text-red-700 text-xs md:text-sm uppercase tracking-wide">
+                Xin chân thành cảm ơn quý phụ huynh!
+              </p>
+              <p class="font-black text-blue-900 text-xs md:text-sm tracking-wider uppercase">
+                Trung tâm Taekwondo Kids Việt Nam
+              </p>
+            </div>
+          </div>
+
+          <div class="mt-4 flex justify-between items-center text-amber-700 text-[11px] font-semibold px-1">
+            <span class="flex items-center gap-1"><i data-lucide="sparkles" class="w-3.5 h-3.5 text-yellow-600"></i> Trí - Dũng - Nhân - Hòa</span>
+            <span class="flex items-center gap-1"><i data-lucide="award" class="w-3.5 h-3.5 text-red-600"></i> Taekwondo Kids</span>
+          </div>
         </div>
       </div>
 
     </main>
 
-    <!-- 3. THANH ĐIỀU HƯỚNG BOTTOM FIXED -->
-    <nav class="fixed bottom-0 left-0 right-0 z-50 bg-white border-t border-slate-200 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto safe-area-bottom">
-      <div class="grid grid-cols-4 text-center">
-        
-        <button id="nav-location" onclick="switchTab('location')" class="nav-btn-item flex flex-col items-center py-2 text-blue-900 font-bold transition-colors">
-          <i data-lucide="map-pin" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Sơ đồ/Vị trí</span>
-        </button>
+    <!-- 3. THANH ĐIỀU HƯỚNG ĐÁY CỐ ĐỊNH -->
+    <nav class="fixed bottom-0 left-0 right-0 max-w-md md:max-w-2xl lg:max-w-3xl mx-auto bg-white border-t border-slate-200 flex justify-between items-center px-1 py-2 z-50 shadow-lg safe-area-bottom">
+      
+      <button onclick="switchTab('location')" id="nav-location" class="nav-btn flex-1 flex flex-col items-center gap-1 text-[9px] font-bold text-blue-800 transition-colors">
+        <i data-lucide="map-pin" class="w-4 h-4"></i>
+        <span>Sơ đồ</span>
+      </button>
 
-        <button id="nav-timeline" onclick="switchTab('timeline')" class="nav-btn-item flex flex-col items-center py-2 text-slate-500 transition-colors">
-          <i data-lucide="calendar" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Lịch trình/Quy định</span>
-        </button>
+      <button onclick="switchTab('timeline')" id="nav-timeline" class="nav-btn flex-1 flex flex-col items-center gap-1 text-[9px] font-medium text-slate-500 transition-colors">
+        <i data-lucide="clock" class="w-4 h-4"></i>
+        <span>Lịch trình</span>
+      </button>
 
-        <button id="nav-activities" onclick="switchTab('activities')" class="nav-btn-item flex flex-col items-center py-2 text-slate-500 transition-colors">
-          <i data-lucide="sparkles" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Hoạt động</span>
-        </button>
+      <button onclick="switchTab('activities')" id="nav-activities" class="nav-btn flex-1 flex flex-col items-center gap-1 text-[9px] font-medium text-slate-500 transition-colors">
+        <i data-lucide="sparkles" class="w-4 h-4"></i>
+        <span>Hoạt động</span>
+      </button>
 
-        <button id="nav-media" onclick="switchTab('media')" class="nav-btn-item flex flex-col items-center py-2 text-slate-500 transition-colors">
-          <i data-lucide="heart" class="w-5 h-5 mb-0.5"></i>
-          <span class="text-[10px]">Gian hàng/Từ thiện</span>
-        </button>
+      <button onclick="switchTab('media')" id="nav-media" class="nav-btn flex-1 flex flex-col items-center gap-0.5 text-[9px] leading-tight font-medium text-slate-500 text-center transition-colors">
+        <i data-lucide="store" class="w-4 h-4"></i>
+        <span>Gian hàng<br>từ thiện</span>
+      </button>
 
-      </div>
+      <button onclick="switchTab('thanks')" id="nav-thanks" class="nav-btn flex-1 flex flex-col items-center gap-0.5 text-[9px] leading-tight font-medium text-slate-500 text-center transition-colors">
+        <i data-lucide="heart-handshake" class="w-4 h-4"></i>
+        <span>Lời cảm ơn</span>
+      </button>
+
     </nav>
 
   </div>
 
-  <!-- SCRIPT XỬ LÝ SỰ KIỆN -->
+  <!-- JAVASCRIPT XỬ LÝ INTERACTION & ACCORDION -->
   <script>
-    // Khởi tạo biểu tượng Lucide
-    lucide.createIcons();
+    try {
+      lucide.createIcons();
+    } catch (err) {
+      console.warn("Lỗi khởi tạo Lucide Icons:", err);
+    }
 
-    // Toggle Hotline Dropdown
     function toggleHotlineDropdown(e) {
       if (e) e.stopPropagation();
-      const dropdown = document.getElementById('hotlineDropdown');
+      const hotlineDropdown = document.getElementById('hotlineDropdown');
       const searchDropdown = document.getElementById('searchDropdown');
+      
       if (searchDropdown) searchDropdown.classList.add('hidden');
-      if (dropdown) dropdown.classList.toggle('hidden');
+      if (hotlineDropdown) hotlineDropdown.classList.toggle('hidden');
     }
 
-    // Toggle Search Dropdown
     function toggleSearchDropdown(e) {
       if (e) e.stopPropagation();
-      const dropdown = document.getElementById('searchDropdown');
+      const searchDropdown = document.getElementById('searchDropdown');
       const hotlineDropdown = document.getElementById('hotlineDropdown');
+      
       if (hotlineDropdown) hotlineDropdown.classList.add('hidden');
-      if (dropdown) dropdown.classList.toggle('hidden');
-    }
-
-    // Xử lý Tìm kiếm võ sinh
-    function handleSearch(e) {
-      e.preventDefault();
-      const input = document.getElementById('searchInput').value.trim();
-      const resultDiv = document.getElementById('searchResult');
-      if (!input) return;
-      resultDiv.classList.remove('hidden');
-      resultDiv.innerHTML = `
-        <div class="p-3 bg-slate-50 border border-slate-200 rounded-lg text-xs space-y-1">
-          <p class="font-bold text-blue-900">Kết quả tìm kiếm cho: "${input}"</p>
-          <p class="text-slate-600">Mã võ sinh / Họ tên / SBD: <span class="font-semibold text-slate-800">${input}</span></p>
-          <div class="mt-2 p-2 bg-yellow-50 border border-yellow-200 rounded text-yellow-900">
-            <p><strong>Sàn thi đấu:</strong> Sàn 02 - Tầng 4</p>
-            <p><strong>Khung giờ thi:</strong> 08:30 - 10:00</p>
-          </div>
-        </div>
-      `;
-    }
-
-    // Chuyển Tab chính
-    function switchTab(tabId) {
-      document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.nav-btn-item').forEach(el => {
-        el.classList.remove('text-blue-900', 'font-bold');
-        el.classList.add('text-slate-500');
-      });
-
-      const targetTab = document.getElementById('tab-' + tabId);
-      if (targetTab) targetTab.classList.add('active');
-
-      const activeNavBtn = document.getElementById('nav-' + tabId);
-      if (activeNavBtn) {
-        activeNavBtn.classList.remove('text-slate-500');
-        activeNavBtn.classList.add('text-blue-900', 'font-bold');
-      }
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Chuyển Subtab Địa điểm / Sơ đồ
-    function switchSubTab(type) {
-      const btnLoc = document.getElementById('btn-sub-location');
-      const btnMap = document.getElementById('btn-sub-map');
-      const subLoc = document.getElementById('sub-tab-location');
-      const subMap = document.getElementById('sub-tab-map');
-
-      if (type === 'location') {
-        btnLoc.className = 'flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold';
-        btnMap.className = 'flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium';
-        subLoc.classList.remove('hidden');
-        subMap.classList.add('hidden');
-      } else {
-        btnMap.className = 'flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold';
-        btnLoc.className = 'flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium';
-        subMap.classList.remove('hidden');
-        subLoc.classList.add('hidden');
-      }
-    }
-
-    // Chuyển Subtab Lịch trình / Dặn dò / Quy định cấp đai
-    function switchTimelineSubTab(type) {
-      const btnSched = document.getElementById('btn-sub-sched');
-      const btnRules = document.getElementById('btn-sub-rules');
-      const btnBelts = document.getElementById('btn-sub-belts');
-
-      const subSched = document.getElementById('sub-tab-timeline-sched');
-      const subRules = document.getElementById('sub-tab-timeline-rules');
-      const subBelts = document.getElementById('sub-tab-timeline-belts');
-
-      [btnSched, btnRules, btnBelts].forEach(b => {
-        if(b) b.className = 'flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium';
-      });
-      [subSched, subRules, subBelts].forEach(s => {
-        if(s) s.classList.add('hidden');
-      });
-
-      if (type === 'sched') {
-        btnSched.className = 'flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold';
-        subSched.classList.remove('hidden');
-      } else if (type === 'rules') {
-        btnRules.className = 'flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold';
-        subRules.classList.remove('hidden');
-      } else if (type === 'belts') {
-        btnBelts.className = 'flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold';
-        subBelts.classList.remove('hidden');
-      }
-    }
-
-    // Đóng/Mở chi tiết quy định đai (Accordion)
-    function toggleBeltDetail(id) {
-      const detailRow = document.getElementById(id);
-      const icon = document.getElementById('icon-' + id);
-      if (detailRow) {
-        detailRow.classList.toggle('hidden');
-        if (icon) {
-          icon.classList.toggle('rotate-180');
+      if (searchDropdown) {
+        searchDropdown.classList.toggle('hidden');
+        if (!searchDropdown.classList.contains('hidden')) {
+          setTimeout(() => {
+            const input = document.getElementById('searchInput');
+            if (input) input.focus();
+          }, 100);
         }
       }
     }
 
-    // Chuyển Subtab Hoạt động
-    function switchActivitySubTab(actNum) {
-      for (let i = 1; i <= 5; i++) {
-        const btn = document.getElementById('btn-act-' + i);
-        const sub = document.getElementById('sub-act-' + i);
-        if (btn) {
-          if (i === actNum) {
-            btn.className = 'act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md';
-          } else {
-            btn.className = 'act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50';
-          }
-        }
-        if (sub) {
-          if (i === actNum) {
-            sub.classList.remove('hidden');
-          } else {
-            sub.classList.add('hidden');
-          }
-        }
-      }
-    }
-
-    // Chuyển nhanh tới Subtab Hoạt động cụ thể
-    function goToActivitySubTab(actNum) {
-      switchTab('activities');
-      switchActivitySubTab(actNum);
-    }
-
-    // Ẩn dropdown khi bấm ngoài màn hình
     document.addEventListener('click', function(e) {
       const hotlineDropdown = document.getElementById('hotlineDropdown');
       const searchDropdown = document.getElementById('searchDropdown');
+
       if (hotlineDropdown && !hotlineDropdown.contains(e.target)) {
         hotlineDropdown.classList.add('hidden');
       }
@@ -1740,6 +1773,237 @@
         searchDropdown.classList.add('hidden');
       }
     });
+
+    function switchTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.classList.remove('text-blue-800', 'font-bold');
+        btn.classList.add('text-slate-500', 'font-medium');
+      });
+
+      const activeTab = document.getElementById('tab-' + tabId);
+      if (activeTab) activeTab.classList.add('active');
+
+      const activeNav = document.getElementById('nav-' + tabId);
+      if (activeNav) {
+        activeNav.classList.remove('text-slate-500', 'font-medium');
+        activeNav.classList.add('text-blue-800', 'font-bold');
+      }
+    }
+
+    function switchSubTab(subTabId) {
+      const subLoc = document.getElementById('sub-tab-location');
+      const subMap = document.getElementById('sub-tab-map');
+      const btnLoc = document.getElementById('btn-sub-location');
+      const btnMap = document.getElementById('btn-sub-map');
+
+      if (!subLoc || !subMap || !btnLoc || !btnMap) return;
+
+      if (subTabId === 'location') {
+        subLoc.classList.remove('hidden');
+        subMap.classList.add('hidden');
+        
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      } else {
+        subLoc.classList.add('hidden');
+        subMap.classList.remove('hidden');
+
+        btnMap.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+        btnLoc.className = "flex-1 py-2 px-2 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      }
+    }
+
+    function switchTimelineSubTab(subTabId) {
+      const subSched = document.getElementById('sub-tab-timeline-sched');
+      const subRules = document.getElementById('sub-tab-timeline-rules');
+      const subBelts = document.getElementById('sub-tab-timeline-belts');
+
+      const btnSched = document.getElementById('btn-sub-sched');
+      const btnRules = document.getElementById('btn-sub-rules');
+      const btnBelts = document.getElementById('btn-sub-belts');
+
+      if (!subSched || !subRules || !subBelts || !btnSched || !btnRules || !btnBelts) return;
+
+      subSched.classList.add('hidden');
+      subRules.classList.add('hidden');
+      subBelts.classList.add('hidden');
+
+      btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+      btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight text-slate-600 hover:text-slate-900 font-medium";
+
+      if (subTabId === 'sched') {
+        subSched.classList.remove('hidden');
+        btnSched.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      } else if (subTabId === 'rules') {
+        subRules.classList.remove('hidden');
+        btnRules.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      } else if (subTabId === 'belts') {
+        subBelts.classList.remove('hidden');
+        btnBelts.className = "flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold";
+      }
+    }
+
+    /* XỬ LÝ ACCORDION BẢNG CẤP ĐAI */
+    function toggleBeltDetail(beltId) {
+      const detailRow = document.getElementById(beltId);
+      const icon = document.getElementById('icon-' + beltId);
+      if (!detailRow) return;
+
+      const isHidden = detailRow.classList.contains('hidden');
+      if (isHidden) {
+        detailRow.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      } else {
+        detailRow.classList.add('hidden');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+      try {
+        if (window.lucide) lucide.createIcons();
+      } catch (e) {}
+    }
+
+    /* CHUYỂN SUBTAB TRONG MỤC HOẠT ĐỘNG */
+    const activityThemes = {
+      1: "bg-blue-600 text-white border-blue-600 font-bold shadow-md",
+      2: "bg-amber-500 text-white border-amber-500 font-bold shadow-md",
+      3: "bg-purple-600 text-white border-purple-600 font-bold shadow-md",
+      4: "bg-fuchsia-700 text-white border-fuchsia-700 font-bold shadow-md",
+      5: "bg-emerald-600 text-white border-emerald-600 font-bold shadow-md"
+    };
+
+    function switchActivitySubTab(actId) {
+      for (let i = 1; i <= 5; i++) {
+        const sub = document.getElementById('sub-act-' + i);
+        const btn = document.getElementById('btn-act-' + i);
+        if (sub) sub.classList.add('hidden');
+        if (btn) {
+          btn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50";
+        }
+      }
+
+      const activeSub = document.getElementById('sub-act-' + actId);
+      const activeBtn = document.getElementById('btn-act-' + actId);
+
+      if (activeSub) activeSub.classList.remove('hidden');
+      if (activeBtn && activityThemes[actId]) {
+        activeBtn.className = "act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border " + activityThemes[actId];
+      }
+    }
+
+    function goToActivitySubTab(actId) {
+      switchTab('activities');
+      switchActivitySubTab(actId);
+    }
+
+    /* TRA CỨU VÕ SINH — API CONFIG */
+    const CHECKIN_API_URL = 'https://script.google.com/macros/s/AKfycbwN7k1gVAFL-UbOA0B3PkwJ2WGINRW-cxYQAA3oIgSWx-cHzBLz1TPVHXDGHlkwo-XjsA/exec';
+    const CHECKIN_API_KEY = 'UGzBsCjZFxgtex8QPSVWmVaMp9A5UjKj';
+
+    function escapeHtml(v) {
+      return String(v == null ? '' : v)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;').replace(/'/g, '&#39;');
+    }
+
+    function showSearchBox(html) {
+      const box = document.getElementById('searchResult');
+      if (!box) return;
+      box.innerHTML = html;
+      box.classList.remove('hidden');
+    }
+
+    function searchNotice(text, tone) {
+      const color = tone === 'error'
+        ? 'bg-red-50 text-red-800 border-red-200'
+        : 'bg-slate-50 text-slate-600 border-slate-200';
+      return `<div class="p-2.5 rounded-lg border text-xs font-semibold text-center ${color}">${escapeHtml(text)}</div>`;
+    }
+
+    function renderCandidateCard(c) {
+      const daCheckIn = c.trangThai === 'Đã check-in';
+      const trangThai = daCheckIn
+        ? `<span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-1.5 py-0.5 rounded">Đã check-in</span>`
+        : `<span class="bg-amber-100 text-amber-800 text-[10px] font-bold px-1.5 py-0.5 rounded">Chưa check-in</span>`;
+
+      return `
+        <div class="bg-slate-50 p-2.5 rounded-lg border border-slate-200 mb-2">
+          <div class="flex justify-between items-start border-b border-slate-200 pb-1.5 mb-1.5 gap-2">
+            <div class="min-w-0">
+              <span class="text-[10px] text-slate-500 uppercase font-semibold">Võ sinh:</span>
+              <h3 class="font-bold text-blue-900 text-xs break-words">${escapeHtml(c.hoTen)}</h3>
+            </div>
+            <span class="bg-blue-100 text-blue-800 text-[10px] font-bold px-1.5 py-0.5 rounded shrink-0">
+              ${escapeHtml(c.dangDuThi || 'Chưa xếp')}
+            </span>
+          </div>
+          <div class="grid grid-cols-2 gap-1.5 text-xs">
+            <div class="col-span-2 bg-emerald-50 text-emerald-900 p-1.5 rounded border border-emerald-200">
+              🎫 <strong>SBD:</strong> <span class="font-bold">${escapeHtml(c.sbd || 'Chưa có')}</span>
+            </div>
+            <div>🥋 <strong>Sân thi:</strong> <span class="font-bold">${escapeHtml(c.sanThi || 'Chưa xếp')}</span></div>
+            <div>👤 <strong>Giới tính:</strong> ${escapeHtml(c.gioiTinh || '-')}</div>
+            <div class="col-span-2 flex items-center gap-1.5">
+              <strong>Trạng thái:</strong> ${trangThai}
+            </div>
+            <div class="col-span-2 text-blue-800 bg-blue-50 p-1.5 rounded">
+              🪑 <strong>Vị trí PH:</strong> Khán đài Tầng 4 - Cung Thiếu nhi
+            </div>
+          </div>
+        </div>`;
+    }
+
+    function handleSearch(e) {
+      e.preventDefault();
+      const input = document.getElementById('searchInput');
+      if (!input) return;
+
+      const query = input.value.trim();
+      if (!query) return;
+
+      if (!CHECKIN_API_URL || !CHECKIN_API_KEY) {
+        showSearchBox(searchNotice('Chức năng tra cứu chưa được cấu hình. Vui lòng liên hệ Ban tổ chức.', 'error'));
+        return;
+      }
+      if (query.length < 2) {
+        showSearchBox(searchNotice('Vui lòng nhập ít nhất 2 ký tự.', 'error'));
+        return;
+      }
+
+      showSearchBox(searchNotice('Đang tra cứu...'));
+
+      const url = CHECKIN_API_URL
+        + (CHECKIN_API_URL.indexOf('?') !== -1 ? '&' : '?')
+        + 'action=search&q=' + encodeURIComponent(query)
+        + '&key=' + encodeURIComponent(CHECKIN_API_KEY);
+
+      fetch(url)
+        .then(r => r.json())
+        .then(res => {
+          if (!res || res.status !== 'success') {
+            showSearchBox(searchNotice((res && res.message) || 'Không tra cứu được.', 'error'));
+            return;
+          }
+          if (!res.data || res.data.length === 0) {
+            showSearchBox(searchNotice('Không tìm thấy võ sinh nào khớp với "' + query + '".'));
+            return;
+          }
+
+          let html = '';
+          if (res.data.length > 1) {
+            html += `<div class="text-[11px] font-bold text-slate-500 mb-1.5">Tìm thấy ${res.data.length} kết quả:</div>`;
+          }
+          html += res.data.map(renderCandidateCard).join('');
+          if (res.truncated) {
+            html += searchNotice('Còn nhiều kết quả khác. Hãy nhập cụ thể hơn (ví dụ: đúng số báo danh).');
+          }
+          showSearchBox(html);
+        })
+        .catch(err => {
+          showSearchBox(searchNotice('Lỗi kết nối: ' + (err.message || err), 'error'));
+        });
+    }
   </script>
 </body>
 </html>
