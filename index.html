@@ -293,7 +293,7 @@
                   <div class="connector">→</div>
                   <div class="step">
                     <div class="step-icon">🛗</div>
-                    <div class="step-label">Thang máy TM1/TM2</div>
+                    <div class="step-label">Thang máy</div>
                   </div>
                   <div class="connector">→</div>
                   <div class="step">
@@ -313,7 +313,7 @@
                   <div class="connector">→</div>
                   <div class="step">
                     <div class="step-icon">🛗</div>
-                    <div class="step-label">Thang máy TM1/TM2</div>
+                    <div class="step-label">Thang máy</div>
                   </div>
                   <div class="connector">→</div>
                   <div class="step">
@@ -368,7 +368,7 @@
       <div id="tab-timeline" class="tab-content space-y-4">
         <div class="bg-white p-4 rounded-xl shadow-sm border border-slate-200 space-y-4">
           
-          <!-- SUBTABS LỊCH TRÌNH (ĐỒNG BỘ NẸP LỀ THEO TAB 1) -->
+          <!-- SUBTABS LỊCH TRÌNH -->
           <div class="flex gap-1.5 p-1 bg-slate-100 rounded-lg text-xs font-bold border border-slate-200">
             <button id="btn-sub-sched" onclick="switchTimelineSubTab('sched')" class="flex-1 py-2 px-1.5 rounded-md transition text-center leading-tight bg-blue-900 text-white shadow-sm font-bold">
               Khung thời gian<br>Kỳ thi
@@ -390,7 +390,7 @@
 
             <div class="relative pl-6 space-y-4 before:absolute before:left-[7px] before:top-3 before:bottom-3 before:w-[2px] before:bg-slate-200">
               
-              <!-- CARD 1: CHECK-IN & TẬP KẾT (EMERALD THEME) -->
+              <!-- CARD 1: CHECK-IN & TẬP KẾT -->
               <div class="relative">
                 <div class="absolute -left-[23px] top-3.5 w-3.5 h-3.5 rounded-full border-2 border-emerald-600 bg-white flex items-center justify-center z-10">
                   <div class="w-1.5 h-1.5 rounded-full bg-emerald-600"></div>
@@ -433,7 +433,7 @@
                 </div>
               </div>
 
-              <!-- CARD 2: KHAI MẠC (BLUE THEME) -->
+              <!-- CARD 2: KHAI MẠC -->
               <div class="relative">
                 <div class="absolute -left-[23px] top-3.5 w-3.5 h-3.5 rounded-full border-2 border-blue-600 bg-white flex items-center justify-center z-10">
                   <div class="w-1.5 h-1.5 rounded-full bg-blue-600"></div>
@@ -470,7 +470,7 @@
                 </div>
               </div>
 
-              <!-- CARD 3: THỰC HIỆN BÀI THI (AMBER THEME) -->
+              <!-- CARD 3: THỰC HIỆN BÀI THI -->
               <div class="relative">
                 <div class="absolute -left-[23px] top-3.5 w-3.5 h-3.5 rounded-full border-2 border-amber-600 bg-white flex items-center justify-center z-10">
                   <div class="w-1.5 h-1.5 rounded-full bg-amber-600"></div>
@@ -521,7 +521,7 @@
                 </div>
               </div>
 
-              <!-- CARD 4: BẾ MẠC (PURPLE THEME) -->
+              <!-- CARD 4: BẾ MẠC -->
               <div class="relative">
                 <div class="absolute -left-[23px] top-3.5 w-3.5 h-3.5 rounded-full border-2 border-purple-600 bg-white flex items-center justify-center z-10">
                   <div class="w-1.5 h-1.5 rounded-full bg-purple-600"></div>
@@ -613,31 +613,536 @@
             </div>
           </div>
 
-          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI -->
+          <!-- SUBTAB 3: QUY ĐỊNH CẤP ĐAI (ACCORDION & DỮ LIỆU TỐI ƯU UI/UX) -->
           <div id="sub-tab-timeline-belts" class="hidden fade-in space-y-3">
-            <h2 class="font-bold text-slate-900 flex items-center gap-2 border-b pb-2 text-xs">
-              <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
-              Quy Định Cấp Đai & Bài Thi Cốt Lõi
-            </h2>
-            <div class="overflow-x-auto rounded-lg border border-slate-200 text-xs">
+            <div class="flex items-center justify-between border-b pb-2">
+              <h2 class="font-bold text-slate-900 flex items-center gap-2 text-xs">
+                <i data-lucide="award" class="text-blue-600 w-4 h-4"></i>
+                <span>Quy Định Cấp Đai & Bài Thi Chi Tiết</span>
+              </h2>
+              <span class="text-[10px] text-slate-500 font-medium italic bg-slate-100 px-2 py-0.5 rounded-full">Chạm hàng để xem chi tiết</span>
+            </div>
+
+            <div class="overflow-hidden rounded-xl border border-slate-200 text-xs shadow-sm bg-white">
               <table class="w-full text-left border-collapse">
                 <thead>
-                  <tr class="bg-slate-100 text-slate-700 font-bold border-b">
-                    <th colspan="2" class="p-2 border-r border-slate-200 text-center">Cấp đai</th>
-                    <th class="p-2">Nội dung bài thi</th>
+                  <tr class="bg-blue-900 text-white font-bold text-[11px]">
+                    <th class="p-2.5 w-1/3">Cấp đai</th>
+                    <th class="p-2.5 w-2/3">Nội dung bài thi (Quét nhanh)</th>
                   </tr>
                 </thead>
-                <tbody class="divide-y divide-slate-100 text-slate-700 text-xs">
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 10</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Căn bản số 1, Kỹ thuật tấn, Căn bản tay/chân</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 9</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Căn bản số 2, Bài quyền Taegeuk 1 (Il Jang)</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 8</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 2 (Ee Jang), Đá căn bản</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 7</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 3 (Sam Jang), Thể lực</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 6</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 4 (Sa Jang), Căn bản đối luyện</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 5</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 5 (Oh Jang), Đá nâng cao</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 4</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 6 (Yuk Jang), Căn bản đòn thế</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 3</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 7 (Chil Jang), Lực phá / Đối kháng</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 2</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Taegeuk 8 (Pal Jang), Phản công & Thể lực</td></tr>
-                  <tr><td class="p-2 font-bold whitespace-nowrap text-blue-900">Cấp 1</td><td class="p-2 w-12 text-center border-r border-slate-100"><div class="w-10 h-6 bg-slate-100 rounded border border-dashed border-slate-300 flex items-center justify-center text-[9px] text-slate-400">Hình</div></td><td class="p-2">Bài quyền Koryo, Kỹ thuật nâng cao & Kỷ luật</td></tr>
+                <tbody class="divide-y divide-slate-200 text-slate-700 text-xs">
+                  
+                  <!-- CẤP 9 -->
+                  <tr onclick="toggleBeltDetail('belt-9')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 9</span>
+                        <i data-lucide="chevron-down" id="icon-belt-9" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Kỹ thuật căn bản & Thuật ngữ</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn (6), Đấm trung, Đỡ (4 hướng), Đá Ap Chagi</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-9" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Kiểm tra sự tập trung, chiều cao, cân nặng, tố chất thể lực.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kibon Joonbi <span class="text-slate-400 font-normal text-[10px]">(기본 준비)</span>:</strong> Tư thế chuẩn bị căn bản.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (6):</strong> Moaseogi, Narani Seogi, Juchum Seogi, Ap Seogi, Ap Kubi Seogi, Dwit Kubi Seogi, Moaseogi (đổi bên).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đấm <span class="text-slate-400 font-normal text-[10px]">(Jireugi)</span>:</strong> Trung bình tấn - Đấm trung 10 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đỡ <span class="text-slate-400 font-normal text-[10px]">(Makki)</span>:</strong> Arae Makki, Momtong Makki, Olgul Makki (đi 4 hướng hình vuông).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá <span class="text-slate-400 font-normal text-[10px]">(Chagi)</span>:</strong> Ap Chagi <span class="text-slate-400 font-normal text-[10px]">(앞 차기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thuật ngữ Taekwondo:</strong> Nắm chắc các thuật ngữ căn bản (Poomsae, Gyeorugi, Gyeokpa, Hoshinsul, Sibeom, Seogi, Jireugi, Makki, Chagi, Jjireugi, Chigi).</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Tập trung hoàn thiện kỹ thuật căn bản.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Nắm vững thuật ngữ kỹ thuật.</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 8 -->
+                  <tr onclick="toggleBeltDetail('belt-8')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 8</span>
+                        <i data-lucide="chevron-down" id="icon-belt-8" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Kỹ thuật căn bản nâng cao</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn (5), Hansonnal Makki/Chigi, Đá Dollyo Chagi</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-8" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kibon Joonbi <span class="text-slate-400 font-normal text-[10px]">(기본 준비)</span>.</strong></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn (5):</strong> Yeop Seogi (Tấn ngang - Oreun/Wen Seogi), Beom Seogi (Hổ tấn), Kkoa Seogi (Tấn chéo), Hakdari Seogi (Hạc tấn), Moa Seogi (đổi bên).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đấm:</strong> Trung bình tấn - Đấm trung 10 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đỡ:</strong> Arae Makki, Momtong Makki, Olgul Makki, Hansonnal Momtong Bakkat Makki <span class="text-slate-400 font-normal text-[10px]">(한손날 몸통 바깥막기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Tấn công <span class="text-slate-400 font-normal text-[10px]">(Chigi)</span>:</strong> Hansonnal Mok Chigi <span class="text-slate-400 font-normal text-[10px]">(한손날 목 치기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá:</strong> Dollyo Chagi <span class="text-slate-400 font-normal text-[10px]">(돌려 차기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thuật ngữ:</strong> Nhớ tên gọi các kỹ thuật trên.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Tập trung hoàn thiện kỹ thuật căn bản nâng cao.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Nắm vững thuật ngữ kỹ thuật.</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 7 -->
+                  <tr onclick="toggleBeltDetail('belt-7')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 7</span>
+                        <i data-lucide="chevron-down" id="icon-belt-7" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 1 (Nhất khúc)</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Ap Kubi, Đấm Thượng/Trung/Hạ, Phân thế & Tự vệ</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-7" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Ap Kubi Seogi <span class="text-slate-400 font-normal text-[10px]">(앞 굽이 서기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Đấm:</strong> Juchum Seogi đấm trung 10 lần (Momtong Jireugi), Đấm thượng 3 lần, Đấm hạ 3 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (2):</strong> Ap Chagi, Dollyo Chagi.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 1 (Nhất khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Arae Makki <span class="text-slate-400 font-normal text-[10px]">(아래 막기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Momtong Makki <span class="text-slate-400 font-normal text-[10px]">(몸통 막기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Olgul Makki <span class="text-slate-400 font-normal text-[10px]">(얼굴 막기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 1.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Nâng cao ứng dụng phân thế theo hướng đối kháng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Các kỹ thuật tự vệ cơ bản.</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 6 -->
+                  <tr onclick="toggleBeltDetail('belt-6')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 6</span>
+                        <i data-lucide="chevron-down" id="icon-belt-6" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 2 (Nhị khúc)</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Dwit Kubi, Eolgul Jireugi, Phân thế Taegeuk 2</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-6" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Dwit Kubi Seogi <span class="text-slate-400 font-normal text-[10px]">(뒷 굽이 서기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Đấm:</strong> Juchum Seogi đấm trung 10 lần (Momtong Jireugi), Đấm thượng 3 lần, Đấm hạ 3 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (2):</strong> Ap Chagi, Dollyo Chagi.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 2 (Nhị khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Eolgul Jireugi <span class="text-slate-400 font-normal text-[10px]">(얼굴지르기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 2.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Kỹ thuật tự vệ cơ bản.</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 5 -->
+                  <tr onclick="toggleBeltDetail('belt-5')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 5</span>
+                        <i data-lucide="chevron-down" id="icon-belt-5" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 3 (Tam khúc)</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Bài Tấn (10), Đá Yeop Chagi (옆 차기), Phân thế</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-5" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Narani Seogi, Juchum Seogi, Yeop Seogi (Oreun/Wen Seogi), Ap Kubi Seogi, Dwit Kubi Seogi.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Đấm:</strong> Juchum Seogi đấm trung 10 lần, Đấm thượng 3 lần, Đấm hạ 3 lần.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (3):</strong> Ap Chagi, Dollyo Chagi, Yeop Chagi <span class="text-slate-400 font-normal text-[10px]">(옆 차기)</span>.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 3 (Tam khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Hansonnal Momtong Bakkat Makki <span class="text-slate-400 font-normal text-[10px]">(한손날 몸통 바깥막기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 3.</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 4 -->
+                  <tr onclick="toggleBeltDetail('belt-4')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 4</span>
+                        <i data-lucide="chevron-down" id="icon-belt-4" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 4 (Tứ khúc) & Đối kháng</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">3 nguyên tắc phát lực, Đối kháng (2 hiệp x 30s)</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-4" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Hoàn thiện bài tấn.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Nguyên tắc phát lực:</strong> Áp dụng 3 nguyên tắc (Bình thường, Liên tục, Nhanh).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (3):</strong> Ap Chagi, Dollyo Chagi, Yeop Chagi.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 4 (Tứ khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Momtong Sonnal Keodeureo Bakkat Makki <span class="text-slate-400 font-normal text-[10px]">(몸통 손날 거들어 바깥 막기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Pyeonsonkkeut Seweo Jireugi <span class="text-slate-400 font-normal text-[10px]">(편손끝 세워찌르기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 4.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-red-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="swords" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+                            <span>Đối kháng</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-red-500 font-bold">•</span><span>2 hiệp (30 giây / hiệp).</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 3 -->
+                  <tr onclick="toggleBeltDetail('belt-3')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 3</span>
+                        <i data-lucide="chevron-down" id="icon-belt-3" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 5 (Ngũ khúc) & Dwi Chagi</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Kkoa Seogi, Đá Dwi Chagi, Đối kháng (2 hiệp x 45s)</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-3" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Kkoa Seogi <span class="text-slate-400 font-normal text-[10px]">(꼬아 서기)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Nguyên tắc phát lực:</strong> Áp dụng 3 nguyên tắc phát lực.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (4):</strong> Dwi Chagi <span class="text-slate-400 font-normal text-[10px]">(뒤 차기 - Back Kick)</span>.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 5 (Ngũ khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Mejumeok Naeryeo Chigi <span class="text-slate-400 font-normal text-[10px]">(매주먹 내려치기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Deungjumeok Ap Chigi <span class="text-slate-400 font-normal text-[10px]">(등주먹 앞치기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Palgup Pyojeok Chigi <span class="text-slate-400 font-normal text-[10px]">(팔굽 표적치기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 5.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-red-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="swords" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+                            <span>Đối kháng</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-red-500 font-bold">•</span><span>2 hiệp (45 giây / hiệp).</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 2 -->
+                  <tr onclick="toggleBeltDetail('belt-2')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 2</span>
+                        <i data-lucide="chevron-down" id="icon-belt-2" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 6 (Lục khúc) & Beom Seogi</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Beom Seogi (Hổ tấn), Phân thế, Đối kháng (2 hiệp x 1 phút)</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-2" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Beom Seogi <span class="text-slate-400 font-normal text-[10px]">(범 서기 - Hổ tấn)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Nguyên tắc phát lực:</strong> Áp dụng 3 nguyên tắc (Bình thường, Liên tục, Nhanh).</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (4):</strong> Dwi Chagi <span class="text-slate-400 font-normal text-[10px]">(뒤 차기)</span>.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 6 (Lục khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Sonnal Bitureo Makki <span class="text-slate-400 font-normal text-[10px]">(손날 비틀어막기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Batangson Momtong Makki <span class="text-slate-400 font-normal text-[10px]">(바탕손 몸통막기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 6.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-red-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="swords" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+                            <span>Đối kháng</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-red-500 font-bold">•</span><span>2 hiệp (1 phút / hiệp).</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
+                  <!-- CẤP 1 -->
+                  <tr onclick="toggleBeltDetail('belt-1')" class="hover:bg-blue-50/50 cursor-pointer transition-colors group select-none">
+                    <td class="p-2.5 font-bold text-blue-900 border-r border-slate-100 align-top">
+                      <div class="flex items-center justify-between gap-1">
+                        <span>Cấp 1</span>
+                        <i data-lucide="chevron-down" id="icon-belt-1" class="w-3.5 h-3.5 text-slate-400 group-hover:text-blue-600 transition-transform duration-200 shrink-0"></i>
+                      </div>
+                    </td>
+                    <td class="p-2.5 text-slate-700 align-top">
+                      <div class="font-semibold text-slate-900">Taegeuk 7 (Thất khúc) & Hakdari Seogi</div>
+                      <div class="text-[10px] text-slate-500 mt-0.5">Tấn Hakdari (Hạc tấn), Kawi Makki, Đối kháng (2 hiệp x 1 phút)</div>
+                    </td>
+                  </tr>
+                  <tr id="belt-1" class="hidden bg-slate-50/90">
+                    <td colspan="2" class="p-3 border-t border-slate-200">
+                      <div class="space-y-3 bg-white p-3 rounded-xl border border-slate-200 shadow-xs text-xs">
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-blue-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="activity" class="w-3.5 h-3.5 text-blue-600 shrink-0"></i>
+                            <span>Thể lực & Kỹ thuật căn bản <span class="text-slate-400 font-normal text-[10px]">(Gibon Dongjak)</span></span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Thể lực & Thể chất:</strong> Tố chất thể lực, sự tập trung, chiều cao, cân nặng.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Bài Tấn (10):</strong> Hakdari Seogi <span class="text-slate-400 font-normal text-[10px]">(학다리 서기 - Hạc tấn)</span>.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Nguyên tắc phát lực:</strong> Áp dụng 3 nguyên tắc phát lực.</span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-blue-500 font-bold">•</span><span><strong>Kỹ thuật Đá (4):</strong> Dwi Chagi <span class="text-slate-400 font-normal text-[10px]">(뒤 차기)</span>.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-amber-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="book-open" class="w-3.5 h-3.5 text-amber-600 shrink-0"></i>
+                            <span>Bài quyền <span class="text-slate-400 font-normal text-[10px]">(Poomsae)</span> & Đòn trọng tâm</span>
+                          </div>
+                          <p class="font-bold text-blue-950 pt-0.5">Taegeuk 7 (Thất khúc)</p>
+                          <ul class="space-y-1 text-slate-700 pl-1 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Kawi Makki <span class="text-slate-400 font-normal text-[10px]">(가위막기)</span></span></li>
+                            <li class="flex items-start gap-1.5"><span class="text-amber-500 font-bold">•</span><span>Mureup Chigi <span class="text-slate-400 font-normal text-[10px]">(무릎 치기)</span></span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-emerald-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="shield-check" class="w-3.5 h-3.5 text-emerald-600 shrink-0"></i>
+                            <span>Phân thế & Tự vệ</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-emerald-500 font-bold">•</span><span>Phân thế bài quyền Taegeuk 7.</span></li>
+                          </ul>
+                        </div>
+                        <div class="space-y-1">
+                          <div class="flex items-center gap-1.5 font-bold text-red-900 border-b border-slate-100 pb-1">
+                            <i data-lucide="swords" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
+                            <span>Đối kháng</span>
+                          </div>
+                          <ul class="space-y-1 text-slate-700 pl-1 pt-0.5 text-[11px]">
+                            <li class="flex items-start gap-1.5"><span class="text-red-500 font-bold">•</span><span>2 hiệp (1 phút / hiệp).</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </td>
+                  </tr>
+
                 </tbody>
               </table>
             </div>
@@ -662,31 +1167,26 @@
         <!-- THANH TRƯỢT SUBTAB CÁC HOẠT ĐỘNG -->
         <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
           
-          <!-- Pill 1: Ảnh võ sinh -->
           <button id="btn-act-1" onclick="switchActivitySubTab(1)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
             <span class="text-sm">📸</span>
             <span>Ảnh võ sinh</span>
           </button>
 
-          <!-- Pill 2: Hoạt động trải nghiệm -->
           <button id="btn-act-2" onclick="switchActivitySubTab(2)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🎯</span>
             <span>Hoạt động trải nghiệm</span>
           </button>
 
-          <!-- Pill 3: Photobooth -->
           <button id="btn-act-3" onclick="switchActivitySubTab(3)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🖨️</span>
             <span>Photobooth</span>
           </button>
 
-          <!-- Pill 4: Phân tích thể trạng -->
           <button id="btn-act-4" onclick="switchActivitySubTab(4)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">📊</span>
             <span>Phân tích thể trạng</span>
           </button>
 
-          <!-- Pill 5: Đo mật độ xương -->
           <button id="btn-act-5" onclick="switchActivitySubTab(5)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🦴</span>
             <span>Đo mật độ xương</span>
@@ -895,7 +1395,7 @@
                 <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Bố Mẹ
               </span>
               <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
-                🎁 ĐO TẦM SOÁT TẠI CHỖ
+                🎁 ĐO TẦM SOÁT TẠI CHỐ
               </span>
             </div>
 
@@ -942,7 +1442,7 @@
 
       </div>
 
-      <!-- TAB 4: GIAN HÀNG & TỪ THIỆN "TAEKWONDO KIDS AND FRIENDS" -->
+      <!-- TAB 4: GIAN HÀNG & TỪ THIỆN -->
       <div id="tab-media" class="tab-content space-y-4">
         
         <div class="bg-gradient-to-br from-red-700 via-rose-800 to-red-900 text-white p-4.5 rounded-2xl shadow-lg border border-red-600/30 relative overflow-hidden">
@@ -1228,7 +1728,7 @@
 
   </div>
 
-  <!-- JAVASCRIPT XỬ LÝ INTERACTION -->
+  <!-- JAVASCRIPT XỬ LÝ INTERACTION & ACCORDION -->
   <script>
     try {
       lucide.createIcons();
@@ -1345,6 +1845,25 @@
       }
     }
 
+    /* XỬ LÝ ACCORDION BẢNG CẤP ĐAI */
+    function toggleBeltDetail(beltId) {
+      const detailRow = document.getElementById(beltId);
+      const icon = document.getElementById('icon-' + beltId);
+      if (!detailRow) return;
+
+      const isHidden = detailRow.classList.contains('hidden');
+      if (isHidden) {
+        detailRow.classList.remove('hidden');
+        if (icon) icon.style.transform = 'rotate(180deg)';
+      } else {
+        detailRow.classList.add('hidden');
+        if (icon) icon.style.transform = 'rotate(0deg)';
+      }
+      try {
+        if (window.lucide) lucide.createIcons();
+      } catch (e) {}
+    }
+
     /* CHUYỂN SUBTAB TRONG MỤC HOẠT ĐỘNG */
     const activityThemes = {
       1: "bg-blue-600 text-white border-blue-600 font-bold shadow-md",
@@ -1373,7 +1892,6 @@
       }
     }
 
-    /* ĐIỀU HƯỚNG TRỰC TIẾP TỪ NÚT BẤM LỊCH TRÌNH SANG SUBTAB HOẠT ĐỘNG */
     function goToActivitySubTab(actId) {
       switchTab('activities');
       switchActivitySubTab(actId);
