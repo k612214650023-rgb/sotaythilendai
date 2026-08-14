@@ -30,7 +30,7 @@
     .no-scrollbar::-webkit-scrollbar { display: none; }
     .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
 
-    /* CSS Luồng di chuyển (Claude Flow Layout) */
+    /* CSS Luồng di chuyển */
     .route-row {
       display: flex;
       align-items: center;
@@ -122,7 +122,6 @@
       .text-\[11px\] { font-size: 13px !important; }
     }
 
-    /* Vùng bấm của thanh điều hướng dưới: tối thiểu 48px cho ngón tay. */
     .nav-btn { min-height: 48px; justify-content: center; }
   </style>
 </head>
@@ -197,7 +196,7 @@
           </li>
           <li class="flex justify-between items-center bg-slate-50 p-1.5 rounded">
             <span class="font-medium text-slate-700">Cơ sở Hà Đông:</span>
-            <a href="tel:0347954345" class="font-bold text-blue-700">0347 954 345</a>
+            <a href="tel:0347954345" class="font-bold text-blue-700">0347.954.345</a>
           </li>
         </ul>
       </div>
@@ -250,6 +249,7 @@
             </button>
           </div>
 
+          <!-- SUBTAB 1: ĐỊA ĐIỂM & LUỒNG DI CHUYỂN -->
           <div id="sub-tab-location" class="space-y-4 fade-in">
             <div class="bg-slate-50 p-3.5 rounded-xl text-xs space-y-3">
               <div class="flex items-start gap-1.5 text-slate-700 leading-snug">
@@ -276,16 +276,25 @@
 
             <div class="pt-2">
               <p class="font-bold text-slate-900 text-xs mb-2 flex items-center gap-1.5">
-                <span>🧭</span> Luồng di chuyển
+                <span>🧭</span> Sơ đồ luồng di chuyển (2.pdf)
               </p>
 
-              <!-- HIỂN THỊ FILE 2.PDF -->
+              <!-- KHUNG NHÚNG FILE 2.PDF -->
               <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-3 shadow-sm">
-                <iframe src="2.pdf" class="w-full h-64 md:h-80 border-0" title="Sơ đồ địa điểm và luồng di chuyển"></iframe>
-                <div class="p-2 bg-slate-50 text-center border-t border-slate-200 flex justify-center items-center gap-2">
-                  <i data-lucide="file-text" class="w-4 h-4 text-blue-700"></i>
-                  <a href="2.pdf" target="_blank" rel="noopener noreferrer" class="text-xs font-bold text-blue-800 hover:underline">
-                    Xem/Tải file PDF Sơ đồ & Luồng di chuyển (2.pdf)
+                <div class="w-full h-[260px] md:h-[320px] relative bg-slate-200">
+                  <iframe 
+                    src="https://drive.google.com/file/d/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1/preview" 
+                    class="w-full h-full border-0 rounded-t-xl"
+                    title="Sơ đồ luồng di chuyển - 2.pdf"
+                    allow="autoplay">
+                  </iframe>
+                </div>
+                <div class="p-2.5 bg-white flex justify-between items-center text-[11px] border-t border-slate-200">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="file-text" class="w-3.5 h-3.5 text-blue-700"></i> Xem file tài liệu (2.pdf)
+                  </span>
+                  <a href="https://drive.google.com/drive/folders/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-bold hover:underline flex items-center gap-1">
+                    Mở Google Drive <i data-lucide="external-link" class="w-3 h-3"></i>
                   </a>
                 </div>
               </div>
@@ -332,15 +341,31 @@
             </div>
           </div>
 
+          <!-- SUBTAB 2: SƠ ĐỒ & TIỆN ÍCH NHÀ THI ĐẤU -->
           <div id="sub-tab-map" class="hidden space-y-4 fade-in">
             <div>
               <h3 class="font-bold text-slate-800 text-xs mb-2 flex items-center gap-1">
-                <i data-lucide="layout" class="w-4 h-4 text-blue-600"></i> Sơ đồ Nhà thi đấu Tầng 4
+                <i data-lucide="layout" class="w-4 h-4 text-blue-600"></i> Sơ đồ Nhà thi đấu Tầng 4 (1.png)
               </h3>
               
-              <!-- HIỂN THỊ FILE 1.PNG -->
-              <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 flex items-center justify-center shadow-sm">
-                <img src="1.png" alt="Sơ đồ & Tiện ích Nhà thi đấu Tầng 4" class="w-full h-auto object-cover" loading="lazy" />
+              <!-- KHUNG HIỂN THỊ CẤU TRÚC MỚI ĐỔI ĐỒNG BỘ ĐỂ HIỂN THỊ 1.PNG -->
+              <div class="rounded-xl overflow-hidden border border-slate-200 bg-slate-100 mb-3 shadow-sm">
+                <div class="w-full min-h-[200px] max-h-[360px] relative bg-slate-200 flex items-center justify-center">
+                  <img 
+                    src="https://lh3.googleusercontent.com/d/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1" 
+                    alt="Sơ đồ Nhà thi đấu Tầng 4 (1.png)" 
+                    class="w-full h-auto object-contain max-h-[350px] rounded-t-xl"
+                    onerror="this.onerror=null; this.src='https://drive.google.com/thumbnail?id=1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1&sz=w1000';"
+                  />
+                </div>
+                <div class="p-2.5 bg-white flex justify-between items-center text-[11px] border-t border-slate-200">
+                  <span class="font-bold text-slate-700 flex items-center gap-1">
+                    <i data-lucide="image" class="w-3.5 h-3.5 text-blue-700"></i> File ảnh sơ đồ (1.png)
+                  </span>
+                  <a href="https://drive.google.com/drive/folders/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1" target="_blank" rel="noopener noreferrer" class="text-blue-700 font-bold hover:underline flex items-center gap-1">
+                    Mở Google Drive <i data-lucide="external-link" class="w-3 h-3"></i>
+                  </a>
+                </div>
               </div>
             </div>
 
@@ -591,39 +616,32 @@
           </p>
         </div>
 
-        <!-- THANH TRƯỢT SẢN PHẨM / SUBTAB CÁC HOẠT ĐỘNG (SLIDER PILLS) -->
+        <!-- THANH TRƯỢT SUBTAB HOẠT ĐỘNG -->
         <div class="flex overflow-x-auto no-scrollbar gap-2 py-1 px-0.5 scroll-smooth snap-x">
-          
-          <!-- Pill 1: Ảnh võ sinh -->
           <button id="btn-act-1" onclick="switchActivitySubTab(1)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs transition-all duration-200 border bg-blue-600 text-white border-blue-600 font-bold shadow-md">
             <span class="text-sm">📸</span>
             <span>Ảnh võ sinh</span>
           </button>
 
-          <!-- Pill 2: Hoạt động trải nghiệm -->
           <button id="btn-act-2" onclick="switchActivitySubTab(2)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🎯</span>
             <span>Hoạt động trải nghiệm</span>
           </button>
 
-          <!-- Pill 3: Photobooth -->
           <button id="btn-act-3" onclick="switchActivitySubTab(3)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🖨️</span>
             <span>Photobooth</span>
           </button>
 
-          <!-- Pill 4: Phân tích thể trạng -->
           <button id="btn-act-4" onclick="switchActivitySubTab(4)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">📊</span>
             <span>Phân tích thể trạng</span>
           </button>
 
-          <!-- Pill 5: Đo mật độ xương -->
           <button id="btn-act-5" onclick="switchActivitySubTab(5)" class="act-pill snap-start shrink-0 flex items-center gap-1.5 px-3.5 py-2 rounded-full text-xs font-medium transition-all duration-200 shadow-sm border bg-white text-slate-700 border-slate-200 hover:bg-slate-50">
             <span class="text-sm">🦴</span>
             <span>Đo mật độ xương</span>
           </button>
-
         </div>
 
         <!-- NỘI DUNG CÁC SUBTAB HOẠT ĐỘNG -->
@@ -660,7 +678,7 @@
 
             <div class="pt-1">
               <a 
-                href="https://drive.google.com/drive/u/0/mobile/folders/YOUR_GOOGLE_DRIVE_FOLDER_ID" 
+                href="https://drive.google.com/drive/folders/1rjgcPFtlZAu0Q01WioWDOsQBl8VTwXf1" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 class="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white font-bold text-xs py-2.5 px-3 rounded-xl shadow-md transition active:scale-95 group"
@@ -679,7 +697,7 @@
                 <i data-lucide="trophy" class="w-3 h-3"></i> Hoạt động 2
               </span>
               <span class="text-[10px] font-bold text-amber-800 bg-amber-50 px-2 py-0.5 rounded-md border border-amber-200/60">
-                🎁 Qùa tặng cực hấp dẫn
+                🎁 Quà tặng cực hấp dẫn
               </span>
             </div>
 
@@ -705,7 +723,7 @@
                 <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
                   <span class="text-base mb-0.5">⚡</span>
                   <span class="font-bold text-slate-800 text-[10px]">2. Vượt mốc</span>
-                  <span class="text-[9px] text-slate-500">Hoàn thành tất cả thử thách</span>
+                  <span class="text-[9px] text-slate-500">Hoàn thành thử thách</span>
                 </div>
                 <div class="bg-white p-2 rounded-lg border border-amber-200/80 flex flex-col items-center">
                   <span class="text-base mb-0.5">🎁</span>
@@ -717,7 +735,7 @@
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span><strong>Địa điểm:</strong> Khu vực ban công Nhà thi đấu Tầng 4: Khu vực Hoạt động trải nghiệm </span>
+              <span><strong>Địa điểm:</strong> Khu vực ban công Nhà thi đấu Tầng 4: Khu vực Hoạt động trải nghiệm</span>
             </div>
           </div>
 
@@ -816,7 +834,7 @@
 
             <div class="flex items-center gap-1.5 text-xs text-slate-600 bg-slate-50 p-2 rounded-lg border border-slate-100">
               <i data-lucide="map-pin" class="w-3.5 h-3.5 text-red-600 shrink-0"></i>
-              <span>Khu vực Gian hàng đối tác Midu: Khu vực ban công Nhà thi đấu Tầng 4 </span>
+              <span>Khu vực Gian hàng đối tác Midu: Khu vực ban công Nhà thi đấu Tầng 4</span>
             </div>
           </div>
 
@@ -827,7 +845,7 @@
                 <i data-lucide="gift" class="w-3 h-3"></i> Quà Tặng Bố Mẹ
               </span>
               <span class="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
-                🎁 ĐO TẦM SOÁT TẠI CHỖ
+                🎁 ĐO TẦM SOÁT TẠI CHỐ
               </span>
             </div>
 
@@ -1329,7 +1347,7 @@
       }
     }
 
-    /* HAM XUL Y CHUYEN SUBTAB TRONG MUC HOAT DONG */
+    /* XỬ LÝ SUBTAB CÁC HOẠT ĐỘNG */
     const activityThemes = {
       1: "bg-blue-600 text-white border-blue-600 font-bold shadow-md",
       2: "bg-amber-500 text-white border-amber-500 font-bold shadow-md",
